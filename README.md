@@ -1,1 +1,1 @@
-Usage java -jar ui-text-extractor.jar -input <inputdir> -out <outputdir>
+Usage java -jar ui-text-extractor.jar -input inputdir -out outputdir
