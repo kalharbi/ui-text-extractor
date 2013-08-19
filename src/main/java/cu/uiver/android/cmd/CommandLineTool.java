@@ -62,7 +62,7 @@ public class CommandLineTool {
 
 	private void printHelp() {
 		System.out
-				.println("Usage java -jar AndroidResourcesDecoder.jar -input <inputdir> -out <outputdir>");
+				.println("Usage java -jar ui-text-extractor.jar -input <inputdir> -out <outputdir>");
 		System.exit(2);
 	}
 }
