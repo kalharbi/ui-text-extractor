@@ -6,14 +6,18 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import cu.uiver.android.utils.Constants;
+
 
 
 public class ResourcesDecoder {
 
-	File inDir = null;
-	File outDir = null;
-
+	private File inDir = null;
+	private File outDir = null;
+	private long startTime;
+	
 	public void run(String[] args) {
+		startTime = System.currentTimeMillis();
 		inDir = new File(args[0]);
 		outDir = new File(args[1]);
 
@@ -40,67 +44,45 @@ public class ResourcesDecoder {
 		for (File apkFile : files) {
 			System.out.println(i + " - " + apkFile.getName());
 			apkProducers
-					.execute(new ResourceExecutor(parserConsumers, apkFile, outDir));
+					.execute(new ResourceExecutor(i, parserConsumers, apkFile, outDir));
 			i++;
 			System.out.println("********************************************************************");
 		}
-		apkProducers.shutdown();
-		try {
-			apkProducers.awaitTermination(10000, TimeUnit.SECONDS);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		parserConsumers.shutdown();
+		shutdownAndAwaitTermination(apkProducers);
+		shutdownAndAwaitTermination(parserConsumers);
+		printExecutionTime();
 	}
-
-	/*private void runApkTool() {
-
+	
+	// http://docs.oracle.com/javase/6/docs/api/java/util/concurrent/ExecutorService.html
+	private void shutdownAndAwaitTermination(ExecutorService pool) {
+		   pool.shutdown(); // Disable new tasks from being submitted
+		   try {
+		     // Wait for existing tasks to terminate
+		     if (!pool.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS)) {
+		       pool.shutdownNow(); // Cancel currently executing tasks
+		       // Wait a while for tasks to respond to being cancelled
+		       if (!pool.awaitTermination(60, TimeUnit.SECONDS))
+		           System.err.println("Pool did not terminate");
+		     }
+		   } catch (InterruptedException ie) {
+		     // (Re-)Cancel if current thread also interrupted
+		     pool.shutdownNow();
+		     // Preserve interrupt status
+		     Thread.currentThread().interrupt();
+		   }
 	}
-
-	private void extractResources(File apkFile) {
-		File outFile = new File(outDir.getAbsolutePath() + apkFile.getName()
-				+ ".txt");
-		if (outFile.exists()) {
-			outFile.delete();
-		} else {
-			try {
-				outFile.createNewFile();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		String apkName = FilenameUtils.removeExtension(apkFile.getName());
-		Process proc = null;
-		try {
-			String cmd = "java -jar " + apktool.getPath() + " d "
-					+ apkFile.getAbsolutePath() + " "
-					+ outDir.getAbsolutePath() + File.separator + apkName;
-			System.out.println(cmd);
-
-			proc = Runtime.getRuntime().exec(cmd);
-			InputStream stdin = proc.getInputStream();
-			InputStream stderr = proc.getErrorStream();
-			if (stdin != null) {
-				BufferedReader inputBuffer = new BufferedReader(
-						new InputStreamReader(stdin));
-				String line;
-				while ((line = inputBuffer.readLine()) != null) {
-					System.out.println(line);
-				}
-			}
-			if (stderr != null) {
-				BufferedReader errorBuffer = new BufferedReader(
-						new InputStreamReader(stderr));
-				String line;
-				while ((line = errorBuffer.readLine()) != null) {
-					System.out.println(line);
-				}
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}*/
+	
+	private void printExecutionTime() {
+		long endTime = System.currentTimeMillis();	
+		long elapsedTime = endTime - startTime;
+		long hr=TimeUnit.MILLISECONDS.toHours(elapsedTime);
+		long min=TimeUnit.MILLISECONDS.toMinutes(elapsedTime-TimeUnit.HOURS.toMillis(hr));
+		long sec=TimeUnit.MILLISECONDS.toSeconds(elapsedTime-TimeUnit.HOURS.toMillis(hr)
+				-TimeUnit.MINUTES.toMillis(min));
+		long ms=TimeUnit.MILLISECONDS.toMillis(elapsedTime-TimeUnit.HOURS.toMillis(hr)
+				-TimeUnit.MINUTES.toMillis(min)-TimeUnit.SECONDS.toMillis(sec));
+		String formattedTime=String.format("%02d:%02d:%02d.%02d", hr, min, sec,ms);
+		System.out.println("Finished after "+formattedTime);
+	}
+	
 }
