@@ -11,7 +11,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
+
 import org.apache.commons.io.FilenameUtils;
+
 import cu.uiver.android.utils.Constants;
 import cu.uiver.android.utils.Constants.AndroidResource;
 
@@ -28,13 +30,15 @@ public class ResourceExecutor implements Runnable {
 	File apktool = new File(runnin_jar.getParent() + File.separator + "lib/apktool.jar"); 
 	
 	private final ExecutorService parserConsumers;
+	private int id;
 	// Android String Resources files
 
 	private File apkFile;
 	private File outDir;
 
-	public ResourceExecutor(ExecutorService parserConsumers, File apkFile,
+	public ResourceExecutor(int id, ExecutorService parserConsumers, File apkFile,
 			File outDir) {
+		this.id = id;
 		this.parserConsumers = parserConsumers;
 		this.apkFile = apkFile;
 		this.outDir = outDir;
@@ -44,12 +48,12 @@ public class ResourceExecutor implements Runnable {
 	public void run() {
 		List<StringResource> stringResources = getStringResources(apkFile);
 		File finalOutputFile = getFinalOutPutFile();
-		parserConsumers.execute(new parserExecutor(stringResources,
+		parserConsumers.execute(new parserExecutor(id, stringResources,
 				finalOutputFile));
 	}
 
 	private File getFinalOutPutFile() {
-		File outFile = new File(outDir.getAbsolutePath() + File.separator + apkFile.getName()
+		File outFile = new File(outDir.getAbsolutePath() + File.separator + FilenameUtils.removeExtension(apkFile.getName())
 				+ ".txt");
 		if (outFile.exists()) {
 			outFile.delete();
@@ -57,7 +61,8 @@ public class ResourceExecutor implements Runnable {
 			try {
 				outFile.createNewFile();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				System.err.println("Failed to create output file for " + apkFile.getName() +
+						". " + e.getMessage());
 				e.printStackTrace();
 			}
 		}
@@ -67,20 +72,20 @@ public class ResourceExecutor implements Runnable {
 	private List<StringResource> getStringResources(File apkFile) {
 		String apkName = FilenameUtils.removeExtension(apkFile.getName());
 		String outPath = outDir.getAbsolutePath() + File.separator + apkName;
-		Process proc = null;
+		Process process = null;
 		try {
 			String cmd = "java -jar " + apktool.getPath() + " d "
 					+ apkFile.getAbsolutePath() + " " + outPath;
 			System.out.println(cmd);
 
-			proc = Runtime.getRuntime().exec(cmd);
+			process = Runtime.getRuntime().exec(cmd);
 			/*
-			 * InputStream stdin = proc.getInputStream(); if (stdin != null) {
+			 * InputStream stdin = process.getInputStream(); if (stdin != null) {
 			 * BufferedReader inputBuffer = new BufferedReader( new
 			 * InputStreamReader(stdin)); String line; while ((line =
 			 * inputBuffer.readLine()) != null) { System.out.println(line); } }
 			 */
-			InputStream stderr = proc.getErrorStream();
+			InputStream stderr = process.getErrorStream();
 			if (stderr != null) {
 				BufferedReader errorBuffer = new BufferedReader(
 						new InputStreamReader(stderr));
@@ -88,8 +93,13 @@ public class ResourceExecutor implements Runnable {
 				while ((line = errorBuffer.readLine()) != null) {
 					System.out.println(line);
 				}
+				stderr.close();
 			}
+			// avoid leaking the File descriptors
+			process.getInputStream().close();
+			
 		} catch (IOException e) {
+			System.err.println("Error in getting string resources. "+ e.getMessage());
 			e.printStackTrace();
 		}
 		String resourcesPath = outPath + File.separator + "res"
