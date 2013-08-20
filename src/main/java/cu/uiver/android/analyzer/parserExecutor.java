@@ -16,8 +16,10 @@ public class parserExecutor implements Runnable {
 	private List<StringResource> stringResources;
 	private File outputFile;
 	private FileWriter fileWriter;
+	private int id;
 
-	parserExecutor(List<StringResource> stringResources, File outputFile) {
+	public parserExecutor(int id, List<StringResource> stringResources, File outputFile) {
+		this.id = id;
 		this.stringResources = stringResources;
 		this.outputFile = outputFile;
 		try {
@@ -36,7 +38,7 @@ public class parserExecutor implements Runnable {
 						(new OutputStreamWriter(new FileOutputStream(outputFile.getAbsoluteFile()),"UTF-8")));
 				
 				for (StringResource resource : stringResources) {
-					System.out.println(outputFile.getName() + "****"
+					System.out.println(id + "- " + outputFile.getName() + " -- "
 							+ resource.getResourceFile().getName());
 					
 					XMLParser parser = new XMLParser(resource
