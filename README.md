@@ -12,8 +12,6 @@ Extract text string resources from Android .apk files
 ## Examples
        
     java -jar ui-text-extractor-2.0.jar -input ~/apks/com.app.apk -target ~/out
-    
-    ---------------------------------------------------------------------------
    
     java -jar ui-text-extractor-2.0.jar -input ~/apks/ -target ~/out
     
