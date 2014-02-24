@@ -1,0 +1,185 @@
+/**
+Khalid
+ */
+package org.sikuli.uiver.textextractor.extractor;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpression;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+
+import org.sikuli.uiver.textextractor.serialization.AndroidView;
+import org.sikuli.uiver.textextractor.utils.AndroidWidgets;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+public class LayoutParser extends DefaultHandler {
+	private File layoutXMLFile, stringsXMLFile, publicXMLFile;
+	private List<AndroidView> widgetList;
+	private final String[] WIDGETS;
+	private boolean inWidget = false;
+	private String widgetName;
+	private AndroidView androidView;
+
+	public LayoutParser(File layoutXMLFile, File stringsXMLFile,
+			File publicXMLFile) {
+		this.layoutXMLFile = layoutXMLFile;
+		this.stringsXMLFile = stringsXMLFile;
+		this.publicXMLFile = publicXMLFile;
+		this.widgetList = new ArrayList<AndroidView>();
+		this.WIDGETS = new AndroidWidgets().getWIDGETS();
+	}
+
+	public void parseDocument() {
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+		try {
+			SAXParser parser = factory.newSAXParser();
+			parser.parse(layoutXMLFile, this);
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			System.err.println("Error while parsing " + layoutXMLFile);
+			e.printStackTrace();
+			
+		}
+	}
+
+	@Override
+	public void startElement(String uri, String localName, String qName,
+			Attributes attributes) throws SAXException {
+		if (isWidget(qName)) {
+			widgetName = qName;
+			androidView = new AndroidView();
+			inWidget = true;
+			String id_val = attributes.getValue("android:id");
+			String publicId_val = "";
+			String name_val = qName;
+			String text_val = attributes.getValue("android:text");
+			String onClick_val = attributes.getValue("android:onClick");
+			if (id_val != null && id_val.contains("id/")) {
+				try{
+					id_val = id_val.substring(id_val.indexOf('/') + 1);
+					publicId_val = getPublicIdValue(id_val);
+					// TODO: REMOVE THIS
+					if(publicId_val.equals("0x7f070014")){
+						publicId_val = publicId_val + "";
+					}
+				}
+				catch(IndexOutOfBoundsException e){
+				}
+			}
+			if (text_val != null && text_val.startsWith("@string/")) {
+				text_val = getTextValue(text_val.substring(text_val
+						.indexOf('/') + 1));
+			}
+			androidView.setId((id_val == null) ? "" : id_val);
+			androidView.setPublicId(publicId_val);
+			androidView.setName((name_val == null) ? "" : name_val);
+			androidView.setText((text_val == null) ? "" : text_val);
+			androidView.setOnClick((onClick_val == null) ? "" : onClick_val);
+		}
+	}
+
+	@Override
+	public void endElement(String uri, String localName, String qName) {
+		if (inWidget && qName.equalsIgnoreCase(widgetName)) {
+			if (androidView != null) {
+				widgetList.add(androidView);
+			}
+			inWidget = false;
+			widgetName = "";
+		}
+	}
+
+	@Override
+	public void characters(char[] ch, int start, int length) {
+	}
+
+	private boolean isWidget(String widgetName) {
+		return Arrays.asList(this.WIDGETS).contains(widgetName);
+	}
+
+	private String getTextValue(String stringName) {
+		try {
+			DocumentBuilderFactory factory = DocumentBuilderFactory
+					.newInstance();
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			Document doc = builder.parse(stringsXMLFile);
+			XPathFactory xPathfactory = XPathFactory.newInstance();
+			XPath xpath = xPathfactory.newXPath();
+			String expression = "//string[@name=\"" + stringName + "\"]";
+			XPathExpression xpathExpr = xpath.compile(expression);
+			NodeList nodeList = (NodeList) xpathExpr.evaluate(doc,
+					XPathConstants.NODESET);
+			if (nodeList != null) {
+				String value = "";
+				for (int i = 0; i < nodeList.getLength(); i++) {
+					value += nodeList.item(i).getTextContent();
+					if (nodeList.getLength() > 1) {
+						value += " ";
+					}
+				}
+				return value;
+			}
+		} catch (XPathExpressionException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+
+	private String getPublicIdValue(String idVal) {
+		try {
+			DocumentBuilderFactory factory = DocumentBuilderFactory
+					.newInstance();
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			Document doc = builder.parse(publicXMLFile);
+			XPathFactory xPathfactory = XPathFactory.newInstance();
+			XPath xpath = xPathfactory.newXPath();
+			String expression = "//public[@type=\"id\" and @name=\"" + idVal + "\"]";
+			XPathExpression xpathExpr = xpath.compile(expression);
+			NodeList nodeList = (NodeList) xpathExpr.evaluate(doc,
+					XPathConstants.NODESET);
+			if (nodeList != null && nodeList.getLength() > 0) {
+				return ((Element) nodeList.item(0)).getAttribute("id");
+			}
+		} catch (XPathExpressionException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+
+	public List<AndroidView> getWidgetsList() {
+		return widgetList;
+	}
+}

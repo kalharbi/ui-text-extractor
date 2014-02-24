@@ -1,7 +1,7 @@
 /**
 Khalid
  */
-package cu.uiver.android.analyzer;
+package org.sikuli.uiver.textextractor.extractor;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class XMLParser extends DefaultHandler {
+public class StringValuesParser extends DefaultHandler {
 	private File xmlFile;
 
 	private boolean inStringBody = false;
@@ -33,7 +33,7 @@ public class XMLParser extends DefaultHandler {
 	private String arrayTextBody = "";
 	private String pluralTextBody = "";
 
-	public XMLParser(File xmlParser) {
+	public StringValuesParser(File xmlParser) {
 		this.xmlFile = xmlParser;
 		this.stringsList = new ArrayList<String>();
 		this.arraysList = new ArrayList<String>();

@@ -1,9 +1,10 @@
-/**
-Khalid
-*/
-package cu.uiver.android.utils;
+package org.sikuli.uiver.textextractor.utils;
 
 public class Constants {
+	/**
+	 * The number of threads in the thread pool
+	 */
+	public static int NTHREADS = 0;
 	/**
 	 * Android XML resource file name that provides a single string.
 	 */
@@ -17,13 +18,17 @@ public class Constants {
 	 */
 	public final static String PLURALS_XML_FILE_NAME = "plurals.xml";
 	/**
+	 * Android XML resource file name that contains fixed resource IDs to Android resources.
+	 */
+	public final static String PUBLIC_XML_FILE_NAME = "public.xml";
+	/**
 	 * 
 	 * AndroidResource represents one of the three types of resources that can provide the
 	 * app with strings: String, String Array, and Quantity Strings (Plurals).
 	 *
 	 */
 	public enum AndroidResource{
-		STRING, STRING_ARRAY, PLURALS
+		STRING, STRING_ARRAY, PLURALS, ASSETS, PUBLIC
 	}
 	
 }

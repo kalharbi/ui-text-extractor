@@ -1,11 +1,12 @@
 /**
 Khalid
 */
-package cu.uiver.android.analyzer;
+package org.sikuli.uiver.textextractor.extractor;
 
 import java.io.File;
 
-import cu.uiver.android.utils.Constants.AndroidResource;
+import org.sikuli.uiver.textextractor.utils.Constants.AndroidResource;
+
 
 public class StringResource {
 	private File resourceFile;
