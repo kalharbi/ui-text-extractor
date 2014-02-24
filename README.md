@@ -1,9 +1,16 @@
-## ui-text-extractor
-Extract text string resources from Android .apk files 
+# ui-text-extractor
+Extract UI features and text string resources from Android .apk files 
 
 ## Running instructions
-* Build the project: <pre><code>mvn package </pre></code> This will generate a .jar file at /target
-* Copy lib/ directory (ui-text-extractor/src/main/resources/lib) into the directory of the generated jar file.
+
+### Download
+*    Download the most recent release at [the releases page](https://github.com/kalharbi/ui-text-extractor/releases)
+*    Run the jar file.
+
+### Build Instructions
+*   Build the project: <pre><code>mvn package </pre></code> This will generate a .jar file at /target. 
+
+*   Copy lib/ directory (ui-text-extractor/src/main/resources/lib) into the directory of the generated jar file.
 
 ## Usage
 
