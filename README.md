@@ -4,8 +4,8 @@ Extract UI features and text string resources from Android .apk files
 ## Running instructions
 
 ### Download
-*    Download the most recent release at [the releases page](https://github.com/kalharbi/ui-text-extractor/releases)
-*    Run the jar file.
+*    Download the latest release at [the releases page](https://github.com/kalharbi/ui-text-extractor/releases)
+*    Skip to the Examples section.
 
 ### Build Instructions
 *   Build the project: <pre><code>mvn package </pre></code> This will generate a .jar file at /target. 
