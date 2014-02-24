@@ -7,6 +7,6 @@ Extract text string resources from Android .apk files
 
 ## Usage
 
-<pre><code>java -jar ui-text-extractor.jar -input inputdir -out outputdir</pre></code>
+<pre><code>java -jar ui-text-extractor-2.0.jar [-help] [-version] -input <apk_file | apk_dir> [-nthreads <nthreads>] -target <target_directory> </pre></code>
 
 
