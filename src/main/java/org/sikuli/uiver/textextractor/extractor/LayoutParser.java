@@ -30,7 +30,8 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class LayoutParser extends DefaultHandler {
 	private File layoutXMLFile, stringsXMLFile, publicXMLFile;
-	private List<AndroidView> widgetList;
+	private List<AndroidView> viewsList;
+	private List<String> viewsTextList;
 	private final String[] WIDGETS;
 	private boolean inWidget = false;
 	private String widgetName;
@@ -41,7 +42,8 @@ public class LayoutParser extends DefaultHandler {
 		this.layoutXMLFile = layoutXMLFile;
 		this.stringsXMLFile = stringsXMLFile;
 		this.publicXMLFile = publicXMLFile;
-		this.widgetList = new ArrayList<AndroidView>();
+		this.viewsList = new ArrayList<AndroidView>();
+		this.viewsTextList = new ArrayList<String>();
 		this.WIDGETS = new AndroidWidgets().getWIDGETS();
 	}
 
@@ -74,15 +76,12 @@ public class LayoutParser extends DefaultHandler {
 			String publicId_val = "";
 			String name_val = qName;
 			String text_val = attributes.getValue("android:text");
+			String hint_val = attributes.getValue("android:hint");
 			String onClick_val = attributes.getValue("android:onClick");
 			if (id_val != null && id_val.contains("id/")) {
 				try{
 					id_val = id_val.substring(id_val.indexOf('/') + 1);
 					publicId_val = getPublicIdValue(id_val);
-					// TODO: REMOVE THIS
-					if(publicId_val.equals("0x7f070014")){
-						publicId_val = publicId_val + "";
-					}
 				}
 				catch(IndexOutOfBoundsException e){
 				}
@@ -91,11 +90,23 @@ public class LayoutParser extends DefaultHandler {
 				text_val = getTextValue(text_val.substring(text_val
 						.indexOf('/') + 1));
 			}
+			if (hint_val != null && hint_val.startsWith("@string/")) {
+				hint_val = getTextValue(hint_val.substring(hint_val
+						.indexOf('/') + 1));
+			}
 			androidView.setId((id_val == null) ? "" : id_val);
 			androidView.setPublicId(publicId_val);
 			androidView.setName((name_val == null) ? "" : name_val);
 			androidView.setText((text_val == null) ? "" : text_val);
+			androidView.setHint((hint_val == null) ? "" : hint_val);
 			androidView.setOnClick((onClick_val == null) ? "" : onClick_val);
+			// add text values to the list so it can be added to the dump text files
+			if(text_val != ""){
+				viewsTextList.add(text_val + " ");
+			}
+			if(hint_val != ""){
+				viewsTextList.add(hint_val + " ");
+			}
 		}
 	}
 
@@ -103,7 +114,7 @@ public class LayoutParser extends DefaultHandler {
 	public void endElement(String uri, String localName, String qName) {
 		if (inWidget && qName.equalsIgnoreCase(widgetName)) {
 			if (androidView != null) {
-				widgetList.add(androidView);
+				viewsList.add(androidView);
 			}
 			inWidget = false;
 			widgetName = "";
@@ -178,8 +189,13 @@ public class LayoutParser extends DefaultHandler {
 		}
 		return "";
 	}
-
-	public List<AndroidView> getWidgetsList() {
-		return widgetList;
+	// Returns a list of hard coded string values in the layout files
+	public List<String> getViewsTextList() {
+		return viewsTextList;
+	}
+	
+	// Returns a list of Android views defined in the layout files
+	public List<AndroidView> getViewsList() {
+		return viewsList;
 	}
 }
