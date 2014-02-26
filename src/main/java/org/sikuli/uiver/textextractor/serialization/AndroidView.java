@@ -9,6 +9,7 @@ public class AndroidView {
 	private String publicId; // Id obtained from public.xml
 	private String name;
 	private String text;
+	private String hint;
 	private String onClick;
 	
 	public String getId() {
@@ -34,6 +35,12 @@ public class AndroidView {
 	}
 	public void setText(String text) {
 		this.text = text;
+	}
+	public String getHint() {
+		return hint;
+	}
+	public void setHint(String hint) {
+		this.hint = hint;
 	}
 	public String getOnClick() {
 		return onClick;
