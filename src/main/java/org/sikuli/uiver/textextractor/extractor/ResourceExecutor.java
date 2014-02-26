@@ -47,12 +47,12 @@ public class ResourceExecutor implements Runnable {
 
 	@Override
 	public void run() {
-		List<StringResource> xmlResources = getStringResources(apkFile);
+		List<StringResource> androidResources = getAndroidResources(apkFile);
 		Collection<File> layoutFiles = getLayoutFiles(apkFile);
 		
 		File []finalOutputFiles = getFinalOutPutFile();
 		if (finalOutputFiles != null) {
-			parserExecutor.execute(new ParserExecutor(id, xmlResources,
+			parserExecutor.execute(new ParserExecutor(id, androidResources,
 					layoutFiles, finalOutputFiles[0], finalOutputFiles[1]));
 		}
 	}
@@ -104,7 +104,7 @@ public class ResourceExecutor implements Runnable {
 		return new File[] {dumpUITextFile, structuredUITextFile};
 	}
 
-	private List<StringResource> getStringResources(File apkFile) {
+	private List<StringResource> getAndroidResources(File apkFile) {
 		String apkName = FilenameUtils.removeExtension(apkFile.getName());
 		String outPath = outDir.getAbsolutePath() + File.separator + apkName
 				+ File.separator + "out";
@@ -152,9 +152,9 @@ public class ResourceExecutor implements Runnable {
 				+ Constants.PUBLIC_XML_FILE_NAME);
 		
 		File assetDir = new File(outPath + File.separator + "assets");
-		Collection<File> assetResources = null;
+		Collection<File> assetFiles = null;
 		if (assetDir.exists()) {
-			assetResources = FileUtils.listFiles(assetDir, new String[] {
+			assetFiles = FileUtils.listFiles(assetDir, new String[] {
 					"json", "xml", "txt" }, true);
 		}
 		List<StringResource> resources = new ArrayList<StringResource>();
@@ -171,8 +171,8 @@ public class ResourceExecutor implements Runnable {
 		if (res4.exists()) {
 			resources.add(new StringResource(res4, AndroidResource.PUBLIC));
 		}
-		if (assetResources != null && assetResources.size() > 0) {
-			for (File assetFile : assetResources) {
+		if (assetFiles != null && assetFiles.size() > 0) {
+			for (File assetFile : assetFiles) {
 				resources.add(new StringResource(assetFile,
 						AndroidResource.ASSETS));
 			}
