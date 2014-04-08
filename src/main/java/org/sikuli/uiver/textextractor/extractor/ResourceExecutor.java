@@ -60,8 +60,14 @@ public class ResourceExecutor implements Runnable {
 	private Collection<File> getLayoutFiles(File apkFile) {
 		File resDirectory = new File( outDir.getAbsolutePath() + File.separator + FilenameUtils.removeExtension(apkFile.getName())
 		+ File.separator + "out" + File.separator + "res" + File.separator + "layout");
-		// Android does not support nested folders under the layout folder
-		return FileUtils.listFiles(resDirectory, new String[]{"xml", "XML"}, false); 
+		if(resDirectory.exists()){
+			// Android does not support nested folders under the layout folder
+			return FileUtils.listFiles(resDirectory, new String[]{"xml", "XML"}, false);
+		}
+		else{
+			System.out.println("No layouts are found for this repository.");
+			return null;
+		}
 	}
 
 	private File[] getFinalOutPutFile() {

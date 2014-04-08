@@ -52,6 +52,9 @@ public class ParserExecutor implements Runnable {
 	private void parseStringResources() {
 		try {
 			synchronized (dumpTargetFile) {
+				if(androidResources == null){
+					return;
+				}
 				BufferedWriter bw = new BufferedWriter((new OutputStreamWriter(
 						new FileOutputStream(dumpTargetFile.getAbsoluteFile()),
 						"UTF-8")));
@@ -135,6 +138,9 @@ public class ParserExecutor implements Runnable {
 
 	private void parseLayoutResources() {
 		synchronized (jsonTargetFile) {
+			if(layoutFiles == null){
+				return;
+			}
 			String apkName = FilenameUtils.getBaseName(jsonTargetFile
 					.getAbsolutePath());
 			UIDescriptor uiDescriptor;
