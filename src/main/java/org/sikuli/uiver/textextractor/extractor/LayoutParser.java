@@ -101,10 +101,10 @@ public class LayoutParser extends DefaultHandler {
 			androidView.setHint((hint_val == null) ? "" : hint_val);
 			androidView.setOnClick((onClick_val == null) ? "" : onClick_val);
 			// add text values to the list so it can be added to the dump text files
-			if(text_val != ""){
+			if(text_val != null && text_val != ""){
 				viewsTextList.add(text_val + " ");
 			}
-			if(hint_val != ""){
+			if(hint_val != null && hint_val != ""){
 				viewsTextList.add(hint_val + " ");
 			}
 		}
