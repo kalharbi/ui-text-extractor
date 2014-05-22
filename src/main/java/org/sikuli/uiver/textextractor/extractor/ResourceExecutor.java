@@ -16,6 +16,8 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.sikuli.uiver.textextractor.utils.Constants;
 import org.sikuli.uiver.textextractor.utils.Constants.AndroidResource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A resource executor that extracts the resources from the apk files using the
@@ -25,6 +27,7 @@ import org.sikuli.uiver.textextractor.utils.Constants.AndroidResource;
  * 
  */
 public class ResourceExecutor implements Runnable {
+	private final static Logger logger = LoggerFactory.getLogger(ResourceExecutor.class);
 	File runnin_jar = new File(ResourceExecutor.class.getProtectionDomain()
 			.getCodeSource().getLocation().getPath());
 	File apktool = new File(runnin_jar.getParent() + File.separator
@@ -65,7 +68,7 @@ public class ResourceExecutor implements Runnable {
 			return FileUtils.listFiles(resDirectory, new String[]{"xml", "XML"}, false);
 		}
 		else{
-			System.out.println("No layouts are found for this repository.");
+			logger.info("No layouts are found for this repository.");
 			return null;
 		}
 	}
@@ -75,11 +78,7 @@ public class ResourceExecutor implements Runnable {
 		File uiOutDir = new File(outDir.getAbsolutePath() + File.separator
 				+ packageName + File.separator + File.separator + "ui");
 		if (!uiOutDir.exists() && !uiOutDir.mkdir()) {
-			System.out
-					.println("************************************************************************");
-			System.err.println("Failed to create UI target directory");
-			System.out
-					.println("************************************************************************");
+			logger.info("Failed to create UI target directory");
 			return null;
 		}
 		File dumpUITextFile = new File(uiOutDir.getAbsoluteFile()
@@ -87,12 +86,12 @@ public class ResourceExecutor implements Runnable {
 		File structuredUITextFile = new File(uiOutDir.getAbsoluteFile()
 				+ File.separator + packageName + ".json");
 		if (dumpUITextFile.exists() && !dumpUITextFile.delete()) {
-			System.out.println(dumpUITextFile.getName() + " alread exist.");
+			logger.info("{} alread exist.", dumpUITextFile.getName());
 			return null;
 		} 
 		
 		if (structuredUITextFile.exists() && !structuredUITextFile.delete()) {
-			System.out.println(structuredUITextFile.getName() + " alread exist.");
+			logger.info("{} alread exist.", structuredUITextFile.getName());
 			return null;
 		} 
 		
@@ -101,10 +100,8 @@ public class ResourceExecutor implements Runnable {
 				dumpUITextFile.createNewFile();
 				structuredUITextFile.createNewFile();
 			} catch (IOException e) {
-				System.err
-						.println("Failed to create target UI text file(s) for "
-								+ apkFile.getName() + System.getProperty("line.separator") + e.getMessage());
-				e.printStackTrace();
+				logger.error("Failed to create target UI text file(s) for {} - {}",
+							apkFile.getName(), e);
 			}
 		}
 		return new File[] {dumpUITextFile, structuredUITextFile};
@@ -118,7 +115,7 @@ public class ResourceExecutor implements Runnable {
 		try {
 			String cmd = "java -jar " + apktool.getPath() + " d "
 					+ apkFile.getAbsolutePath() + " " + outPath;
-			System.out.println(cmd);
+			logger.info(cmd);
 
 			process = Runtime.getRuntime().exec(cmd);
 			/*
@@ -141,9 +138,7 @@ public class ResourceExecutor implements Runnable {
 			process.getInputStream().close();
 
 		} catch (IOException e) {
-			System.err.println("Error in getting string resources. "
-					+ e.getMessage());
-			e.printStackTrace();
+			logger.error("Error in getting string resources. {}", e);
 		}
 		String resourcesPath = outPath + File.separator + "res"
 				+ File.separator + "values";

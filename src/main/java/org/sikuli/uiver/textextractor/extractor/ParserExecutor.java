@@ -20,10 +20,14 @@ import org.sikuli.uiver.textextractor.serialization.AndroidView;
 import org.sikuli.uiver.textextractor.serialization.Layout;
 import org.sikuli.uiver.textextractor.serialization.UIDescriptor;
 import org.sikuli.uiver.textextractor.utils.Constants.AndroidResource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class ParserExecutor implements Runnable {
+	private final static Logger logger = LoggerFactory.getLogger(ParserExecutor.class);
 	private List<StringResource> androidResources;
 	private Collection<File> layoutFiles;
 	private File dumpTargetFile, jsonTargetFile;
@@ -66,8 +70,8 @@ public class ParserExecutor implements Runnable {
 					}
 					StringValuesParser parser = null;
 
-					System.out.println(id + "- " + dumpTargetFile.getName()
-							+ " -- " + resource.getResourceFile().getName());
+					logger.info("{}- {} -- {}",id, dumpTargetFile.getName(),
+							resource.getResourceFile().getName());
 
 					// TODO: Parse other types of asset resources
 					if (resource.getAndroidResourceType() == AndroidResource.ASSETS) {
@@ -98,7 +102,7 @@ public class ParserExecutor implements Runnable {
 					} 
 					else if (resource.getAndroidResourceType().equals(
 							AndroidResource.STRING_ARRAY)) {
-						System.out.println("Processing String Array...");
+						logger.info("Processing String Array...");
 						parser = new StringValuesParser(resource
 								.getResourceFile().getAbsoluteFile());
 						parser.parseDocument();
@@ -109,7 +113,7 @@ public class ParserExecutor implements Runnable {
 					} 
 					else if (resource.getAndroidResourceType().equals(
 							AndroidResource.PLURALS)) {
-						System.out.println("Processing Plurals...");
+						logger.info("Processing Plurals...");
 						parser = new StringValuesParser(resource
 								.getResourceFile().getAbsoluteFile());
 						parser.parseDocument();
@@ -129,10 +133,8 @@ public class ParserExecutor implements Runnable {
 				 * token:tokens) bw.write(token+" ");
 				 */
 			}
-			System.out
-					.println("##########################################################");
-		} catch (Exception ex) {
-			ex.printStackTrace();
+		} catch (Exception e) {
+			logger.error("Error {}", e);
 		}
 	}
 
@@ -153,8 +155,8 @@ public class ParserExecutor implements Runnable {
 				for (File layouFile : layoutFiles) {
 					Layout layout = new Layout(layouFile.getAbsolutePath());
 
-					System.out.println("Processing Layout File: "
-							+ layouFile.getAbsolutePath());
+					logger.info("Processing Layout File: {}",
+							layouFile.getAbsolutePath());
 
 					LayoutParser layoutParser = new LayoutParser(layouFile,
 							this.stringsFile, this.publicFile);
@@ -179,7 +181,7 @@ public class ParserExecutor implements Runnable {
 				}
 
 			} catch (IOException e) {
-				e.printStackTrace();
+				logger.error("Error: {}", e);
 			}
 		}
 	}
@@ -199,11 +201,11 @@ public class ParserExecutor implements Runnable {
 						bw.close();
 					}
 				} catch (UnsupportedEncodingException e) {
-					e.printStackTrace();
+					logger.error("Error: {}", e);
 				} catch (FileNotFoundException e) {
-					e.printStackTrace();
+					logger.error("Error: {}", e);
 				} catch (IOException e) {
-					e.printStackTrace();
+					logger.error("Error: {}", e);
 				}
 			}
 		}

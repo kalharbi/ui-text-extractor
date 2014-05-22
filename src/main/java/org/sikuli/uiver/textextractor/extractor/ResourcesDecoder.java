@@ -5,23 +5,26 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import org.sikuli.uiver.textextractor.utils.Constants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ResourcesDecoder {
-
+	private final static Logger logger = LoggerFactory.getLogger(ResourcesDecoder.class);
+	
 	private long startTime;
 
 	public void run(File[] apkFiles, File targetDirectory) {
 		startTime = System.currentTimeMillis();
 		
-		System.out.println("Target directory : "
-				+ targetDirectory.getAbsolutePath());
+		logger.info("Target directory : {}",
+				targetDirectory.getAbsolutePath());
 		
 		final int numberOfCores = Runtime.getRuntime().availableProcessors();
-		final double blockingCoefficient = 0.9;
+		final double blockingCoefficient = 0.4;
 		final int poolSize = Constants.NTHREADS > 0 ? Constants.NTHREADS
 				: (int) (numberOfCores / (1 - blockingCoefficient));
-		System.out.println("Number of Cores available:" + numberOfCores);
-		System.out.println("Pool size:" + poolSize);
+		logger.info("Number of Cores available: {}", numberOfCores);
+		logger.info("Pool size: {}", poolSize);
 
 		final ExecutorService apkProducers = Executors
 				.newFixedThreadPool(poolSize); // APK resources extractor
@@ -30,12 +33,10 @@ public class ResourcesDecoder {
 		
 		int i = 1;
 		for (File apkFile : apkFiles) {
-			System.out.println(i + " - " + apkFile.getName());
+			logger.info("{} - {}", i, apkFile.getName());
 			apkProducers.execute(new ResourceExecutor(i, parserExecutor,
 					apkFile, targetDirectory));
 			i++;
-			System.out
-					.println("==================================================================");
 		}
 		shutdownAndAwaitTermination(apkProducers);
 		shutdownAndAwaitTermination(parserExecutor);
@@ -51,7 +52,7 @@ public class ResourcesDecoder {
 				pool.shutdownNow(); // Cancel currently executing tasks
 				// Wait a while for tasks to respond to being cancelled
 				if (!pool.awaitTermination(60, TimeUnit.SECONDS))
-					System.err.println("Pool did not terminate");
+					logger.error("Something went wrong! The thread pool did not terminate");
 			}
 		} catch (InterruptedException ie) {
 			// (Re-)Cancel if current thread also interrupted
@@ -74,7 +75,7 @@ public class ResourcesDecoder {
 				- TimeUnit.SECONDS.toMillis(sec));
 		String formattedTime = String.format("%02d:%02d:%02d.%02d", hr, min,
 				sec, ms);
-		System.out.println("Finished after " + formattedTime);
+		logger.info("Finished after {}", formattedTime);
 	}
 
 }

@@ -21,6 +21,8 @@ import javax.xml.xpath.XPathFactory;
 
 import org.sikuli.uiver.textextractor.serialization.AndroidView;
 import org.sikuli.uiver.textextractor.utils.AndroidWidgets;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -29,6 +31,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class LayoutParser extends DefaultHandler {
+	private final static Logger logger = LoggerFactory.getLogger(LayoutParser.class);
 	private File layoutXMLFile, stringsXMLFile, publicXMLFile;
 	private List<AndroidView> viewsList;
 	private List<String> viewsTextList;
@@ -53,15 +56,13 @@ public class LayoutParser extends DefaultHandler {
 			SAXParser parser = factory.newSAXParser();
 			parser.parse(layoutXMLFile, this);
 		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
+			logger.error("Error", e);
 		} catch (SAXException e) {
-			e.printStackTrace();
+			logger.error("Error", e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Error", e);
 		} catch (NullPointerException e) {
-			System.err.println("Error while parsing " + layoutXMLFile);
-			e.printStackTrace();
-			
+			logger.error("Error", e);
 		}
 	}
 
@@ -152,13 +153,13 @@ public class LayoutParser extends DefaultHandler {
 				return value;
 			}
 		} catch (XPathExpressionException e) {
-			e.printStackTrace();
+			logger.error("Error: ", e);
 		} catch (SAXException e) {
-			e.printStackTrace();
+			logger.error("Error: ", e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Error: ", e);
 		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
+			logger.error("Error: ", e);
 		}
 		return "";
 	}
@@ -179,13 +180,13 @@ public class LayoutParser extends DefaultHandler {
 				return ((Element) nodeList.item(0)).getAttribute("id");
 			}
 		} catch (XPathExpressionException e) {
-			e.printStackTrace();
+			logger.error("Error", e);
 		} catch (SAXException e) {
-			e.printStackTrace();
+			logger.error("Error", e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Error", e);
 		} catch (ParserConfigurationException e) {
-			e.printStackTrace();
+			logger.error("Error", e);
 		}
 		return "";
 	}
