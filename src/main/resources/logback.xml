@@ -1,0 +1,21 @@
+<configuration>
+	<contextName>sikuli-slides</contextName>
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>ui-text.log</file>
+		<encoder>
+			<pattern>%date %level %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+		<encoder>
+			<pattern>%date %level %msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="org.sikuli.uiver.uitext" level="DEBUG" />
+	<root level="DEBUG">
+	    <appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
