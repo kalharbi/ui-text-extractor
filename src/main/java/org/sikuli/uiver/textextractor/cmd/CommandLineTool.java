@@ -5,6 +5,8 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.net.URLDecoder;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.GnuParser;
@@ -14,8 +16,19 @@ import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
 import org.apache.commons.io.FilenameUtils;
 import org.sikuli.uiver.textextractor.utils.Constants;
+import org.slf4j.LoggerFactory;
+
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.encoder.PatternLayoutEncoder;
+import ch.qos.logback.classic.spi.ILoggingEvent;
+import ch.qos.logback.core.rolling.RollingFileAppender;
+import ch.qos.logback.core.rolling.TimeBasedRollingPolicy;
 
 public class CommandLineTool {
+	private final static LoggerContext loggerContext = (LoggerContext) LoggerFactory
+			.getLogger(CommandLineTool.class);
 	private static final String applicationName = "ui-text-extractor";
 	private static final String versionNumber = CommandLineTool.class
 			.getPackage().getImplementationVersion();
@@ -41,6 +54,8 @@ public class CommandLineTool {
 			final Options posixOptions = getCommandLineOptions();
 			CommandLine cmd;
 			cmd = parser.parse(posixOptions, args);
+			File logFile = new File(URLDecoder.decode(CommandLineTool.class.getProtectionDomain()
+					.getCodeSource().getLocation().getPath(), "UTF-8"), "ui-text-log-" + System.nanoTime() + ".log");
 
 			if (cmd.hasOption("help")) {
 				printHelp(getCommandLineOptions());
@@ -50,6 +65,9 @@ public class CommandLineTool {
 						+ versionNumber + NEW_LINE;
 				System.out.write(versionMsg.getBytes());
 				System.exit(0);
+			}
+			if (cmd.hasOption("log")) {
+				logFile = new File(cmd.getOptionValue("log"));
 			}
 			if (cmd.hasOption("input")) {
 				doInput(cmd.getOptionValue("input"));
@@ -67,10 +85,38 @@ public class CommandLineTool {
 					System.out.write(errorMessage.getBytes());
 				}
 			}
+			doLogger(logFile);
 		} catch (Exception exception) {
 			printUsage(applicationName, getCommandLineOptions(), System.out);
 			displayBlankLine();
 		}
+	}
+
+	private void doLogger(File logFile) {
+		System.out.println(logFile.getAbsolutePath());
+		RollingFileAppender<ILoggingEvent> rollingFileAppender = new RollingFileAppender<ILoggingEvent>();
+		rollingFileAppender.setContext(loggerContext);
+		rollingFileAppender.setFile(logFile.getAbsolutePath());
+		@SuppressWarnings("rawtypes")
+		TimeBasedRollingPolicy rollingPolicy = new TimeBasedRollingPolicy();
+		rollingPolicy.setContext(loggerContext);
+		rollingPolicy.setMaxHistory(7);
+		rollingPolicy.setParent(rollingFileAppender);
+		rollingPolicy.setFileNamePattern("ui-text.%d{yyyy-MM-dd}.log");
+		rollingPolicy.start();
+
+		PatternLayoutEncoder patternLayoutEncoder = new PatternLayoutEncoder();
+		patternLayoutEncoder.setContext(loggerContext);
+		patternLayoutEncoder.setPattern("%date %level %msg%n");
+		patternLayoutEncoder.start();
+
+		rollingFileAppender.setEncoder(patternLayoutEncoder);
+		rollingFileAppender.setRollingPolicy(rollingPolicy);
+		rollingFileAppender.start();
+		Logger logger = loggerContext.getLogger("LogFile");
+		logger.setLevel(Level.INFO);
+		logger.addAppender(rollingFileAppender);
+
 	}
 
 	private void doTarget(String outDirValue) {
@@ -79,7 +125,8 @@ public class CommandLineTool {
 			if (!outFile.exists()) {
 				if (!new File(outDirValue).mkdirs()) {
 					System.err
-							.println("Error: output directory does not exist. " + outDirValue);
+							.println("Error: output directory does not exist. "
+									+ outDirValue);
 					System.exit(2);
 				}
 			}
@@ -91,7 +138,8 @@ public class CommandLineTool {
 		if (inputValue != null) {
 			File inputFile = new File(inputValue);
 			if (!inputFile.exists()) {
-				System.err.println("Error: input directory does not exist. " + inputValue);
+				System.err.println("Error: input directory does not exist. "
+						+ inputValue);
 				System.exit(2);
 			}
 			if (inputFile.isDirectory()) {
@@ -122,6 +170,9 @@ public class CommandLineTool {
 		Option versionOption = new Option("version",
 				"print the version number.");
 
+		Option logFileOption = OptionBuilder.withArgName("FILE").hasArg()
+				.withDescription("Write logs to FILE.").create("log");
+
 		Option inputOption = OptionBuilder
 				.withArgName("apk_file | apk_dir")
 				.hasArg()
@@ -146,6 +197,7 @@ public class CommandLineTool {
 
 		gnuOptions.addOption(helpOption);
 		gnuOptions.addOption(versionOption);
+		gnuOptions.addOption(logFileOption);
 		gnuOptions.addOption(inputOption);
 		gnuOptions.addOption(targetDirectoryOption);
 		gnuOptions.addOption(workerThreadsOption);
