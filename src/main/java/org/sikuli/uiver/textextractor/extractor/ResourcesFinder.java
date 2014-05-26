@@ -20,65 +20,64 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * A resource executor that extracts the resources from the apk files using the
- * apktool. It acts like a producer for the parser executor.
+ * A resource executor that finds app's resources in the unpacked apk files.
  * 
  * @author Khalid
  * 
  */
-public class ResourceExecutor implements Runnable {
-	private final static Logger logger = LoggerFactory.getLogger(ResourceExecutor.class);
-	File runnin_jar = new File(ResourceExecutor.class.getProtectionDomain()
-			.getCodeSource().getLocation().getPath());
-	File apktool = new File(runnin_jar.getParent() + File.separator
-			+ "lib/apktool.jar");
-	
-	private final ExecutorService parserExecutor;
-	private int id;
-	// Android String Resources files
+public class ResourcesFinder {
+	private final static Logger logger = LoggerFactory
+			.getLogger(ResourcesFinder.class);
+	private File apkDir;
+	private List<StringResource> androidResources = null;
+	private Collection<File> layoutFiles = null;
+	private File[] finalOutputFiles = null;
 
-	private File apkFile;
-	private File outDir;
-
-	public ResourceExecutor(int id, ExecutorService parserExecutor,
-			File apkFile, File outDir) {
-		this.id = id;
-		this.parserExecutor = parserExecutor;
-		this.apkFile = apkFile;
-		this.outDir = outDir;
+	public ResourcesFinder(File apkDir) {
+		this.apkDir = apkDir;
 	}
 
-	@Override
-	public void run() {
-		List<StringResource> androidResources = getAndroidResources(apkFile);
-		Collection<File> layoutFiles = getLayoutFiles(apkFile);
-		
-		File []finalOutputFiles = getFinalOutPutFile();
-		if (finalOutputFiles != null) {
-			parserExecutor.execute(new ParserExecutor(id, androidResources,
-					layoutFiles, finalOutputFiles[0], finalOutputFiles[1]));
-		}
+	/**
+	 * Finds app's string resources.
+	 */
+	public void findResources() {
+		this.androidResources = getAndroidResources(apkDir);
+		this.layoutFiles = getLayoutFiles(apkDir);
+		this.finalOutputFiles = getFinalOutPutFile();
 	}
 
-	private Collection<File> getLayoutFiles(File apkFile) {
-		File resDirectory = new File( outDir.getAbsolutePath() + File.separator + FilenameUtils.removeExtension(apkFile.getName())
-		+ File.separator + "out" + File.separator + "res" + File.separator + "layout");
-		if(resDirectory.exists()){
+	/**
+	 * Returns a collection of layout files
+	 * 
+	 * @param apkDir
+	 *            the directory of the unpacked apk file.
+	 * @return a collection of layout files
+	 */
+	private Collection<File> getLayoutFiles(File apkDir) {
+		File resDirectory = new File(apkDir.getAbsolutePath() + File.separator
+				+ "res" + File.separator + "layout");
+		if (resDirectory.exists()) {
 			// Android does not support nested folders under the layout folder
-			return FileUtils.listFiles(resDirectory, new String[]{"xml", "XML"}, false);
-		}
-		else{
+			return FileUtils.listFiles(resDirectory, new String[] { "xml",
+					"XML" }, false);
+		} else {
 			logger.info("No layouts are found for this repository.");
 			return null;
 		}
 	}
 
+	/**
+	 * Returns an array containing two output files: 1) UI text file and 2)
+	 * structured UI elements.
+	 * 
+	 * @return a list of files for UI text and UI elements.
+	 */
 	private File[] getFinalOutPutFile() {
-		String packageName = FilenameUtils.removeExtension(apkFile.getName());
-		File uiOutDir = new File(outDir.getAbsolutePath() + File.separator
-				+ packageName + File.separator + File.separator + "ui");
+		String packageName = FilenameUtils.getName(this.apkDir
+				.getAbsolutePath());
+		File uiOutDir = new File(this.apkDir, "ui");
 		if (!uiOutDir.exists() && !uiOutDir.mkdir()) {
-			logger.info("Failed to create UI target directory");
+			logger.error("Failed to create UI target directory");
 			return null;
 		}
 		File dumpUITextFile = new File(uiOutDir.getAbsoluteFile()
@@ -86,62 +85,36 @@ public class ResourceExecutor implements Runnable {
 		File structuredUITextFile = new File(uiOutDir.getAbsoluteFile()
 				+ File.separator + packageName + ".json");
 		if (dumpUITextFile.exists() && !dumpUITextFile.delete()) {
-			logger.info("{} alread exist.", dumpUITextFile.getName());
+			logger.error("{} alread exist.", dumpUITextFile.getName());
 			return null;
-		} 
-		
+		}
 		if (structuredUITextFile.exists() && !structuredUITextFile.delete()) {
-			logger.info("{} alread exist.", structuredUITextFile.getName());
+			logger.error("{} alread exist.", structuredUITextFile.getName());
 			return null;
-		} 
-		
-		else {
+		} else {
 			try {
 				dumpUITextFile.createNewFile();
 				structuredUITextFile.createNewFile();
 			} catch (IOException e) {
-				logger.error("Failed to create target UI text file(s) for {} - {}",
-							apkFile.getName(), e);
+				logger.error(
+						"Failed to create target UI text file(s) for {} - {}",
+						apkDir.getName(), e);
 			}
 		}
-		return new File[] {dumpUITextFile, structuredUITextFile};
+		return new File[] { dumpUITextFile, structuredUITextFile };
 	}
 
-	private List<StringResource> getAndroidResources(File apkFile) {
-		String apkName = FilenameUtils.removeExtension(apkFile.getName());
-		String outPath = outDir.getAbsolutePath() + File.separator + apkName
-				+ File.separator + "out";
-		Process process = null;
-		try {
-			String cmd = "java -jar " + apktool.getPath() + " d "
-					+ apkFile.getAbsolutePath() + " " + outPath;
-			logger.info(cmd);
-
-			process = Runtime.getRuntime().exec(cmd);
-			/*
-			 * InputStream stdin = process.getInputStream(); if (stdin != null)
-			 * { BufferedReader inputBuffer = new BufferedReader( new
-			 * InputStreamReader(stdin)); String line; while ((line =
-			 * inputBuffer.readLine()) != null) { System.out.println(line); } }
-			 */
-			InputStream stderr = process.getErrorStream();
-			if (stderr != null) {
-				BufferedReader errorBuffer = new BufferedReader(
-						new InputStreamReader(stderr));
-				String line;
-				while ((line = errorBuffer.readLine()) != null) {
-					System.out.println(line);
-				}
-				stderr.close();
-			}
-			// avoid leaking the File descriptors
-			process.getInputStream().close();
-
-		} catch (IOException e) {
-			logger.error("Error in getting string resources. {}", e);
-		}
-		String resourcesPath = outPath + File.separator + "res"
-				+ File.separator + "values";
+	/**
+	 * Returns application resources files declared in /res/values and /assets
+	 * directories.
+	 * 
+	 * @param apkDir
+	 *            the directory of the unpacked apk file.
+	 * @return a list of string resources that the app uses.
+	 */
+	private List<StringResource> getAndroidResources(File apkDir) {
+		String resourcesPath = apkDir + File.separator + "res" + File.separator
+				+ "values";
 
 		File res1 = new File(resourcesPath + File.separator
 				+ Constants.STRINGS_XML_FILE_NAME);
@@ -151,12 +124,12 @@ public class ResourceExecutor implements Runnable {
 				+ Constants.PLURALS_XML_FILE_NAME);
 		File res4 = new File(resourcesPath + File.separator
 				+ Constants.PUBLIC_XML_FILE_NAME);
-		
-		File assetDir = new File(outPath + File.separator + "assets");
+
+		File assetDir = new File(apkDir + File.separator + "assets");
 		Collection<File> assetFiles = null;
 		if (assetDir.exists()) {
-			assetFiles = FileUtils.listFiles(assetDir, new String[] {
-					"json", "xml", "txt" }, true);
+			assetFiles = FileUtils.listFiles(assetDir, new String[] { "json",
+					"xml", "txt" }, true);
 		}
 		List<StringResource> resources = new ArrayList<StringResource>();
 		if (res1.exists()) {
@@ -179,5 +152,34 @@ public class ResourceExecutor implements Runnable {
 			}
 		}
 		return resources;
+	}
+
+	/**
+	 * Return a list of string resources.
+	 * 
+	 * @return A list of string resources.
+	 */
+	public List<StringResource> getAndroidResources() {
+		return this.androidResources;
+	}
+
+	/**
+	 * Returns a collection of layout files.
+	 * 
+	 * @return A collection of layout files
+	 */
+	public Collection<File> getlayoutFiles() {
+		return this.layoutFiles;
+	}
+
+	/**
+	 * Returns an array that contains the path to the UI text file and the JSON
+	 * UI elements file.
+	 * 
+	 * @return An array that contains the path to the UI text file and the JSON
+	 *         UI elements file.
+	 */
+	public File[] getFinalOutputFiles() {
+		return this.finalOutputFiles;
 	}
 }

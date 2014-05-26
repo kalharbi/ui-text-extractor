@@ -14,7 +14,7 @@ import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.OptionBuilder;
 import org.apache.commons.cli.Options;
-import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.FileUtils;
 import org.sikuli.uiver.textextractor.utils.Constants;
 import org.slf4j.LoggerFactory;
 
@@ -28,7 +28,7 @@ import ch.qos.logback.core.rolling.TimeBasedRollingPolicy;
 
 public class CommandLineTool {
 	private final static LoggerContext loggerContext = (LoggerContext) LoggerFactory
-			.getLogger(CommandLineTool.class);
+			.getILoggerFactory();
 	private static final String applicationName = "ui-text-extractor";
 	private static final String versionNumber = CommandLineTool.class
 			.getPackage().getImplementationVersion();
@@ -36,9 +36,7 @@ public class CommandLineTool {
 			+ applicationName + "-" + versionNumber + ".jar";
 
 	private static final String NEW_LINE = System.getProperty("line.separator");
-
-	private File targetDir = null;
-	private File[] apkFiles = null;
+	private File[] apkDirs = null;
 
 	/**
 	 * Parse the command-line arguments as GNU-style long option (one word long
@@ -54,8 +52,10 @@ public class CommandLineTool {
 			final Options posixOptions = getCommandLineOptions();
 			CommandLine cmd;
 			cmd = parser.parse(posixOptions, args);
-			File logFile = new File(URLDecoder.decode(CommandLineTool.class.getProtectionDomain()
-					.getCodeSource().getLocation().getPath(), "UTF-8"), "ui-text-log-" + System.nanoTime() + ".log");
+			File logFile = new File(URLDecoder.decode(CommandLineTool.class
+					.getProtectionDomain().getCodeSource().getLocation()
+					.getPath(), "UTF-8"), "ui-text-log-" + System.nanoTime()
+					+ ".log");
 
 			if (cmd.hasOption("help")) {
 				printHelp(getCommandLineOptions());
@@ -69,12 +69,6 @@ public class CommandLineTool {
 			if (cmd.hasOption("log")) {
 				logFile = new File(cmd.getOptionValue("log"));
 			}
-			if (cmd.hasOption("input")) {
-				doInput(cmd.getOptionValue("input"));
-			}
-			if (cmd.hasOption("target")) {
-				doTarget(cmd.getOptionValue("target"));
-			}
 			if (cmd.hasOption("nthreads")) {
 				int nthreads = Integer.parseInt(cmd.getOptionValue("nthreads"));
 				if (nthreads > 0) {
@@ -85,14 +79,21 @@ public class CommandLineTool {
 					System.out.write(errorMessage.getBytes());
 				}
 			}
-			doLogger(logFile);
+			// get directory path argument.
+			final String[] remainingArguments = cmd.getArgs();
+			if (remainingArguments == null || remainingArguments.length != 1) {
+				throw new Exception("Directory path is not specified.");
+			}
+			doInput(remainingArguments[0]);
+			// setup file logger.
+			setupLogger(logFile);
 		} catch (Exception exception) {
 			printUsage(applicationName, getCommandLineOptions(), System.out);
 			displayBlankLine();
 		}
 	}
 
-	private void doLogger(File logFile) {
+	private void setupLogger(File logFile) {
 		System.out.println(logFile.getAbsolutePath());
 		RollingFileAppender<ILoggingEvent> rollingFileAppender = new RollingFileAppender<ILoggingEvent>();
 		rollingFileAppender.setContext(loggerContext);
@@ -119,21 +120,6 @@ public class CommandLineTool {
 
 	}
 
-	private void doTarget(String outDirValue) {
-		if (outDirValue != null) {
-			File outFile = new File(outDirValue);
-			if (!outFile.exists()) {
-				if (!new File(outDirValue).mkdirs()) {
-					System.err
-							.println("Error: output directory does not exist. "
-									+ outDirValue);
-					System.exit(2);
-				}
-			}
-			this.targetDir = outFile;
-		}
-	}
-
 	private void doInput(String inputValue) {
 		if (inputValue != null) {
 			File inputFile = new File(inputValue);
@@ -143,17 +129,22 @@ public class CommandLineTool {
 				System.exit(2);
 			}
 			if (inputFile.isDirectory()) {
-				this.apkFiles = inputFile.listFiles(new FilenameFilter() {
-					public boolean accept(File dir, String filename) {
-						return filename.endsWith(".apk");
+				this.apkDirs = inputFile.listFiles(new FilenameFilter() {
+					public boolean accept(File dir, String name) {
+						try {
+							if (FileUtils.directoryContains(dir, new File(dir,
+									name))) {
+								return new File(dir, name).isDirectory();
+							}
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+						return false;
 					}
 				});
-			} else if (FilenameUtils.getExtension(inputFile.getAbsolutePath())
-					.equalsIgnoreCase("apk")) {
-				this.apkFiles = new File[1];
-				this.apkFiles[0] = inputFile;
 			}
-			if (this.apkFiles == null || this.apkFiles.length < 1) {
+
+			if (this.apkDirs == null || this.apkDirs.length < 1) {
 				System.err.println("Error: Unable to find .apk file(s) in "
 						+ inputValue);
 				System.exit(2);
@@ -173,33 +164,17 @@ public class CommandLineTool {
 		Option logFileOption = OptionBuilder.withArgName("FILE").hasArg()
 				.withDescription("Write logs to FILE.").create("log");
 
-		Option inputOption = OptionBuilder
-				.withArgName("apk_file | apk_dir")
-				.hasArg()
-				.withDescription(
-						"The input APK file or the directory that contains APK files")
-				.isRequired().create("input");
-
-		Option targetDirectoryOption = OptionBuilder
-				.withArgName("target_directory")
-				.hasArg()
-				.withDescription(
-						"The target directory to which the generated files are saved.")
-				.isRequired().create("target");
-
 		Option workerThreadsOption = OptionBuilder
 				.withArgName("nthreads")
 				.hasArg()
 				.withDescription(
-						"Set the number of threads to handle unpacking apks and extracting UI text."
+						"Set the number of threads to handle extracting UI text."
 								+ "The default is to allocate an optimal number of threads relative to the available CPU cores.")
-				.create("nthreads");
+				.withLongOpt("thread").create("t");
 
 		gnuOptions.addOption(helpOption);
 		gnuOptions.addOption(versionOption);
 		gnuOptions.addOption(logFileOption);
-		gnuOptions.addOption(inputOption);
-		gnuOptions.addOption(targetDirectoryOption);
 		gnuOptions.addOption(workerThreadsOption);
 
 		return gnuOptions;
@@ -225,7 +200,7 @@ public class CommandLineTool {
 
 	private void showTextHeader(final OutputStream out) {
 		String textHeader = applicationName
-				+ " -- A tool for reverse engineering and extracting statically declared UI text of Android apk files.";
+				+ " -- A tool for extracting statically declared UI text from Android apk files.";
 		try {
 			out.write(textHeader.getBytes());
 		} catch (IOException ioEx) {
@@ -254,11 +229,7 @@ public class CommandLineTool {
 		}
 	}
 
-	public File getTargetDirectory() {
-		return targetDir;
-	}
-
-	public File[] getApkFiles() {
-		return apkFiles;
+	public File[] getApkDirs() {
+		return apkDirs;
 	}
 }
