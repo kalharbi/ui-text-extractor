@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.evernote.ui.InterceptableRelativeLayout android:id="@id/efab_root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/efab_menu_hdr" android:background="@drawable/enab_bg" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_alignParentTop="true" />
+    <RelativeLayout android:id="@id/efab_menu_footer" android:background="@drawable/enab_split_bg" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_alignParentBottom="true" />
+</com.evernote.ui.InterceptableRelativeLayout>

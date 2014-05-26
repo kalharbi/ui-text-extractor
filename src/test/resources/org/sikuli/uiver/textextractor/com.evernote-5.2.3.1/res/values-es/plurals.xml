@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d notas</item>
+        <item quantity="one">%d nota</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d libretas</item>
+        <item quantity="one">%d libreta</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d etiquetas:</item>
+        <item quantity="one">%d etiqueta:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d intentos restantes</item>
+        <item quantity="one">%d intento restante</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">La cuota se reinicia en %d días</item>
+        <item quantity="one">La cuota se reinicia en %d día</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Restaurar en %d días</item>
+        <item quantity="one">Restaurar en %d día</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Se renueva en %d días</item>
+        <item quantity="one">Se renueva en %d día</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d fotos</item>
+        <item quantity="one">%1d foto</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Subscripciones a Recordatorios</item>
+        <item quantity="one">%d Subscripción a Recordatorios</item>
+    </plurals>
+</resources>

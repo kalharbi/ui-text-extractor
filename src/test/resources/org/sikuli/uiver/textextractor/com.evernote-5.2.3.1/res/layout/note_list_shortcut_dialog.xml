@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:padding="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:id="@id/shortcut_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/shortcut_title_default" android:maxLength="35" android:inputType="textCapSentences|textAutoCorrect" android:imeOptions="actionDone" />
+    </LinearLayout>
+</LinearLayout>

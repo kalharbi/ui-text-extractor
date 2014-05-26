@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d ghi chú</item>
+        <item quantity="one">%d ghi chú</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d sổ tay</item>
+        <item quantity="one">%d sổ tay</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d thẻ:</item>
+        <item quantity="one">%d thẻ:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d lần thử còn lại</item>
+        <item quantity="one">%d lần thử còn lại</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Hạn ngạch được đặt lại sau %d ngày</item>
+        <item quantity="one">Hạn ngạch được đặt lại sau %d ngày</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Đặt lại sau %d ngày</item>
+        <item quantity="one">Đặt lại sau %d ngày</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Làm mới sau %d ngày</item>
+        <item quantity="one">Làm mới sau %d ngày</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d ảnh</item>
+        <item quantity="one">%1d ảnh</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Đăng ký Lời nhắc</item>
+        <item quantity="one">%d Đăng ký Lời nhắc</item>
+    </plurals>
+</resources>

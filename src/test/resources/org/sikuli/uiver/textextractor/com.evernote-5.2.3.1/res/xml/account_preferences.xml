@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/settings" />
+    <PreferenceScreen android:title="@string/category_sync" android:key="sync_settings" android:summary="@string/category_sync_summary">
+        <intent android:targetPackage="com.evernote" android:targetClass="com.evernote.ui.SyncPreferenceActivity" />
+    </PreferenceScreen>
+</PreferenceScreen>

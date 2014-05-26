@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap android:src="@drawable/banner_home_top_shadow" android:tileMode="repeat" />
+    </item>
+    <item android:top="8.0dip">
+        <bitmap android:src="@drawable/banner_home_background_tile" android:tileMode="repeat" />
+    </item>
+</layer-list>

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="15231" android:versionName="5.2.3.1" android:installLocation="auto" package="com.evernote"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:amazon="http://schemas.amazon.com/apk/res/android">
+    <permission android:label="@string/read_data_label" android:name="evernote.permission.READ_DATA" android:protectionLevel="normal" android:description="@string/read_data_desc" />
+    <permission android:label="@string/write_data_label" android:name="evernote.permission.WRITE_DATA" android:protectionLevel="normal" android:description="@string/write_data_desc" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="evernote.permission.READ_DATA" />
+    <uses-permission android:name="evernote.permission.WRITE_DATA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+    <uses-feature android:name="android.hardware.faketouch" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false" />
+    <supports-screens android:anyDensity="true" android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" />
+    <meta-data android:name="com.nec.android.dualscreen.runsOnSecondaryDisplay" android:value="true" />
+    <application android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:name="com.evernote.Evernote" android:debuggable="false" android:hardwareAccelerated="true" android:largeHeap="true">
+        <amazon:enable-feature android:name="com.amazon.geo.maps" android:required="false" />
+        <meta-data android:name="to.dualscreen" android:value="true" />
+        <uses-library android:name="com.google.android.maps" android:required="false" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.HomeActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.phone.PhoneMainActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.tablet.TabletMainActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" />
+        <activity android:theme="@style/Theme.Translucent.NoTitleBar.Dim" android:name="com.evernote.ui.ShortcutsActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateHidden" />
+        <activity android:theme="@style/Theme.NoTitle" android:label="@string/app_name" android:name="com.evernote.ui.maps.EvernoteMapActivity" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme.NoTitle" android:label="@string/app_name" android:name="com.evernote.ui.maps.SnippetActivity" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme.NoTitle" android:label="@string/app_name" android:name="com.evernote.ui.maps.NoteListActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.NoTitle" android:label="@string/app_name" android:name="com.evernote.ui.maps.MapActivityGroup" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme.NoTitle" android:label="@string/app_name" android:name="com.evernote.ui.maps.PinDropActivity" android:launchMode="singleTop" android:configChanges="orientation|screenSize" />
+        <activity android:theme="@style/Theme.NoTitle" android:label="@string/app_name" android:name="com.evernote.ui.maps.amazon.EvernoteMapActivity" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme.NoTitle" android:label="@string/app_name" android:name="com.evernote.ui.maps.amazon.MapActivityGroup" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme.NoTitle" android:label="@string/app_name" android:name="com.evernote.ui.maps.amazon.PinDropActivity" android:launchMode="singleTop" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.PinLockActivity" />
+        <activity android:label="@string/pinllock_setting_title" android:name="com.evernote.ui.SecurityPreferenceActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize">
+            <intent-filter>
+                <action android:name="com.evernote.action.SECURITY_PREFERENCES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.phone.SwipeableNoteListActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.phone.SwipeableNoteListAloneActivity" android:taskAffinity="com.evernote.standAlone" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" android:allowTaskReparenting="true" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.EvernoteNotePickerActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.phone.SwipeableNoteViewActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.phone.HoneycombSwipeableNoteViewActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.phone.SwipeableNoteViewAloneActivity" android:taskAffinity="com.evernote.standAlone" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" android:allowTaskReparenting="true" />
+        <activity android:label="@string/notice" android:name="com.evernote.ui.InformationActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.tablet.NoteListActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true">
+            <intent-filter>
+                <action android:name="com.evernote.action.SEARCH_NOTES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="1">
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.evernote.ui.GoogleSearchResultRedirectActivity" android:taskAffinity="com.evernote.standAlone" android:launchMode="singleTop" android:allowTaskReparenting="true">
+            <meta-data android:name="android.app.searchable" android:resource="@xml/searchable" />
+            <intent-filter android:priority="2">
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/PopUpActivity" android:name="com.evernote.ui.tablet.NoteListAloneActivity" android:taskAffinity="com.evernote.standAlone" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" android:allowTaskReparenting="true">
+            <intent-filter android:priority="1">
+                <action android:name="com.evernote.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity-alias android:label="@string/note_shortcut" android:name="com.evernote.app.CreateShortcuts" android:targetActivity="com.evernote.ui.tablet.NoteListAloneActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.tablet.NoteViewActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.tablet.NoteViewAloneActivity" android:taskAffinity="com.evernote.standAlone" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" android:allowTaskReparenting="true" />
+        <activity android:label="@string/evernote_settings" android:name="com.evernote.ui.AccountInfoPreferenceActivity" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="com.evernote.action.ACCOUNT_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/evernote_settings" android:name="com.evernote.ui.NoteComposerPreferenceActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/evernote_settings" android:name="com.evernote.ui.SyncPreferenceActivity" android:taskAffinity="com.evernote.syncPreferences" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/evernote_settings" android:name="com.evernote.ui.TestPreferenceActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:label="@string/evernote_settings" android:name="com.evernote.ui.EvernotePreferenceActivity" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="com.evernote.action.SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.note.composer.NewNoteActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:alwaysRetainTaskState="true" android:allowTaskReparenting="true" />
+        <activity android:theme="@style/TransparentActivity" android:name="com.evernote.ui.ContentClassAppLaunchActivity" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" />
+        <service android:name="com.evernote.publicinterface.ENOperationService" android:exported="true">
+            <intent-filter>
+                <action android:name="com.evernote.action.CREATE_NEW_NOTE.bg" />
+                <action android:name="com.evernote.action.UPDATE_NOTE.bg" />
+                <action android:name="com.evernote.action.DELETE_NOTE.bg" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+        <activity android:theme="@style/PopUpActivity" android:name="com.evernote.note.composer.NewNoteAloneActivity" android:taskAffinity="com.evernote.standAlone" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:alwaysRetainTaskState="true">
+            <intent-filter>
+                <data android:scheme="*" />
+                <action android:name="com.evernote.action.CREATE_NEW_NOTE" />
+                <action android:name="com.evernote.action.EDIT_NOTE" />
+                <action android:name="com.evernote.action.NEW_SNAPSHOT" />
+                <action android:name="com.evernote.action.NEW_VIDEO_NOTE" />
+                <action android:name="com.evernote.action.NEW_VOICE_NOTE" />
+                <action android:name="com.evernote.action.NEW_SKITCH_NOTE" />
+                <action android:name="com.evernote.action.NEW_SPEECH_TO_TEXT_NOTE" />
+                <action android:name="com.evernote.action.SWAP_RESOURCE" />
+                <action android:name="com.evernote.action.UPDATE_NOTE" />
+                <action android:name="com.evernote.action.DELETE_NOTE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.evernote.action.CREATE_NEW_NOTE" />
+                <action android:name="com.evernote.action.EDIT_NOTE" />
+                <action android:name="com.evernote.action.NEW_SNAPSHOT" />
+                <action android:name="com.evernote.action.NEW_VIDEO_NOTE" />
+                <action android:name="com.evernote.action.NEW_VOICE_NOTE" />
+                <action android:name="com.evernote.action.NEW_SKITCH_NOTE" />
+                <action android:name="com.evernote.action.NEW_SPEECH_TO_TEXT_NOTE" />
+                <action android:name="com.evernote.action.SWAP_RESOURCE" />
+                <action android:name="com.evernote.action.UPDATE_NOTE" />
+                <action android:name="com.evernote.action.DELETE_NOTE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:label="@string/evernote_send" android:icon="@drawable/ic_launcher">
+                <action android:name="com.google.android.gm.action.AUTO_SEND" />
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <data android:mimeType="*/*" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.google.android.voicesearch.SELF_NOTE" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/TransparentActivity.Dim" android:name="com.evernote.note.composer.QuickReminderActivity" android:taskAffinity="com.evernote.standAlone">
+            <intent-filter>
+                <action android:name="com.evernote.widget.action.CREATE_NEW_QUICK_REMINDER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.NoTitle" android:label="@string/widget" android:name="com.evernote.ui.WidgetNewNoteActivity" android:taskAffinity="com.evernote.newNoteTask" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true">
+            <intent-filter>
+                <action android:name="com.evernote.widget.action.CREATE_NEW_NOTE" />
+                <action android:name="com.evernote.widget.action.NEW_SNAPSHOT" />
+                <action android:name="com.evernote.widget.action.NEW_PAGE_CAMERA_SNAPSHOT" />
+                <action android:name="com.evernote.widget.action.NEW_QUICK_SNAPSHOT" />
+                <action android:name="com.evernote.widget.action.NEW_VIDEO_NOTE" />
+                <action android:name="com.evernote.widget.action.NEW_VOICE_NOTE" />
+                <action android:name="com.evernote.widget.action.NEW_SKITCH_NOTE" />
+                <action android:name="com.evernote.widget.action.NEW_SPEECH_TO_TEXT_NOTE" />
+                <action android:name="com.evernote.widget.action.NEW_ATTACHMENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/TranslucentPopUpActivity.Dim" android:name="com.evernote.ui.EmailActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/FragmentDialogActivity" android:name="com.evernote.ui.TagEditActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateHidden" />
+        <activity android:theme="@style/TransparentActivity.Dim" android:name="com.evernote.ui.datetimepicker.DateTimePickerActivity" />
+        <activity android:theme="@style/TransparentActivity.Dim" android:name="com.evernote.ui.datetimepicker.WidgetDateTimePickerActivity" android:taskAffinity="com.evernote.standAlone" android:noHistory="true">
+            <intent-filter>
+                <action android:name="com.evernote.ui.datetimepicker.action.HEADLESS_MODE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/TransparentActivity.Dim" android:name="com.evernote.ui.NoteInfoActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.upsell.UpsellActivity">
+            <intent-filter>
+                <action android:name="com.evernote.upsell.skitch" />
+                <action android:name="com.evernote.upsell.desktop" />
+                <action android:name="com.evernote.action.upsell.WIDGET_ANNOUNCEMENT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.evernote.note.composer.FilePickerActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/TransparentActivity.Dim" android:name="com.evernote.ui.AuthenticationActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name="com.evernote.ui.WebActivity" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="com.evernote.action.MOLESKINE_ORDER_NOW" />
+                <action android:name="com.evernote.action.MOLESKINE_GETTING_STARTED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/PopUpActivity" android:name="com.evernote.ui.TrunkActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/TranslucentPopUpActivity.Dim" android:name="com.evernote.ui.SearchActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:alwaysRetainTaskState="true" android:windowSoftInputMode="stateHidden" />
+        <activity android:theme="@style/TransparentPopUpActivity" android:name="com.evernote.ui.WidgetSearchActivity" android:taskAffinity="com.evernote.searchTask" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" android:allowTaskReparenting="true" android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="com.evernote.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/PopUpActivity" android:name="com.evernote.ui.AdvanceSearchActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateHidden" />
+        <activity android:theme="@style/PopUpActivity" android:name="com.evernote.ui.AdvanceSearchSelector" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/LandingScreen" android:name="com.evernote.ui.landing.LandingActivity" android:configChanges="keyboardHidden|orientation|screenSize">
+            <intent-filter>
+                <action android:name="com.evernote.action.LOGIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/LandingScreenTransparent" android:name="com.evernote.ui.landing.TransparentLandingActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Dialog" android:label="@string/rate_app_title" android:name="com.evernote.ui.RateAppActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Dialog" android:label="@string/dyn_title" android:name="com.evernote.ui.DYNDialogActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.Dialog.Alert" android:name="com.evernote.ui.StandardDialogActivity" android:launchMode="singleTop" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Dialog" android:label="@string/dyn_title" android:name="com.evernote.ui.ShareWithFacebook" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.Dialog.Alert" android:name="com.evernote.ui.ShareDialogActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.Dialog.Alert" android:name="com.evernote.ui.SDCardChangedActivity" android:launchMode="singleTask" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <service android:label="@string/app_name" android:name="com.evernote.client.EvernoteService" />
+        <service android:label="@string/app_name" android:name="com.evernote.client.SyncService" />
+        <service android:label="@string/app_name" android:name="com.evernote.client.RevokedAuthTokenService" />
+        <service android:label="@string/app_name" android:name="com.evernote.client.ReminderService">
+            <intent-filter>
+                <action android:name="com.evernote.client.ReminderService.action.CHANGE_REMINDER_DATE" />
+                <action android:name="com.evernote.client.ReminderService.action.REMOVE_REMINDER" />
+                <action android:name="com.evernote.client.ReminderService.action.MARK_DONE" />
+                <action android:name="com.evernote.client.ReminderService.action.MARK_UNDONE" />
+            </intent-filter>
+        </service>
+        <service android:name="com.evernote.client.tracker.TrackerService">
+            <intent-filter>
+                <action android:name="com.evernote.client.TrackerService" />
+            </intent-filter>
+        </service>
+        <receiver android:name="com.evernote.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.evernote.ui.helper.SyncNotification">
+            <intent-filter android:priority="1">
+                <action android:name="com.evernote.action.SYNC_STARTED" />
+                <action android:name="com.evernote.action.SYNC_ERROR" />
+                <action android:name="com.evernote.action.SYNC_DONE" />
+                <action android:name="com.evernote.action.SAVE_NOTE_DONE" />
+                <action android:name="com.evernote.action.SDCARD_CHANGED" />
+                <action android:name="com.evernote.action.DB_READ_ONLY" />
+                <action android:name="com.evernote.action.DB_OPEN_CREATION_FAILED" />
+                <action android:name="com.evernote.action.DB_CORRUPTED" />
+                <action android:name="com.evernote.action.METADATA_DONE" />
+                <action android:name="com.evernote.action.CHUNK_STARTED" />
+                <action android:name="com.evernote.action.CHUNK_DONE" />
+                <action android:name="com.evernote.action.CONTENT_DONE" />
+                <action android:name="com.evernote.action.RESOURCE_DONE" />
+                <action android:name="com.evernote.action.NOTE_UPLOADED" />
+                <action android:name="com.evernote.action.TAG_UPLOADED" />
+                <action android:name="com.evernote.action.THUMBNAIL_DONE" />
+                <action android:name="com.evernote.action.PLACE_DONE" />
+                <action android:name="com.evernote.action.PLACE_COUNT_REFRESH" />
+                <action android:name="com.evernote.action.METADATA_ERROR" />
+                <action android:name="com.evernote.action.RECO_DONE" />
+                <action android:name="com.evernote.action.ACTION_NOTEBOOK_COUNT_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <provider android:label="@string/sync_notes_short" android:name="com.evernote.provider.EvernoteProvider" android:readPermission="evernote.permission.READ_DATA" android:writePermission="evernote.permission.WRITE_DATA" android:exported="true" android:authorities="com.evernote.evernoteprovider" android:syncable="true" android:grantUriPermissions="true">
+            <path-permission android:readPermission="android.permission.GLOBAL_SEARCH" android:pathPrefix="/search_suggest_query" />
+        </provider>
+        <receiver android:label="@string/start_audio_note" android:name="com.evernote.ui.helper.LiveKeyAudioNoteReceiver">
+            <intent-filter>
+                <action android:name="com.sonyericsson.extras.livekey" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.evernote.ui.helper.StopAudioNoteReceiver">
+            <intent-filter>
+                <action android:name="com.evernote.ACTION_STOP_AUDIO_NOTE" />
+            </intent-filter>
+        </receiver>
+        <activity android:name="com.evernote.ui.helper.URIBrokerActivity" android:taskAffinity="com.evernote.standAlone" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" android:allowTaskReparenting="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="evernote.com" android:pathPattern="/shard/s.*/share/.*" />
+                <data android:scheme="https" android:host="www.evernote.com" android:pathPattern="/shard/s.*/share/.*" />
+                <data android:scheme="https" android:host="stage.evernote.com" android:pathPattern="/shard/s.*/share/.*" />
+                <data android:scheme="https" android:host="www.stage.evernote.com" android:pathPattern="/shard/s.*/share/.*" />
+                <data android:scheme="https" android:host="stage-china.evernote.com" android:pathPattern="/shard/s.*/share/.*" />
+                <data android:scheme="https" android:host="www.stage-china.evernote.com" android:pathPattern="/shard/s.*/share/.*" />
+                <data android:scheme="https" android:host="yinxiang.com" android:pathPattern="/shard/s.*/share/.*" />
+                <data android:scheme="https" android:host="www.yinxiang.com" android:pathPattern="/shard/s.*/share/.*" />
+                <data android:scheme="https" android:host="app.yinxiang.com" android:pathPattern="/shard/s.*/share/.*" />
+                <data android:scheme="https" android:host="stage-dev.corp.etonreve.com" android:pathPattern="/shard/s.*/share/.*" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="evernote" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.evernote.action.NOTE_PICKER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.evernote.action.VIEW_NOTE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.evernote.action.VIEW_NOTE_TABLET" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.evernote.action.VIEW_NOTELIST_TABLET" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.evernote.action.VIEW_NOTELIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/TransparentActivity.Dim" android:name="com.evernote.billing.AmazonBillingActivity" android:launchMode="singleTask" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.billing.BillingActivity" android:launchMode="singleTask" />
+        <activity android:theme="@style/TransparentActivity" android:name="com.evernote.billing.BillingHelper$BillingHelperActivity" android:launchMode="singleTask" />
+        <activity android:theme="@style/TransparentActivity.Dim" android:name="com.evernote.billing.LaunchBillingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="evernote.com" android:pathPattern="/Checkout.action" />
+                <data android:scheme="https" android:host="www.evernote.com" android:pathPattern="/Checkout.action" />
+                <data android:scheme="https" android:host="stage.evernote.com" android:pathPattern="/Checkout.action" />
+                <data android:scheme="https" android:host="www.stage.evernote.com" android:pathPattern="/Checkout.action" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.SmartNotebookSettingsActivity" />
+        <service android:name="com.evernote.billing.BillingService" />
+        <receiver android:name="com.evernote.billing.BillingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.billing.IN_APP_NOTIFY" />
+                <action android:name="com.android.vending.billing.RESPONSE_CODE" />
+                <action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.evernote.billing.BillingService$BillingAlarmReceiver" />
+        <receiver android:name="com.evernote.util.ReferralTrackingReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/PopUpActivity" android:name="com.evernote.ui.NotebookShareSettingsActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/PopUpActivity" android:name="com.evernote.ui.NoteShareSettingsActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.Light.NoTitle" android:name="com.evernote.ui.EmailPickerActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateHidden" />
+        <activity android:theme="@style/PopUpActivity" android:label="@string/cs_title" android:name="com.evernote.support.CustomerSupportActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <receiver android:name="com.evernote.util.MultiUseReceiver">
+            <intent-filter>
+                <action android:name="com.evernote.action.ACTION_DELAYED_NOTIFICATION" />
+                <action android:name="com.evernote.action.ACTION_DISMISS_UPLOAD_NOTIFICATIONS" />
+                <data android:scheme="notificationId" />
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/Theme.NewDialog.Transparent" android:name="com.evernote.help.FeatureDiscoveryWidgetGet" android:taskAffinity="com.evernote.fullscreenfeatureDialog" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" android:noHistory="true" />
+        <activity android:theme="@style/Theme.NewDialog.Transparent" android:name="com.evernote.help.FeatureDiscoveryPromo" android:configChanges="keyboardHidden|screenSize" />
+        <activity android:theme="@style/Theme.Light.NoTitle" android:name="com.evernote.help.PromoWebActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.Light.NoTitle" android:name="com.evernote.ui.BusinessLibraryActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.NewDialog.Transparent" android:name="com.evernote.help.FeatureDiscoveryWidgetConfig" android:taskAffinity="com.evernote.fullscreenfeatureDialog" android:excludeFromRecents="true" android:configChanges="keyboardHidden|orientation|screenSize" android:noHistory="true" />
+        <activity android:theme="@style/Theme.Light.Fullscreen" android:name="com.evernote.ui.VideoCaptureActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:theme="@style/Theme.Welcome" android:name="com.evernote.ui.WelcomeActivity" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.UserSetupActivity" android:configChanges="keyboardHidden|orientation|screenSize" android:windowSoftInputMode="stateHidden" />
+        <activity android:theme="@style/Theme.NoTitle" android:name="com.evernote.ui.gallery.GalleryActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <receiver android:name="com.amazon.inapp.purchasing.ResponseReceiver">
+            <intent-filter>
+                <action android:name="com.amazon.inapp.purchasing.NOTIFY" android:permission="com.amazon.inapp.Permission.NOTIFY" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.evernote.common.util.AndroidCommonReceiver">
+            <intent-filter>
+                <action android:name="com.evernote.common.ACTION_INSTALL_BROADCAST" />
+                <action android:name="com.evernote.common.ACTION_UPDATE_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.evernote.util.SessionTrackingReceiver">
+            <intent-filter>
+                <action android:name="com.evernote.session.SESSION_EVENT" />
+            </intent-filter>
+        </receiver>
+        <activity android:theme="@style/Theme.Light.NoTitle" android:name="com.evernote.smart.noteworthy.EventsActivity" android:screenOrientation="portrait" android:configChanges="keyboardHidden|orientation|screenSize" />
+        <receiver android:name="com.evernote.smart.noteworthy.EventNotificationGenerator" android:enabled="false">
+            <intent-filter android:priority="99">
+                <action android:name="android.intent.action.MEDIA_SCANNER_SCAN_FILE" />
+                <action android:name="android.intent.action.MEDIA_SCANNER_FINISHED" />
+                <action android:name="android.intent.action.MEDIA_SCANNER_STARTED" />
+                <action android:name="com.android.camera.NEW_PICTURE" />
+                <action android:name="android.hardware.action.NEW_VIDEO" />
+                <action android:name="android.hardware.action.NEW_PICTURE" />
+                <data android:mimeType="*/*" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="99">
+                <action android:name="android.intent.action.MEDIA_SCANNER_SCAN_FILE" />
+                <action android:name="android.intent.action.MEDIA_SCANNER_STARTED" />
+                <data android:mimeType="*/*" android:scheme="file" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_SCANNER_FINISHED" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_SCANNER_SCAN_FILE" />
+                <data android:scheme="file" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.EVENT_REMINDER" />
+                <data android:mimeType="vnd.android.cursor.item/calendar-alert" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.evernote.smart.noteworthy.media.trigger" />
+            </intent-filter>
+        </receiver>
+        <service android:label="test" android:name="com.evernote.smart.noteworthy.EventsUpdaterService" android:enabled="false">
+            <intent-filter android:priority="99">
+                <action android:name="android.intent.action.PROVIDER_CHANGED" />
+                <data android:scheme="content" />
+                <data android:host="com.android.calendar" />
+            </intent-filter>
+        </service>
+        <activity android:theme="@*android:style/Theme.NoTitleBar.Fullscreen" android:label="@string/amsc_app_name" android:name="com.evernote.android.multishotcamera.MultiShotCameraActivity" android:process=":camera" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" />
+        <activity android:label="@string/amsc_app_name" android:name="com.evernote.android.multishotcamera.FilePickerActivity" android:process=":camera" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" />
+        <activity android:theme="@*android:style/Theme.NoTitleBar" android:label="View Images" android:name="com.evernote.android.multishotcamera.ViewImagesActivity" android:process=":camera" android:configChanges="keyboardHidden|orientation|screenLayout|screenSize" />
+        <receiver android:name="com.evernote.android.multishotcamera.BCTransformReceiver" android:process=":camera">
+            <intent-filter>
+                <action android:name="BCTransformReceiver" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.evernote.authenticator.AuthenticationService" android:exported="true">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator" />
+        </service>
+        <service android:name="com.evernote.sync.SystemSyncService" android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter" />
+        </service>
+        <meta-data android:name="com.sec.android.support.multiwindow" android:value="true" />
+    </application>
+</manifest>

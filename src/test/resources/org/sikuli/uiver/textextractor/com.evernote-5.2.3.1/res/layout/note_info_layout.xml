@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/screen_root" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/login_frame" android:paddingLeft="3.0dip" android:paddingTop="2.0dip" android:paddingRight="5.0dip" android:layout_width="@dimen/pop_activity_content_width" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <LinearLayout android:background="@drawable/toolbar_bg" android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <ImageButton android:layout_gravity="center_vertical" android:id="@id/btn_ok" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:src="@drawable/ic_action_close" />
+            <TextView android:textColor="@color/gainsboro_text" android:gravity="center" android:layout_gravity="center" android:id="@id/note_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_marginRight="30.0dip" android:maxLines="2" android:layout_weight="1.0" style="@style/textsmall.Bold" />
+        </LinearLayout>
+        <ListView android:scrollbarAlwaysDrawVerticalTrack="true" android:id="@id/note_list" android:background="@color/white" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@color/white" android:cacheColorHint="#ffffffff" android:divider="@color/info_line" android:dividerHeight="1.0dip" android:footerDividersEnabled="false" android:scrollbarDefaultDelayBeforeFade="10000" />
+        <View android:background="@color/light_grey" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </LinearLayout>
+</RelativeLayout>

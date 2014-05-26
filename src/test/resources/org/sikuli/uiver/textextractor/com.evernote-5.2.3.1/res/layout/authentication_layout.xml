@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/faded_black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@color/white" android:layout_width="@dimen/pop_activity_content_width" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <LinearLayout android:id="@id/header" android:background="@drawable/navigation_bar_bg" android:layout_width="fill_parent" android:layout_height="40.0dip">
+            <ImageView android:layout_gravity="left|center" android:id="@id/hdr_icon" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/btn_hdr_logo_icon" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        </LinearLayout>
+        <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:fillViewport="false" android:layout_below="@id/header">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <RelativeLayout android:id="@id/lyt_reset_password" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="5.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="10.0dip">
+                    <TextView android:id="@id/reset_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/invalid_auth_password_expired" android:layout_alignParentTop="true" style="@style/textsmall.Black" />
+                    <Button android:id="@id/reset_ok" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:text="@string/reset_create_new_password" android:layout_below="@id/reset_title" />
+                    <Button android:id="@id/reset_enterpassword" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:text="@string/reset_i_have_password" android:layout_below="@id/reset_ok" />
+                    <Button android:id="@id/reset_customer_support" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/customer_support_title" android:layout_below="@id/reset_enterpassword" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/lyt_auth" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="10.0dip">
+                    <TextView android:id="@id/username" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/reauth_title" android:layout_alignParentTop="true" style="@style/textsmall.Black" />
+                    <EditText android:textSize="14.0sp" android:textColor="@color/black" android:id="@id/password" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:hint="@string/evernote_password" android:maxLines="1" android:password="true" android:layout_below="@id/username" android:inputType="textPassword" android:imeOptions="actionDone" />
+                    <Button android:id="@id/btn_sign_in" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/sign_in" android:layout_below="@id/password" />
+                    <Button android:layout_gravity="center_horizontal" android:id="@id/btn_reset_password" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/forgot_password_submit" android:layout_below="@id/btn_sign_in" />
+                    <Button android:id="@id/btn_customer_support" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/customer_support_title" android:layout_below="@id/btn_reset_password" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

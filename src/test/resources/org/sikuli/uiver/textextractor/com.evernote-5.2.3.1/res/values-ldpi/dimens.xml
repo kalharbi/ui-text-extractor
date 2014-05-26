@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="widget_land_left_padding">2.0px</dimen>
+    <dimen name="widget_snippet_height">105.0px</dimen>
+    <dimen name="widget_snippet_layout_marginTop">-7.0px</dimen>
+    <dimen name="note_view_gallery_item_height">104.0px</dimen>
+</resources>

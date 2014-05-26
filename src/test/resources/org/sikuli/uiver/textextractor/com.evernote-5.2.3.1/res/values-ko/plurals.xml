@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">노트 %d개</item>
+        <item quantity="one">노트 %d개</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">노트북 %d개</item>
+        <item quantity="one">노트북 %d개</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d개 태그:</item>
+        <item quantity="one">%d개 태그:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d회 남음</item>
+        <item quantity="one">%d회 남음</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">%d일 후 할당량 재설정</item>
+        <item quantity="one">%d일 후 할당량 재설정</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">%d일 후 재설정</item>
+        <item quantity="one">%d일에 재설정</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">%d일 후 갱신</item>
+        <item quantity="one">%d일 후 갱신</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">사진 %1d개</item>
+        <item quantity="one">사진 %1d개</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d 알리미 수신</item>
+        <item quantity="one">%d 알리미 수신</item>
+    </plurals>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_centerInParent="true" app:maxLinearLayoutWidth="564.0dip" style="@style/quick_reminder_dialog"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <TextView android:gravity="center_vertical" android:id="@id/nb_selector" android:paddingLeft="16.0dip" android:layout_width="fill_parent" style="@style/quick_reminder_nb_selector" />
+    <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxWidth="496.0dip">
+        <RelativeLayout android:gravity="center" android:orientation="horizontal" android:paddingTop="16.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.evernote.note.composer.richtext.Views.EvernoteEditText android:textAppearance="@style/quick_reminders_input_style" android:textColorHint="@color/en_grey" android:ellipsize="end" android:id="@id/reminder_title" android:paddingLeft="16.0dip" android:paddingRight="@dimen/quick_reminder_field_action_width" android:layout_width="fill_parent" android:hint="@string/quick_reminder_add_hint" android:scrollHorizontally="true" android:singleLine="true" android:layout_centerInParent="true" android:inputType="textAutoCorrect" android:imeOptions="flagNoExtractUi" android:imeActionLabel="@string/ok" style="@style/quick_reminder_field" />
+            <ImageView android:id="@id/reminder_date_picker" android:src="@drawable/ic_reminder_add_date" android:scaleType="center" android:layout_alignRight="@id/reminder_title" android:layout_centerVertical="true" style="@style/quick_reminder_field_action" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" style="@style/quick_reminder_button_bar">
+            <Button android:id="@id/reminder_cancel" android:text="@string/cancel" style="@style/quick_reminder_button" />
+            <View android:gravity="center_vertical" android:layout_gravity="center_vertical" android:background="@color/en_light_grey" android:layout_width="1.0dip" android:layout_height="24.0dip" />
+            <Button android:id="@id/reminder_ok" android:text="@string/ok" style="@style/quick_reminder_button" />
+        </LinearLayout> ø
+</LinearLayout>
+</com.evernote.billing.MaxWidthLinearLayout>

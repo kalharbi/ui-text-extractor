@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="widget_snippet_title_num_lines">2</integer>
+    <integer name="widget_snippet_content_num_lines">7</integer>
+    <integer name="snippet_content_num_lines">8</integer>
+    <integer name="keyboard_focus_key">9</integer>
+    <integer name="config_reallyShortAnimTime">100</integer>
+    <integer name="tag_promo">10</integer>
+    <integer name="grid_snippet_col_count">2</integer>
+    <integer name="image_position">1</integer>
+    <integer name="note_position">2</integer>
+    <integer name="home_list_position">1337</integer>
+</resources>

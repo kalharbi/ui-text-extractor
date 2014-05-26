@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.evernote.ui.widget.EvernoteBanner android:id="@id/notebook_banner" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" evernote:imagePlacement="none" evernote:titleStr="@string/subscribe_to_reminders_banner_notelist" evernote:descriptionStr="@string/subscribe_to_reminders_banner_notelist_desc" evernote:hideAction="true" evernote:bannerType="overlay" evernote:leftButtonText="@string/no" evernote:rightButtonText="@string/yes"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote" />

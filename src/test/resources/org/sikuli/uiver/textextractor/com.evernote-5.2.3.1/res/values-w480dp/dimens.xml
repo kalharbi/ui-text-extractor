@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="h1">20.0sp</dimen>
+    <dimen name="h2">18.0sp</dimen>
+    <dimen name="h3">14.0sp</dimen>
+    <dimen name="h4">12.0sp</dimen>
+    <dimen name="snippet_gridview_margin">12.0dip</dimen>
+    <dimen name="snippet_margin">12.0dip</dimen>
+    <dimen name="snippet_top_margin">6.0dip</dimen>
+    <dimen name="snippet_grid_width">240.0dip</dimen>
+    <dimen name="snippet_grid_height">240.0dip</dimen>
+    <dimen name="snippet_grid_spacing">6.0dip</dimen>
+    <dimen name="upsell_main_vert_padding">20.0dip</dimen>
+    <dimen name="upsell_main_horiz_padding">24.0dip</dimen>
+    <dimen name="upsell_msg_margin">20.0dip</dimen>
+    <dimen name="upsell_title_padding">20.0dip</dimen>
+    <dimen name="upsell_dash_separator_margin">20.0dip</dimen>
+    <dimen name="upsell_hero_bottom_margin">16.0dip</dimen>
+    <dimen name="upsell_inline_img_horiz_padding">20.0dip</dimen>
+    <dimen name="upsell_shell_button_padding_right">30.0dip</dimen>
+</resources>

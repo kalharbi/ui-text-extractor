@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/screen_root" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/content_root" android:layout_width="@dimen/pop_activity_content_width" android:layout_height="@dimen/pop_activity_content_height" android:layout_centerInParent="true">
+        <LinearLayout android:orientation="vertical" android:id="@id/edit_tags_layout" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+            <com.evernote.ui.bubblefield.BubbleField android:id="@id/bubble_field" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView android:gravity="center_horizontal" android:id="@id/toggle_list" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/edit_tags_layout" />
+        <ListView android:id="@id/list" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="#ffe4e4e4" android:dividerHeight="1.0dip" android:layout_below="@id/edit_tags_layout" />
+    </RelativeLayout>
+</RelativeLayout>

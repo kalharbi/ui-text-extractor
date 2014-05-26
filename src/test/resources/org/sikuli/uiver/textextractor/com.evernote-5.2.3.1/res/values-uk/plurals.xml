@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d нотаток</item>
+        <item quantity="one">%d нотатка</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d блокнотів</item>
+        <item quantity="one">%d блокнот</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d міток:</item>
+        <item quantity="one">%d мітка:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">залишилось %d спроб</item>
+        <item quantity="one">залишилася %d спроб</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Квота оновиться через %d днів</item>
+        <item quantity="one">Квота оновиться через %d день</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Днів до наступного циклу: %d</item>
+        <item quantity="one">Днів до наступного циклу: %d</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Renews in %d days</item>
+        <item quantity="one">Renews in %d day</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d photos</item>
+        <item quantity="one">%1d photo</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Reminder Subscriptions</item>
+        <item quantity="one">%d Reminder Subscription</item>
+    </plurals>
+</resources>

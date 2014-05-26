@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="grid_snippet_item_width">235.0dip</dimen>
+    <dimen name="grid_snippet_item_height">235.0dip</dimen>
+    <dimen name="upsell_layout_width">896.0dip</dimen>
+    <dimen name="upsell_main_vert_padding">28.0dip</dimen>
+    <dimen name="upsell_main_horiz_padding">72.0dip</dimen>
+    <dimen name="upsell_msg_margin">28.0dip</dimen>
+    <dimen name="upsell_title_padding">28.0dip</dimen>
+    <dimen name="upsell_dash_separator_margin">28.0dip</dimen>
+    <dimen name="upsell_hero_bottom_margin">28.0dip</dimen>
+    <dimen name="upsell_inline_img_horiz_padding">28.0dip</dimen>
+</resources>

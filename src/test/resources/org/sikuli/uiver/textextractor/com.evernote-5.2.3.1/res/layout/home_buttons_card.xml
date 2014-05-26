@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/card_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:id="@id/top_row" android:layout_width="fill_parent" android:layout_height="@dimen/home_portrait_button_height" android:layout_marginBottom="2.0dip">
+        <RelativeLayout android:id="@id/btn_new_note" android:background="@drawable/home_buttons" android:layout_width="@dimen/home_portrait_button_width" android:layout_height="fill_parent" android:layout_marginRight="@dimen/hf_button_spacing">
+            <ImageView android:id="@id/btn_new_note_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_home_add_note" android:scaleType="center" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/btn_snapshot" android:background="@drawable/home_buttons" android:layout_width="@dimen/home_portrait_button_width" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/hf_button_spacing">
+            <ImageView android:id="@id/btn_snapshot_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_home_snapshot" android:scaleType="center" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:id="@id/bottom_row" android:layout_width="fill_parent" android:layout_height="@dimen/home_portrait_button_height">
+        <RelativeLayout android:id="@id/btn_new_audio" android:background="@drawable/home_buttons" android:layout_width="@dimen/home_portrait_button_width" android:layout_height="fill_parent" android:layout_marginRight="@dimen/hf_button_spacing">
+            <ImageView android:id="@id/btn_new_audio_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_home_audio" android:scaleType="center" android:layout_centerInParent="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/btn_new_attachment" android:background="@drawable/home_buttons" android:layout_width="@dimen/home_portrait_button_width" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/hf_button_spacing">
+            <ImageView android:id="@id/btn_new_attachment_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_home_attachment" android:scaleType="center" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

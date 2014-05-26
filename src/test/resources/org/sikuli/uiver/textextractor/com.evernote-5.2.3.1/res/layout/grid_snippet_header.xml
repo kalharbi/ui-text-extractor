@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/grid_outer_layout" android:background="@drawable/hdr_grid_snippet_border" android:layout_width="fill_parent" android:layout_height="@dimen/snippet_grid_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:layout_gravity="right" android:background="@color/list_group_divider" android:layout_width="3.0dip" android:layout_height="fill_parent" />
+    <LinearLayout android:gravity="right|center" android:layout_gravity="top" android:orientation="vertical" android:id="@id/inner_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/snippet_main_layout">
+        <TextView android:textAppearance="@style/snippet_header_title" android:ellipsize="middle" android:gravity="right" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:minLines="1" />
+        <TextView android:textAppearance="@style/snippet_header_count" android:ellipsize="middle" android:gravity="right" android:id="@id/note_count" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:minLines="1" />
+    </LinearLayout>
+</FrameLayout>

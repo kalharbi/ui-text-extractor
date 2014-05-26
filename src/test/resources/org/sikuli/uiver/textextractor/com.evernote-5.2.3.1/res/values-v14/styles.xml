@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.NoTitle" parent="@*android:style/Theme.Holo.Light.NoActionBar">
+        <item name="android:windowBackground">@null</item>
+    </style>
+    <style name="Theme.Light.NoTitle" parent="@*android:style/Theme.Holo.Light.NoActionBar" />
+    <style name="PopUpActivity" parent="@*android:style/Theme.Holo.Light.NoActionBar">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowEnterAnimation">@anim/grow_fade_in_center</item>
+        <item name="android:windowExitAnimation">@anim/shrink_fade_out_center</item>
+        <item name="android:activityOpenEnterAnimation">@anim/grow_fade_in_center</item>
+        <item name="android:activityOpenExitAnimation">@anim/shrink_fade_out_center</item>
+        <item name="android:activityCloseEnterAnimation">@anim/grow_fade_in_center</item>
+        <item name="android:activityCloseExitAnimation">@anim/shrink_fade_out_center</item>
+        <item name="android:wallpaperIntraCloseExitAnimation">@anim/shrink_fade_out_center</item>
+    </style>
+    <style name="Theme.NewDialog.Transparent" parent="@*android:style/Theme.Holo.Light.NoActionBar">
+        <item name="android:windowBackground">@*android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="TransparentPopUpActivity" parent="@style/PopUpActivity">
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="TranslucentPopUpActivity" parent="@style/PopUpActivity">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <style name="TranslucentPopUpActivity.Dim" parent="@style/TranslucentPopUpActivity">
+        <item name="android:windowBackground">@*android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="bubble_linear_layout">
+        <item name="android:background">@drawable/edit_text_holo_light</item>
+    </style>
+    <style name="Theme_Dialog_Translucent" parent="@*android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+    <style name="TransparentActivity" parent="@style/TransparentPopUpActivity" />
+    <style name="TransparentActivity.Dim" parent="@style/PopUpActivity">
+        <item name="android:windowBackground">@*android:color/transparent</item>
+    </style>
+    <style name="LandingButton" parent="@*android:style/Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/landing_btn_default_holo_light</item>
+    </style>
+    <style name="LandingImageButton" parent="@*android:style/Widget.Holo.Light.ImageButton">
+        <item name="android:background">@drawable/landing_btn_default_holo_light</item>
+    </style>
+    <style name="AutoCompleteTextViewAppTheme" parent="@*android:style/Widget.Holo.Light.AutoCompleteTextView">
+        <item name="android:background">@drawable/edit_text_holo_light</item>
+        <item name="android:dropDownSelector">@drawable/list_selector_holo_light</item>
+    </style>
+    <style name="ButtonAppTheme" parent="@*android:style/Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/btn_default_holo_light</item>
+    </style>
+    <style name="ImageButtonAppTheme" parent="@*android:style/Widget.Holo.Light.ImageButton">
+        <item name="android:background">@drawable/btn_default_holo_light</item>
+    </style>
+    <style name="DialogAppThemeLight" parent="@*android:style/Theme.Holo.Light.Dialog" />
+    <style name="LandingScreen" parent="@*android:style/Theme.Holo.Light.NoActionBar">
+        <item name="android:buttonStyle">@style/ButtonAppTheme</item>
+        <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewAppTheme</item>
+        <item name="android:imageButtonStyle">@style/ImageButtonAppTheme</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_holo_light</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_holo_light</item>
+        <item name="android:editTextBackground">@drawable/edit_text_holo_light</item>
+    </style>
+    <style name="LandingScreenDialog" parent="@style/LandingScreen" />
+    <style name="FragmentDialogActivity" parent="@style/PopUpActivity">
+        <item name="android:buttonStyle">@style/ButtonAppTheme</item>
+        <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewAppTheme</item>
+        <item name="android:imageButtonStyle">@style/ImageButtonAppTheme</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check_holo_light</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector_holo_light</item>
+        <item name="android:editTextBackground">@drawable/edit_text_holo_light</item>
+    </style>
+</resources>

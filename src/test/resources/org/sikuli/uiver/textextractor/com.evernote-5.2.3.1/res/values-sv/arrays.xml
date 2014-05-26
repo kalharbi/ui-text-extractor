@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>Kontoproblem</item>
+        <item>Ljudanteckningar</item>
+        <item>Innehåll</item>
+        <item>Visa</item>
+        <item>Formatering</item>
+        <item>Hjälp</item>
+        <item>Bildanteckningar</item>
+        <item>Offline</item>
+        <item>Annat</item>
+        <item>Synkronisering</item>
+    </string-array>
+</resources>

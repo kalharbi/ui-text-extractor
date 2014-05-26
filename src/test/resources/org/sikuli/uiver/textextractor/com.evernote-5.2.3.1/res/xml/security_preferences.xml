@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="@string/disable_pinlock" android:key="DISABLE_PIN" />
+    <Preference android:title="@string/change_pinlock" android:key="SET_PIN" />
+    <CheckBoxPreference android:title="@string/pinlock_show_widget" android:key="WIDGET_DISPLAY_DISPITE_PIN" />
+</PreferenceScreen>

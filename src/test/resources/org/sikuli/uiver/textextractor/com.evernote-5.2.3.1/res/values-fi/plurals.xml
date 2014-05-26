@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d muistiinpanoa</item>
+        <item quantity="one">%d muistiinpano</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d muistikirjaa</item>
+        <item quantity="one">%d muistikirja</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d avainsanaa:</item>
+        <item quantity="one">%d avainsana:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d yritystä jäljellä</item>
+        <item quantity="one">%d yritys jäljellä</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Käytettävissä oleva tila nollataan %d päivässä</item>
+        <item quantity="one">Käytettävissä oleva tila nollataan %d päivässä</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Nollautuu %d päivän kuluttua</item>
+        <item quantity="one">Nollautuu %d päivän kuluttua</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Uusiutuu %d päivän kuluttua</item>
+        <item quantity="one">Uusiutuu %d päivän kuluttua</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d kuvaa</item>
+        <item quantity="one">%1d kuva</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d muistutustilausta</item>
+        <item quantity="one">%d muistutustilaus</item>
+    </plurals>
+</resources>

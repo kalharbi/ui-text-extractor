@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.evernote.ui.widget.PreviewFrameLayout android:id="@id/frame_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/camera_actions_wrapper">
+        <FrameLayout android:id="@id/frame" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <SurfaceView android:gravity="center" android:layout_gravity="center" android:id="@id/camera_preview" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <ImageView android:id="@id/video_frame" android:background="@color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <FrameLayout android:layout_gravity="center" android:id="@id/btn_play_wrapper" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ImageView android:layout_gravity="center" android:id="@id/btn_play" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/av_play_selector" android:contentDescription="@string/play_video" />
+            </FrameLayout>
+        </FrameLayout>
+    </com.evernote.ui.widget.PreviewFrameLayout>
+    <FrameLayout android:background="@drawable/av_camera_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignTop="@id/camera_actions_wrapper" android:layout_alignBottom="@id/camera_actions_wrapper">
+        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/av_circle3" />
+    </FrameLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/camera_actions_wrapper" android:layout_width="fill_parent" android:layout_height="115.0dip" android:layout_alignParentBottom="true">
+        <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageButton android:layout_gravity="center" android:id="@id/btn_cancel" android:background="@drawable/abs__item_background_holo_light" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_navigation_cancel" android:hapticFeedbackEnabled="false" android:contentDescription="@string/cancel" />
+        </FrameLayout>
+        <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center" android:id="@id/outer_circle" android:background="@drawable/av_record_bg_selector" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/av_circle2" />
+            <ImageView android:layout_gravity="center" android:id="@id/loading_circle" android:layout_width="41.0dip" android:layout_height="41.0dip" />
+            <ImageView android:layout_gravity="center" android:id="@id/inner_circle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/av_circle1" />
+            <FrameLayout android:layout_gravity="center" android:id="@id/btn_video_action_wrapper" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ImageView android:layout_gravity="center" android:id="@id/btn_video_action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/av_stop" />
+            </FrameLayout>
+        </FrameLayout>
+        <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <FrameLayout android:layout_gravity="center" android:id="@id/time_wrapper" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <FrameLayout android:layout_gravity="center" android:id="@id/time_frame" android:background="@drawable/abs__spinner_ab_holo_dark" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="16.0sp" android:textStyle="bold" android:layout_gravity="center" android:id="@id/time" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </FrameLayout>
+            </FrameLayout>
+            <FrameLayout android:layout_gravity="center" android:id="@id/btn_accept_wrapper" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ImageButton android:layout_gravity="center" android:id="@id/btn_accept" android:background="@drawable/abs__item_background_holo_light" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_navigation_accept" android:contentDescription="@string/accept" />
+            </FrameLayout>
+        </FrameLayout>
+    </LinearLayout>
+</RelativeLayout>

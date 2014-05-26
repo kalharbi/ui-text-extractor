@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="amsc_gravity">
+        <flag name="top" value="0x00000030" />
+        <flag name="bottom" value="0x00000050" />
+        <flag name="left" value="0x00000003" />
+        <flag name="right" value="0x00000005" />
+        <flag name="center_vertical" value="0x00000010" />
+        <flag name="fill_vertical" value="0x00000070" />
+        <flag name="center_horizontal" value="0x00000001" />
+        <flag name="fill_horizontal" value="0x00000007" />
+        <flag name="center" value="0x00000011" />
+        <flag name="fill" value="0x00000077" />
+        <flag name="clip_vertical" value="0x00000080" />
+        <flag name="clip_horizontal" value="0x00000008" />
+    </attr>
+    <attr name="amsc_gridViewStyle" format="reference" />
+    <attr name="amsc_title" format="string" />
+    <attr name="amsc_key" format="string" />
+    <attr name="amsc_defaultValue" format="reference|string" />
+    <attr name="amsc_entryValues" format="reference" />
+    <attr name="amsc_entries" format="reference" />
+    <attr name="amsc_icons" format="reference" />
+    <attr name="amsc_modes" format="reference" />
+    <attr name="amsc_singleIcon" format="reference" />
+    <attr name="amsc_largeIcons" format="reference" />
+    <attr name="amsc_images" format="reference" />
+    <attr name="amsc_listSelector" format="reference|color" />
+    <attr name="amsc_drawSelectorOnTop" format="boolean" />
+    <attr name="amsc_stackFromBottom" format="boolean" />
+    <attr name="amsc_scrollingCache" format="boolean" />
+    <attr name="amsc_transcriptMode">
+        <enum name="disabled" value="0" />
+        <enum name="normal" value="1" />
+        <enum name="alwaysScroll" value="2" />
+    </attr>
+    <attr name="amsc_cacheColorHint" format="color" />
+    <attr name="amsc_smoothScrollbar" format="boolean" />
+    <attr name="amsc_scrollDirectionPortrait">
+        <enum name="vertical" value="0" />
+        <enum name="horizontal" value="1" />
+    </attr>
+    <attr name="amsc_scrollDirectionLandscape">
+        <enum name="vertical" value="0" />
+        <enum name="horizontal" value="1" />
+    </attr>
+    <attr name="amsc_horizontalSpacing" format="dimension" />
+    <attr name="amsc_verticalSpacing" format="dimension" />
+    <attr name="amsc_stretchMode">
+        <enum name="none" value="0" />
+        <enum name="spacingWidth" value="1" />
+        <enum name="columnWidth" value="2" />
+        <enum name="spacingWidthUniform" value="3" />
+    </attr>
+    <attr name="amsc_columnWidth" format="dimension" />
+    <attr name="amsc_rowHeight" format="dimension" />
+    <attr name="amsc_numColumns" format="integer" min="0">
+        <enum name="auto_fit" value="-1" />
+    </attr>
+    <attr name="amsc_numRows" format="integer" min="0">
+        <enum name="auto_fit" value="-1" />
+    </attr>
+    <attr name="amsc_horizontalPadding" format="dimension" />
+    <attr name="amsc_verticalPadding" format="dimension" />
+    <attr name="amsc_borderColor" format="color" />
+    <attr name="areHeadersSticky" format="boolean" />
+    <attr name="bold" format="boolean" />
+    <attr name="highlight" format="boolean" />
+    <attr name="underline" format="boolean" />
+    <attr name="gravity">
+        <flag name="top" value="0x00000030" />
+        <flag name="bottom" value="0x00000050" />
+        <flag name="left" value="0x00000003" />
+        <flag name="right" value="0x00000005" />
+        <flag name="center_vertical" value="0x00000010" />
+        <flag name="fill_vertical" value="0x00000070" />
+        <flag name="center_horizontal" value="0x00000001" />
+        <flag name="fill_horizontal" value="0x00000007" />
+        <flag name="center" value="0x00000011" />
+        <flag name="fill" value="0x00000077" />
+        <flag name="clip_vertical" value="0x00000080" />
+        <flag name="clip_horizontal" value="0x00000008" />
+    </attr>
+    <attr name="gridViewStyle" format="reference" />
+    <attr name="listSelector" format="reference|color" />
+    <attr name="drawSelectorOnTop" format="boolean" />
+    <attr name="stackFromBottom" format="boolean" />
+    <attr name="scrollingCache" format="boolean" />
+    <attr name="transcriptMode">
+        <enum name="disabled" value="0" />
+        <enum name="normal" value="1" />
+        <enum name="alwaysScroll" value="2" />
+    </attr>
+    <attr name="cacheColorHint" format="color" />
+    <attr name="smoothScrollbar" format="boolean" />
+    <attr name="scrollDirectionPortrait">
+        <enum name="vertical" value="0" />
+        <enum name="horizontal" value="1" />
+    </attr>
+    <attr name="scrollDirectionLandscape">
+        <enum name="vertical" value="0" />
+        <enum name="horizontal" value="1" />
+    </attr>
+    <attr name="fontType">
+        <enum name="none" value="0" />
+        <enum name="caecilia" value="1" />
+        <enum name="caecilia_light" value="2" />
+        <enum name="caecilia_italic" value="3" />
+        <enum name="caecilia_light_italic" value="4" />
+        <enum name="caecilia_bold" value="5" />
+    </attr>
+    <attr name="image" format="reference" />
+    <attr name="imagePlacement">
+        <enum name="left" value="1" />
+        <enum name="right" value="2" />
+        <enum name="none" value="0" />
+    </attr>
+    <attr name="textPlacement">
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+    </attr>
+    <attr name="titleStr" format="string" />
+    <attr name="actionStr" format="string" />
+    <attr name="descriptionStr" format="string" />
+    <attr name="hideTitle" format="boolean" />
+    <attr name="hideAction" format="boolean" />
+    <attr name="hideDescription" format="boolean" />
+    <attr name="bannerType">
+        <enum name="inline" value="0" />
+        <enum name="overlay" value="1" />
+        <enum name="home" value="2" />
+    </attr>
+    <attr name="leftButtonText" format="string" />
+    <attr name="rightButtonText" format="string" />
+    <attr name="dismissableImage" format="reference" />
+    <attr name="headerActionBarBackground" format="reference" />
+    <attr name="footerActionBarBackground" format="reference" />
+    <attr name="elephantUpIcon" format="reference" />
+    <attr name="buttonTextStyle" format="reference" />
+    <attr name="countTextStyle" format="reference" />
+    <attr name="topOverflowResource" format="reference" />
+    <attr name="bottomOverflowResource" format="reference" />
+    <attr name="titleDefaultStyle" format="reference" />
+    <attr name="titleLongPortraitStyle" format="reference" />
+    <attr name="titleLongLandscapeStyle" format="reference" />
+    <attr name="horizontalSpacing" format="dimension" />
+    <attr name="verticalSpacing" format="dimension" />
+    <attr name="stretchMode">
+        <enum name="none" value="0" />
+        <enum name="spacingWidth" value="1" />
+        <enum name="columnWidth" value="2" />
+        <enum name="spacingWidthUniform" value="3" />
+    </attr>
+    <attr name="columnWidth" format="dimension" />
+    <attr name="rowHeight" format="dimension" />
+    <attr name="numColumns" format="integer" min="0">
+        <enum name="auto_fit" value="-1" />
+    </attr>
+    <attr name="numRows" format="integer" min="0">
+        <enum name="auto_fit" value="-1" />
+    </attr>
+    <attr name="frameDuration" format="integer" />
+    <attr name="framesCount" format="integer" />
+    <attr name="pivotX" format="float|fraction" />
+    <attr name="pivotY" format="float|fraction" />
+    <attr name="maxWidth" format="dimension" />
+    <attr name="maxHeight" format="dimension" />
+    <attr name="landWidthWeightMin" format="float" />
+    <attr name="landWidthWeightMax" format="float" />
+    <attr name="portWidthWeightMin" format="float" />
+    <attr name="portWidthWeightMax" format="float" />
+    <attr name="landHeightWeightMin" format="float" />
+    <attr name="landHeightWeightMax" format="float" />
+    <attr name="portHeightWeightMin" format="float" />
+    <attr name="portHeightWeightMax" format="float" />
+    <attr name="bottomIcon" format="integer" />
+    <attr name="forceText" format="boolean" />
+    <attr name="abItemTextStyle" format="reference" />
+    <attr name="speed" format="integer" />
+    <attr name="targetHeight" format="dimension" />
+    <attr name="maxLinearLayoutWidth" format="dimension" />
+    <attr name="collapsed_height" format="dimension" />
+    <attr name="drag_scroll_start" format="float" />
+    <attr name="max_drag_scroll_speed" format="float" />
+    <attr name="float_background_color" format="color" />
+    <attr name="remove_mode">
+        <enum name="clickRemove" value="0" />
+        <enum name="flingRemove" value="1" />
+    </attr>
+    <attr name="track_drag_sort" format="boolean" />
+    <attr name="float_alpha" format="float" />
+    <attr name="slide_shuffle_speed" format="float" />
+    <attr name="remove_animation_duration" format="integer" />
+    <attr name="drop_animation_duration" format="integer" />
+    <attr name="drag_enabled" format="boolean" />
+    <attr name="sort_enabled" format="boolean" />
+    <attr name="remove_enabled" format="boolean" />
+    <attr name="drag_start_mode">
+        <enum name="onDown" value="0" />
+        <enum name="onMove" value="1" />
+        <enum name="onLongPress" value="2" />
+    </attr>
+    <attr name="drag_handle_id" format="integer" />
+    <attr name="fling_handle_id" format="integer" />
+    <attr name="click_remove_id" format="integer" />
+    <attr name="use_default_controller" format="boolean" />
+</resources>

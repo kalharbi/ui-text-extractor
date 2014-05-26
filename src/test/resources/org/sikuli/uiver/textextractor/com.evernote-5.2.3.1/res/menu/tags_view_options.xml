@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/personal_tags" android:title="@string/personal_tags" />
+    <item android:id="@id/linked_tags" android:title="@string/linked_tags" />
+    <item android:id="@id/business_tags" android:title="@string/business_tags" />
+    <item android:id="@id/sort_by" android:title="@string/notelist_sort_by">
+        <menu>
+            <item android:id="@id/sort_by_tree" android:title="@string/taglist_sortby_tree" />
+            <item android:id="@id/sort_by_note_count" android:title="@string/sort_note_count" />
+            <item android:id="@id/sort_by_title" android:title="@string/title" />
+        </menu>
+    </item>
+</menu>

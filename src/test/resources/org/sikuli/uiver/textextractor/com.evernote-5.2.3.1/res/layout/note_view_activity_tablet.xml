@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.evernote.ui.gestureframework.EAbsoluteLayout android:id="@id/activity_base_layout" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/note_list_right" android:layout_above="@id/note_list_bottom" />
+        <TextView android:id="@id/hide_view" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <FrameLayout android:id="@id/note_list_right" android:visibility="gone" android:layout_width="@dimen/snippet_grid_width" android:layout_height="fill_parent" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        <View android:id="@id/right_shadow" android:background="@drawable/noteview_snippets_shadow_vert" android:visibility="gone" android:layout_width="6.0dip" android:layout_height="fill_parent" android:layout_alignLeft="@id/note_list_right" android:layout_alignParentTop="true" />
+        <FrameLayout android:id="@id/note_list_bottom" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/snippet_grid_height" android:layout_alignParentBottom="true" />
+        <View android:id="@id/bottom_shadow" android:background="@drawable/noteview_snippets_shadow_horizontal" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="6.0dip" android:layout_alignTop="@id/note_list_bottom" android:layout_alignParentLeft="true" />
+        <ImageView android:id="@id/more_notes_right_button" android:background="@null" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:layout_marginBottom="4.0dip" android:src="@drawable/btn_note_view_open_gallery_ls" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        <ImageView android:id="@id/more_notes_bottom_button" android:background="@null" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginBottom="4.0dip" android:src="@drawable/btn_note_view_open_gallery" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</com.evernote.ui.gestureframework.EAbsoluteLayout>

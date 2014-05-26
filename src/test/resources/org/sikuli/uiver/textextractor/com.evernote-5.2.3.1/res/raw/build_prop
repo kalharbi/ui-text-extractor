@@ -1,0 +1,9 @@
+#Wed, 21 Aug 2013 09:01:30 -0700
+#//////////////////////////////////////////////////////////////////////
+# This is the default release property file that will get included as the
+# release properties file when doing a non-Jenkins and/or non Ant build
+#//////////////////////////////////////////////////////////////////////
+
+bundleName=google-play
+revision=AndroidMarket_523_bd_53
+gitHash=ea1a1de2a545fd0d0ca09083f7e8d478fce1b8fe

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <item android:id="@id/reminder" android:visible="false" android:title="@string/empty" android:showAsAction="always|withText" evernote:forceText="true" evernote:abItemTextStyle="@style/blue_glow.text">
+        <menu>
+            <item android:icon="@drawable/ic_options_done" android:id="@id/mark_as_done" android:title="@string/mark_as_done" android:showAsAction="never" />
+            <item android:icon="@drawable/ic_options_remove" android:id="@id/clear_reminder" android:title="@string/clear_reminder" android:showAsAction="never" />
+            <item android:icon="@drawable/ic_options_calendar" android:id="@id/set_date" android:title="@string/set_date" android:showAsAction="never" />
+        </menu>
+    </item>
+    <item android:icon="@drawable/ic_action_lock" android:id="@id/view_only" android:visible="false" android:title="@string/view_only" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_action_edit" android:id="@id/edit" android:title="@string/edit" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_action_share" android:id="@id/share" android:title="@string/share" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_action_search" android:id="@id/search" android:title="@string/search" android:showAsAction="ifRoom" />
+    <item android:id="@id/tag" android:title="@string/tag" android:showAsAction="never" />
+    <item android:id="@id/change_notebook" android:title="@string/change_notebook" android:showAsAction="never" />
+    <item android:id="@id/export_res" android:title="@string/export_res" android:showAsAction="never" />
+    <item android:id="@id/note_info" android:title="@string/note_info" android:showAsAction="never" />
+    <item android:id="@id/create_shortcut" android:title="@string/create_shortcut" android:showAsAction="never" />
+    <item android:id="@id/shortcuts" android:title="@string/shortcuts" android:showAsAction="never" />
+    <item android:id="@id/create_task" android:title="@string/add_to_task" android:showAsAction="never" />
+    <item android:id="@id/delete" android:title="@string/delete" android:showAsAction="never" />
+    <item android:id="@id/email" android:title="@string/email_a_copy" android:showAsAction="never" />
+    <item android:id="@id/fit_to_screen" android:title="@string/full_size" android:showAsAction="never" />
+    <item android:id="@id/goto_source" android:title="@string/goto_source" android:showAsAction="never" />
+    <item android:id="@id/print" android:title="@string/print" android:showAsAction="never" />
+    <item android:id="@id/toggle_view" android:title="@string/slideshow" android:showAsAction="never" />
+    <item android:id="@id/select_text" android:title="@string/select_text" android:showAsAction="never" />
+</menu>

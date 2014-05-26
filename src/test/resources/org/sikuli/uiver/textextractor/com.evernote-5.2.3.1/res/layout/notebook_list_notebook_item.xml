@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <LinearLayout android:orientation="vertical" android:id="@id/base_layout" android:background="@null" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="65.0dip">
+            <ImageView android:id="@id/stack_icon" android:background="@drawable/white_tag_list_item" android:focusable="true" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="fill_parent" android:scaleType="centerInside" />
+            <View android:id="@id/left_indent_padding" android:background="@drawable/tag_list_item" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="fill_parent" />
+            <View android:id="@id/offline_indent_padding" android:background="@drawable/tag_list_item" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="fill_parent" />
+            <CheckBox android:layout_gravity="center" android:id="@id/reminder_item" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/subscription_check_selector" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/info_layout" android:background="@drawable/tag_list_item" android:paddingLeft="8.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <com.evernote.ui.widget.EvernoteTextView android:textAppearance="@style/notebooks_title" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" evernote:fontType="caecilia" />
+                <TextView android:textAppearance="@style/notebooks_status" android:id="@id/status" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout android:gravity="right|center" android:orientation="vertical" android:id="@id/notebook_options" android:background="@drawable/tag_list_item" android:layout_width="wrap_content" android:layout_height="fill_parent" android:minWidth="48.0dip">
+                <TextView android:textSize="18.0sp" android:textColor="@color/en_grey" android:id="@id/note_count" android:paddingRight="24.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1" />
+                <ImageView android:id="@id/option_icon" android:layout_width="wrap_content" android:layout_height="16.0dip" android:src="@drawable/ic_drop_down_triangle" android:scaleType="centerInside" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/unsynced_layout" android:background="@drawable/tag_list_item" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <View android:id="@id/unsynced_divider" android:background="@color/en_lightest_grey" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip" />
+                <ImageView android:id="@id/unsynced_icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_notebook_sync" android:scaleType="center" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/email_area" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/strong_bright_blue" android:layout_gravity="center_vertical" android:id="@id/email_on_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reminder_emails_on" />
+                <ImageView android:layout_gravity="center_vertical" android:id="@id/email_icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:src="@drawable/ic_notebooks_email_off" android:scaleType="center" />
+            </LinearLayout>
+        </LinearLayout>
+        <View android:id="@id/bottom_line" android:background="@color/en_lightest_grey" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    </LinearLayout>
+    <CheckBox android:id="@id/action_touch_interceptor" android:background="@drawable/action_selector" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:button="@drawable/offline_check_selector" android:layout_alignTop="@id/base_layout" android:layout_alignBottom="@id/base_layout" />
+</RelativeLayout>

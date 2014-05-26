@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector android:constantSize="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_window_focused="false">
+        <nine-patch android:src="@drawable/btn_spotlight_normal" />
+    </item>
+    <item android:state_focused="true" android:state_enabled="false" android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/grey" />
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_enabled="false">
+        <shape>
+            <solid android:color="@color/grey" />
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_pressed="true">
+        <nine-patch android:src="@drawable/btn_spotlight_pressed" />
+    </item>
+    <item android:state_focused="false" android:state_pressed="true">
+        <nine-patch android:src="@drawable/btn_spotlight_pressed" />
+    </item>
+    <item android:state_focused="true">
+        <nine-patch android:src="@drawable/btn_spotlight_pressed" />
+    </item>
+    <item android:state_checked="true">
+        <nine-patch android:src="@drawable/btn_spotlight_pressed" />
+    </item>
+    <item>
+        <nine-patch android:src="@drawable/btn_spotlight_normal" />
+    </item>
+</selector>

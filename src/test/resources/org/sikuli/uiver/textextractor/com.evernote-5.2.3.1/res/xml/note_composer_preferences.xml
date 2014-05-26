@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/composer_settings" android:key="otherOptionsScreen" android:summary="@string/other_options_summary"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/category_location" android:key="location_category">
+        <CheckBoxPreference android:title="@string/use_gps_title" android:key="GpsUseEnabled" android:summary="@string/use_gps_summary" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/use_network_title" android:key="NetworkUseEnabled" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_auto_title" android:key="auto-title_category">
+        <CheckBoxPreference android:title="@string/use_auto_title_title" android:key="ENABLE_AUTO_TITLE" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/video_recording" android:key="video_category">
+        <CheckBoxPreference android:enabled="false" android:title="@string/video_pref_stock_title" android:key="VIDEO_USE_EXTERNAL" android:summary="@string/video_pref_stock_message" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/camera" android:key="camera">
+        <CheckBoxPreference android:persistent="true" android:title="@string/multishot_camera_setting" android:key="ENABLE_MULTISHOT_CAMERA" android:summary="@string/multishot_camera_setting_msg" android:defaultValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

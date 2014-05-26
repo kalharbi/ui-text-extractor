@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d 則記事</item>
+        <item quantity="one">%d 則記事</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d 個記事本</item>
+        <item quantity="one">%d 個記事本</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d 個標籤：</item>
+        <item quantity="one">%d 個標籤：</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">剩下 %d 次嘗試</item>
+        <item quantity="one">剩下 %d 次嘗試</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">配額在 %d 天後重設</item>
+        <item quantity="one">配額在 %d 天後重設</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">在%d天後重設</item>
+        <item quantity="one">在%d天後重設</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">於 %d 日內更新</item>
+        <item quantity="one">於 %d 日內更新</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d 相片</item>
+        <item quantity="one">%1d 相片</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d 訂閱提醒</item>
+        <item quantity="one">%d 訂閱提醒</item>
+    </plurals>
+</resources>

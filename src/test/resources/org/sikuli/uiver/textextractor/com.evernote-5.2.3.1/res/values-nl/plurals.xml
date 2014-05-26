@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d notities</item>
+        <item quantity="one">%d notitie</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d notitieboeken</item>
+        <item quantity="one">%d notitieboek</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d labels:</item>
+        <item quantity="one">%d label:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d resterende pogingen</item>
+        <item quantity="one">%d resterende poging</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Limiet wordt gereset in %d dagen</item>
+        <item quantity="one">Uploadlimiet wordt gereset in %d dag</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Wordt in %d dagen gereset</item>
+        <item quantity="one">Wordt in %d dag gereset</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Wordt vernieuwd over %d dagen</item>
+        <item quantity="one">Wordt vernieuwd over %d dagen</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">"%1d foto's"</item>
+        <item quantity="one">%1d foto</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d abonnementen op herinneringen</item>
+        <item quantity="one">%d abonnement op herinneringen</item>
+    </plurals>
+</resources>

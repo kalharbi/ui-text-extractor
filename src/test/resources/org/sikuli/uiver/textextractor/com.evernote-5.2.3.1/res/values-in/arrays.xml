@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>Masalah Akun</item>
+        <item>Catatan Audio</item>
+        <item>Konten</item>
+        <item>Tampilan</item>
+        <item>Pemformatan</item>
+        <item>Tutorial</item>
+        <item>Catatan Gambar</item>
+        <item>Offline</item>
+        <item>Lainnya</item>
+        <item>Mensinkronkan</item>
+    </string-array>
+</resources>

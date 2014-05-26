@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d notes</item>
+        <item quantity="one">%d note</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d notebooks</item>
+        <item quantity="one">%d notebook</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d tags:</item>
+        <item quantity="one">%d tag:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d tries remaining</item>
+        <item quantity="one">%d try remaining</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Quota resets in %d days</item>
+        <item quantity="one">Quota resets in %d day</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Resets in %d days</item>
+        <item quantity="one">Resets in %d day</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Renews in %d days</item>
+        <item quantity="one">Renews in %d day</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d photos</item>
+        <item quantity="one">%1d photo</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Reminder Subscriptions</item>
+        <item quantity="one">%d Reminder Subscription</item>
+    </plurals>
+</resources>

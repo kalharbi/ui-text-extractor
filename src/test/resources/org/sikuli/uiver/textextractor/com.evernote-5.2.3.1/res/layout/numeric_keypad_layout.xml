@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/pad_one" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <Button android:gravity="center" android:layout_gravity="center" android:id="@id/num_one" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/one" style="@style/textnumkeypad" />
+        <Button android:layout_gravity="center" android:id="@id/num_two" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/two" style="@style/textnumkeypad" />
+        <Button android:layout_gravity="center" android:id="@id/num_three" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/three" style="@style/textnumkeypad" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/pad_two" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <Button android:layout_gravity="center" android:id="@id/num_four" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/four" style="@style/textnumkeypad" />
+        <Button android:layout_gravity="center" android:id="@id/num_five" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/five" style="@style/textnumkeypad" />
+        <Button android:layout_gravity="center" android:id="@id/num_six" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/six" style="@style/textnumkeypad" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/pad_three" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <Button android:layout_gravity="center" android:id="@id/num_seven" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/seven" style="@style/textnumkeypad" />
+        <Button android:layout_gravity="center" android:id="@id/num_eight" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/eight" style="@style/textnumkeypad" />
+        <Button android:layout_gravity="center" android:id="@id/num_nine" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/nine" style="@style/textnumkeypad" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/pad_four" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <Button android:layout_gravity="center" android:id="@id/num_ok" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/cancel" style="@style/textnumkeypad.small" />
+        <Button android:layout_gravity="center" android:id="@id/num_zero" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:text="@string/zero" style="@style/textnumkeypad" />
+        <ImageButton android:layout_gravity="center" android:id="@id/num_delete" android:background="@drawable/pin_lock_btn_bg" android:layout_width="92.0dip" android:layout_height="@dimen/num_keypad_height" android:src="@drawable/pin_lock_backspace_icon" />
+    </LinearLayout>
+</LinearLayout>

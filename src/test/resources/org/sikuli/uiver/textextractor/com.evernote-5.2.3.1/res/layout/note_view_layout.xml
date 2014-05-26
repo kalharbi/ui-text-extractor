@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root_new" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <LinearLayout android:orientation="vertical" android:id="@id/header_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <RelativeLayout android:id="@id/voice_controller_lyt" android:background="@color/faded_black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="@dimen/ab_height">
+            <CheckBox android:id="@id/btn_play_pause" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:checked="true" android:button="@drawable/ic_btn_pause_play" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:id="@id/timer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/btn_play_pause" android:layout_centerVertical="true" />
+            <SeekBar android:layout_gravity="bottom" android:id="@id/progressbar" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="20.0dip" android:maxHeight="15.0dip" android:progressDrawable="@drawable/media_seekbar" android:minHeight="15.0dip" android:thumb="@drawable/media_progress_meter_slider" android:thumbOffset="0.0px" android:layout_toRightOf="@id/timer" android:layout_centerVertical="true" style="?android:attr/seekBarStyle" />
+        </RelativeLayout>
+        <TextView android:id="@id/note_content_locked_status" android:background="#ffdadada" android:paddingLeft="6.0dip" android:paddingTop="3.0dip" android:paddingRight="3.0dip" android:paddingBottom="2.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="25.0dip" android:layout_marginTop="@dimen/ab_height" style="@style/textinfobar" />
+        <com.evernote.ui.widget.EvernoteBanner android:id="@id/upsell_banner" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/ab_height" evernote:image="@drawable/ic_inline_officesuite" evernote:imagePlacement="left" evernote:titleStr="@string/officesuite_upsell_banner_title" evernote:actionStr="@string/learn_more" evernote:descriptionStr="@string/officesuite_upsell_banner_body" evernote:hideAction="false" evernote:bannerType="inline" evernote:dismissableImage="@drawable/ic_banner_close"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:evernote="http://schemas.android.com/apk/res/com.evernote" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/web_view_container" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/header_bar" android:layout_alignWithParentIfMissing="true" />
+    <RelativeLayout android:id="@id/note_loading_info" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:background="#ffebe8e5" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/inlinepremium_view" />
+        </LinearLayout>
+        <LinearLayout android:layout_gravity="center_horizontal" android:id="@id/loading_note_msg_layout" android:background="#ffebe8e5" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="17.0sp" android:textColor="#ffa29f9c" android:gravity="center" android:layout_gravity="center" android:id="@id/loading_note_msg_layout_txt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/loading_note_msg" android:layout_weight="1.0" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/note_loading_info_inner" android:background="@drawable/help_info_box_bg" android:padding="16.0dip" android:visibility="gone" android:layout_width="250.0dip" android:layout_height="250.0dip" android:layout_centerInParent="true">
+            <ImageView android:enabled="false" android:layout_gravity="center_horizontal" android:id="@id/note_loading_error_icon" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/noteview_error" />
+            <TextView android:textSize="14.0sp" android:typeface="serif" android:textColor="#ff808080" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/note_loading_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="@string/loading" />
+            <Button android:textSize="14.0sp" android:typeface="serif" android:textColor="#ff808080" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/note_loading_btn_reload" android:background="@drawable/ic_toolbar_btn_bg_states" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="24.0dip" android:layout_marginTop="12.0dip" android:text="@string/retry" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

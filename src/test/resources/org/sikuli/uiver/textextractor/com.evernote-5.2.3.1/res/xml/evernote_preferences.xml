@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/category_account_info" android:key="category_accountInfo">
+        <Preference android:title="@string/pref_account_title" android:key="Account" />
+        <Preference android:title="@string/pref_status_non_premium_title" android:key="Upgrade" android:summary="@string/pref_status_non_premium_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_premium_settings" android:key="premium_settings">
+        <Preference android:title="@string/set_pinlock_title" android:key="PIN_SETTING" android:summary="@string/set_pinlock_summary" />
+        <Preference android:title="@string/offline_nb_title" android:key="offline_nb" android:summary="@string/offline_nb_msg" />
+        <Preference android:enabled="false" android:title="@string/offline_access" android:key="OfflineNotebooks" android:summary="@string/offline_desc" />
+        <Preference android:title="@string/pref_business_library" android:key="business_library" android:summary="@string/pref_business_library_desc" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/smart_notebook_settings_hdr" android:key="smart_notebook_settings">
+        <Preference android:title="@string/smart_notebook_settings_title" android:key="smart_stickers" android:summary="@string/smart_notebook_settings_summary" />
+        <Preference android:title="@string/smartnb_order_now" android:key="smart_stickers_order_now" android:summary="@string/smartnb_order_now_msg" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/category_app_settings" android:key="category_app_settings">
+        <PreferenceScreen android:title="@string/category_sync" android:key="sync_settings" android:summary="@string/category_sync_summary">
+            <intent android:targetPackage="com.evernote" android:targetClass="com.evernote.ui.SyncPreferenceActivity" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/search_and_storage" android:key="searchStorageScreen" android:summary="@string/search_and_storage_summary">
+            <PreferenceCategory android:title="@string/search" android:key="searchCategory">
+                <CheckBoxPreference android:persistent="true" android:title="@string/offline_search" android:key="ENABLE_OFFLINE_SEARCH" android:summary="@string/offline_search_summary" android:defaultValue="true" />
+                <Preference android:title="@string/clear_history_title" android:key="ClearHistory" android:summary="@string/clear_history_summary" />
+            </PreferenceCategory>
+            <PreferenceCategory android:title="@string/sdcard" android:key="sdcardCategory">
+                <Preference android:title="@string/clear_local_cache" android:key="ClearCache" android:summary="@string/clear_local_cache_summary" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <Preference android:title="@string/composer_options" android:key="otherOptionsScreen" android:summary="@string/other_options_summary" />
+        <PreferenceScreen android:title="@string/reminder" android:key="reminderScreen" android:summary="@string/reminder_pref_summary">
+            <CheckBoxPreference android:title="@string/send_email_digest" android:key="reminder_email_digest_setting" android:summary="@string/send_email_digest_summary" android:defaultValue="false" />
+            <Preference android:summary="@string/reminders_linked_summary" />
+        </PreferenceScreen>
+        <CheckBoxPreference android:title="@string/menu_controls_ab" android:key="OPTION_MENU_CONTROL_ACTION_BAR" android:summary="@string/menu_controls_ab_summary" android:defaultValue="false" />
+        <PreferenceScreen android:title="@string/support" android:key="support" android:summary="@string/support_summary">
+            <Preference android:title="@string/testp_screen_title" android:key="testpScreen" />
+            <Preference android:title="@string/customer_support_title" android:key="CustomerSupport" android:summary="@string/customer_support_summary" />
+            <Preference android:title="@string/send_log_title" android:key="SendLog" android:summary="@string/send_log_summary" />
+            <Preference android:title="@string/version" android:key="BuildVersion" />
+            <Preference android:title="@string/update_check" android:key="CHECK_FOR_UPDATES" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/legal" android:key="legal" android:summary="@string/legal_summary">
+            <Preference android:title="@string/terms_of_service" android:key="TERMS_OF_SERVICE" />
+            <Preference android:title="@string/notice" android:key="NOTICE" />
+            <Preference android:title="@string/privacy_policy" android:key="PRIVACY_POLICY" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>

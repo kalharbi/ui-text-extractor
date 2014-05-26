@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/root" android:background="@drawable/upsell_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <com.evernote.ui.landing.StretchLinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerHorizontal="true" evernote:maxWidth="@dimen/upsell_layout_width">
+        <FrameLayout android:id="@id/fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.evernote.ui.landing.StretchLinearLayout>
+</RelativeLayout>

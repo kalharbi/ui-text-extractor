@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/account_area" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <LinearLayout android:orientation="horizontal" android:id="@id/signed_in_user_area" android:background="@drawable/spinner_enholo_dark" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <ImageView android:id="@id/signed_in_user_icon" android:layout_width="36.0dip" android:layout_height="fill_parent" android:layout_marginRight="4.0dip" android:src="@drawable/ic_user" android:scaleType="center" />
+        <com.evernote.ui.widget.EvernoteTextView android:textAppearance="@style/home_ab_accountinfo_name" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/signed_in_user" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/username" android:maxLines="1" evernote:fontType="caecilia" />
+    </LinearLayout>
+    <TextView android:textAppearance="@style/setup_account_appearance" android:gravity="center" android:id="@id/setup_user" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/setup_account_caps" android:layout_weight="1.0" />
+</LinearLayout>

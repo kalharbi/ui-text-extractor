@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/header_layout" android:background="@color/setup_account_hdr_background" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.evernote.ui.landing.StretchLinearLayout android:layout_gravity="center" android:orientation="vertical" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" evernote:maxWidth="550.0dip">
+                <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/setup_remember_color" android:gravity="center" android:id="@id/explanation_hdr" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/setup_account_hdr" />
+                <TextView android:textSize="18.0sp" android:textColor="@color/setup_remember_color" android:gravity="center" android:id="@id/explanation_text" android:paddingLeft="32.0dip" android:paddingTop="8.0dip" android:paddingRight="32.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/setup_account_desc" />
+            </com.evernote.ui.landing.StretchLinearLayout>
+        </LinearLayout>
+        <View android:id="@id/separator" android:background="@color/setup_account_separator" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <ImageView android:paddingTop="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/ic_account_user" android:scaleType="center" />
+        <com.evernote.ui.landing.StretchLinearLayout android:layout_gravity="center" android:orientation="vertical" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" evernote:maxWidth="450.0dip">
+            <TextView android:textSize="13.0sp" android:textColor="#ffc6c4c6" android:gravity="center" android:id="@id/using_evernote_since" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxWidth="450.0dip" />
+            <EditText android:id="@id/name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/name" android:inputType="text" android:imeOptions="actionNext" />
+            <EditText android:id="@id/email" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/email" android:inputType="textEmailAddress" />
+            <EditText android:id="@id/password" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/password" android:inputType="textPassword" android:imeOptions="actionDone" />
+        </com.evernote.ui.landing.StretchLinearLayout>
+    </LinearLayout>
+</ScrollView>

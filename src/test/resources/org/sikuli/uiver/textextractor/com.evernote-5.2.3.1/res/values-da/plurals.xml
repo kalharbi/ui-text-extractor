@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d noter</item>
+        <item quantity="one">%d note</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d notesbøger</item>
+        <item quantity="one">%d notesbog</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d mærker:</item>
+        <item quantity="one">%d mærke:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d forsøg tilbage</item>
+        <item quantity="one">%d forsøg tilbage</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Kvote nulstilles om %d dage</item>
+        <item quantity="one">Kvote nulstilles om %d dag</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Nulstilles om %d dage</item>
+        <item quantity="one">Nulstilles om %d dag</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Fornyes om %d dage</item>
+        <item quantity="one">Fornyes om %d dag</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d billeder</item>
+        <item quantity="one">%1d billede</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Tilmelding til påmindelser</item>
+        <item quantity="one">%d Tilmelding til påmindelser</item>
+    </plurals>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>Hesap Sorunları</item>
+        <item>Sesli Notlar</item>
+        <item>İçerik</item>
+        <item>Görüntüle</item>
+        <item>Biçimlendirme</item>
+        <item>Nasıl Yapılır</item>
+        <item>Görüntü Notları</item>
+        <item>Çevrimdışı</item>
+        <item>Diğer</item>
+        <item>Senkronize ediliyor</item>
+    </string-array>
+</resources>

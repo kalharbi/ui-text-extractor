@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/datepicker_dialog_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <RelativeLayout android:id="@id/time_area" android:layout_width="fill_parent" android:layout_height="@dimen/time_section_height" android:layout_marginTop="12.0dip" android:layout_alignParentTop="true">
+        <com.evernote.ui.datetimepicker.EvernoteTimePicker android:id="@id/evernote_time_picker" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.evernote.ui.widget.EvernoteTextView android:textSize="@dimen/time_text_size" android:textColor="@color/day_time_1" android:id="@id/time_text" android:background="@drawable/spinner_time_yellow" android:paddingBottom="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/today" android:layout_centerInParent="true" evernote:fontType="caecilia" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/buttons_area" android:layout_below="@id/time_area">
+        <com.evernote.ui.widget.EvernoteTextView android:textSize="@dimen/picker_date_text_size" android:textColor="#ff609bb0" android:layout_gravity="center_horizontal" android:id="@id/date_text" android:background="@drawable/datepicker_spinner_blue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/today" evernote:fontType="caecilia" />
+        <com.evernote.ui.datetimepicker.EvernoteDatePicker android:id="@id/evernote_picker" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/buttons_area" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_alignParentBottom="true" style="@style/date_picker_buttons">
+        <Button android:id="@id/negative_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/cancel" android:layout_weight="1.0" style="@style/date_picker_button" />
+        <View android:id="@id/button_divider" android:background="#ffdddddd" android:layout_width="1.0dip" android:layout_height="24.0dip" />
+        <Button android:id="@id/positive_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/ok" android:layout_weight="1.0" style="@style/date_picker_button" />
+    </LinearLayout>
+</RelativeLayout>

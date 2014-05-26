@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>مشكلات تتعلق بالحساب</item>
+        <item>ملاحظات صوتية</item>
+        <item>محتوى</item>
+        <item>عرض</item>
+        <item>تنسيق</item>
+        <item>كيف</item>
+        <item>ملاحظات في شكل صورة</item>
+        <item>دون اتصال</item>
+        <item>أخرى</item>
+        <item>مزامنة</item>
+    </string-array>
+</resources>

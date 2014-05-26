@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/testp_screen_title" android:key="testpScreen" android:summary="@string/testp_screen_summary"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/testp_category_network" android:key="testp_network_category">
+        <CheckBoxPreference android:title="@string/testp_http_slow_title" android:key="testp_http_slow" android:defaultValue="false" android:onClick="handlePreferenceClick" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Sign In Settings" android:key="test_sign_in_categry">
+        <CheckBoxPreference android:title="Use Staging" android:key="useStagingTest" android:summary="Write Staging bootstrap file" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/testp_category_general" android:key="testp_general_category">
+        <CheckBoxPreference android:title="@string/testp_rating_dlg_title" android:key="testp_rating_dlg" android:defaultValue="false" />
+        <Preference android:title="Revoke Token" android:key="revoke_token_button" android:summary="Revoke a token from the server" />
+        <Preference android:title="Server forced password reset" android:key="revoke_token_button_forced" android:summary="Emulate server forced password reset" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Promos" android:key="promo_category">
+        <CheckBoxPreference android:title="Check Every Sync" android:key="test_promo_every_sync" android:defaultValue="false" />
+        <EditTextPreference android:title="IMEI" android:key="test_imei" />
+        <EditTextPreference android:title="MCC" android:key="test_mcc" />
+        <EditTextPreference android:title="MNC" android:key="test_mnc" />
+        <EditTextPreference android:title="Model" android:key="test_model" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/sync_preferences" android:key="sync_preferences">
+        <EditTextPreference android:title="Sync Frequency" android:key="sync_interval" android:summary="Milliseconds - 1s == 1000ms" />
+        <CheckBoxPreference android:title="Set inactive 1 hr Threshold" android:key="sync_inactivity_threshold" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="EN Server Interaction" android:key="billing_category">
+        <CheckBoxPreference android:title="Load notes slowly" android:key="show_slow_loading" android:defaultValue="false" />
+        <CheckBoxPreference android:title="Use Web Billing" android:key="use_web_billing" />
+        <Preference android:title="Notification - Premium Expiring" android:key="notify_premium_expiring" />
+        <Preference android:title="Notification - Premium Ended" android:key="notify_premium_ended" />
+        <Preference android:title="Notification - Quota Reaching" android:key="notify_quota_reaching" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="S Note" android:key="snote_category">
+        <Preference android:title="Edit S note" android:key="edit_snote" />
+        <Preference android:title="Create S note" android:key="create_snote" />
+        <Preference android:title="Create S note Linked" android:key="create_snote_linked" />
+        <Preference android:title="Find S notes" android:key="find_snotes" />
+        <Preference android:title="Delete S notes" android:key="delete_snote" />
+        <Preference android:title="Launch Evernote settings" android:key="evernote_settings" />
+        <Preference android:title="Launch Evernote Account settings" android:key="evernote_acc_settings" />
+        <Preference android:title="IsLoggedin" android:key="login_userid" />
+        <Preference android:title="ASE_algo" android:key="ase_algo" />
+    </PreferenceCategory>
+</PreferenceScreen>

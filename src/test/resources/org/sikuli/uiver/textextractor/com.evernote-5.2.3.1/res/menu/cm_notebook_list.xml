@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/enable_offline_sync" android:visible="false" android:title="@string/enable_offline_sync" />
+    <item android:id="@id/disable_offline_sync" android:visible="false" android:title="@string/disable_offline_sync" />
+    <item android:id="@id/rename_stack" android:visible="true" android:title="@string/rename_stack" />
+    <item android:id="@id/rename_notebook" android:visible="true" android:title="@string/rename_notebook" />
+    <item android:id="@id/remove_stack" android:visible="true" android:title="@string/remove_stack" />
+    <item android:id="@id/move_stack" android:visible="true" android:title="@string/move_stack" />
+    <item android:id="@id/new_stack" android:visible="true" android:title="@string/new_stack" />
+    <item android:id="@id/create_shortcut" android:title="@string/add_to_shortcuts" />
+    <item android:id="@id/remove_shortcut" android:title="@string/remove_from_shortcuts" />
+    <item android:id="@id/configure_sharing" android:visible="false" android:title="@string/sharing_settings" />
+</menu>

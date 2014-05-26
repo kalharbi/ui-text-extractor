@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <View android:id="@id/landing_background_1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <com.evernote.ui.bubblefield.StretchScrollView android:gravity="top|center" android:layout_gravity="center_horizontal" android:id="@id/landing_scroll_view" android:background="@drawable/landing_column_bg_colored" android:paddingLeft="1.0px" android:paddingRight="1.0px" android:fadingEdgeLength="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true" evernote:maxWidth="500.0dip">
+        <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="vertical" android:paddingBottom="40.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@id/ambassador_info" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:id="@id/ambassador_image" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" android:adjustViewBounds="true" android:minHeight="500.0dip" android:layout_alignParentTop="true" />
+                <ImageView android:id="@id/evernote_text" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" android:adjustViewBounds="true" android:minHeight="500.0dip" android:layout_alignParentTop="true" />
+                <TextView android:textSize="18.0sp" android:textColor="@color/landing_text_secondary" android:gravity="center" android:id="@id/ambassador_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="32.0dip" android:layout_marginBottom="16.0dip" android:text="@string/landing_welcome_description" android:layout_below="@id/ambassador_image" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </com.evernote.ui.bubblefield.StretchScrollView>
+    <View android:id="@id/landing_background_2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+</LinearLayout>

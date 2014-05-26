@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="note_toolbar_height">50.0dip</dimen>
+    <dimen name="note_toolbar_width">50.0dip</dimen>
+    <dimen name="widget_snippet_title">13.0dip</dimen>
+    <dimen name="widget_snippet_content">13.0dip</dimen>
+    <dimen name="grid_snippet_item_width">275.0dip</dimen>
+    <dimen name="grid_snippet_item_height">275.0dip</dimen>
+    <dimen name="grid_snippet_title">17.0sp</dimen>
+    <dimen name="grid_snippet_date">15.0sp</dimen>
+    <dimen name="grid_snippet_content">15.0sp</dimen>
+    <dimen name="grid_snippet_content_extra_spacing">2.0dip</dimen>
+    <dimen name="grid_snippet_image_size_large">150.0dip</dimen>
+    <dimen name="grid_snippet_image_size_small">80.0dip</dimen>
+    <dimen name="pop_activity_content_width">600.0dip</dimen>
+    <dimen name="pop_activity_content_height">620.0dip</dimen>
+    <dimen name="bubble_text_max_width">516.0dip</dimen>
+    <dimen name="billing_content_width">480.0dip</dimen>
+    <dimen name="billing_content_height">496.0dip</dimen>
+    <dimen name="adv_search_selec_layout_margin_bottom">4.0dip</dimen>
+    <dimen name="gallery_bottom_padding">20.0dip</dimen>
+    <dimen name="ambassador_avatar_size">56.0dip</dimen>
+    <dimen name="ambassador_name_size">16.0dip</dimen>
+    <dimen name="ambassador_quote_size">22.0dip</dimen>
+    <dimen name="ambassador_quote_width">400.0dip</dimen>
+    <dimen name="landing_padding_bottom">120.0dip</dimen>
+</resources>

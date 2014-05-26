@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <item android:icon="@drawable/ic_action_new_note_dk" android:id="@id/new_note" android:title="@string/new_note" android:showAsAction="always|withText" evernote:bottomIcon="@drawable/ic_action_new_note" />
+    <item android:icon="@drawable/ic_action_search_dk" android:id="@id/search" android:title="@string/search" android:showAsAction="always" evernote:bottomIcon="@drawable/ic_action_search" />
+    <item android:icon="@drawable/ic_action_map_dk" android:id="@id/map" android:title="@string/maps" android:showAsAction="never" evernote:bottomIcon="@drawable/ic_action_map" />
+    <item android:id="@id/configure_notebook_sharing" android:title="@string/share" android:showAsAction="never" />
+    <item android:id="@id/create_android_shortcut" android:title="@string/create_shortcut" android:showAsAction="never" />
+    <item android:id="@id/show_all_linked_notes" android:title="@string/show_all_linked_notes" android:showAsAction="never" />
+    <item android:id="@id/show_all_notes" android:title="@string/show_all_notes" android:showAsAction="never" />
+    <item android:id="@id/show_all_account_notes" android:title="@string/show_all_account_notes" android:showAsAction="never" />
+    <item android:id="@id/shortcuts" android:title="@string/shortcuts" android:showAsAction="never" />
+    <item android:id="@id/nb_reminder_notifications" android:title="@string/enable_reminder_notifications" android:showAsAction="never" />
+</menu>

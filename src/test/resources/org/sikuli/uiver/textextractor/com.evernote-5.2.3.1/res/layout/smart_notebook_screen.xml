@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/smart_notebook_scroll_view" android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/smartnb_root_layout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.evernote.billing.MaxWidthLinearLayout android:orientation="vertical" android:id="@id/smartnb_top_padding" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="@dimen/smartnb_max_upper_width" />
+        </LinearLayout>
+        <View android:background="#ffb3b3b3" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <com.evernote.billing.MaxWidthLinearLayout android:orientation="vertical" android:id="@id/smartnb_bottom_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="@dimen/smartnb_max_lower_width">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="24.0dip">
+                <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="#ff545454" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/smartnb_config_stickers" />
+                <TextView android:textSize="14.0sp" android:textColor="#ff747778" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="24.0dip" android:text="@string/smart_notebook_settings_msg" />
+            </LinearLayout>
+            <TableLayout android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/tag_parent_view" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </com.evernote.billing.MaxWidthLinearLayout>
+    </LinearLayout>
+</ScrollView>

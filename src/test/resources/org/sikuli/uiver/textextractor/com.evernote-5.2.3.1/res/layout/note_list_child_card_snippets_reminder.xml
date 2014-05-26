@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/debug" android:layout_width="fill_parent" android:layout_height="48.0dip" style="@style/snippet_text"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <FrameLayout android:id="@id/left_area" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentLeft="true">
+        <ImageView android:id="@id/drag_handle" android:layout_width="40.0dip" android:layout_height="fill_parent" android:src="@drawable/drag_handle" android:scaleType="center" />
+        <View android:id="@id/spacer" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <CheckBox android:layout_gravity="center" android:id="@id/checkbox" android:focusable="false" android:layout_width="@dimen/reminder_btn_check_width" android:layout_height="fill_parent" android:button="@drawable/btn_check_reminder" android:scaleType="center" android:layout_toRightOf="@id/left_area" android:layout_alignWithParentIfMissing="true" />
+    <TextView android:textAppearance="@style/snippet_description" android:textColor="@color/en_sky_blue" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/content" android:background="@drawable/state_list_blue" android:paddingLeft="@dimen/reminder_time_action_padding" android:paddingRight="@dimen/reminder_time_action_padding" android:layout_width="wrap_content" android:layout_height="fill_parent" android:maxLines="1" android:layout_alignParentRight="true" android:textAllCaps="true" />
+    <com.evernote.ui.widget.EvernoteTextView android:textSize="@dimen/h2_odd" android:ellipsize="end" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_toLeftOf="@id/content" android:layout_toRightOf="@id/checkbox" android:layout_centerVertical="true" android:lineSpacingExtra="0.0sp" evernote:fontType="caecilia" />
+</RelativeLayout>

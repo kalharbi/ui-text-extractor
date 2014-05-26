@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d catatan</item>
+        <item quantity="one">%d catatan</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d buku catatan</item>
+        <item quantity="one">%d buku catatan</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d label:</item>
+        <item quantity="one">%d label:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">tersisa %d percobaan</item>
+        <item quantity="one">tersisa %d percobaan</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Setel ulang kuota dalam %d hari</item>
+        <item quantity="one">Setel ulang kuota dalam %d hari</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Disetel ulang dalam %d hari</item>
+        <item quantity="one">Disetel ulang dalam %d hari</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Akan diperpanjang dalam %d hari</item>
+        <item quantity="one">Akan diperpanjang dalam %d hari</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d foto</item>
+        <item quantity="one">%1d foto</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Langganan Pengingat</item>
+        <item quantity="one">%d Langganan Pengingat</item>
+    </plurals>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <item android:icon="@drawable/ic_action_skitch_white" android:id="@id/skitch" android:title="@string/need_skitch" android:showAsAction="ifRoom|withText" evernote:bottomIcon="@drawable/ic_action_skitch_white" />
+    <item android:icon="@drawable/ic_action_share_white" android:id="@id/share" android:title="@string/share" android:showAsAction="ifRoom" evernote:bottomIcon="@drawable/ic_action_share_white" />
+    <item android:id="@id/download" android:title="@string/save_to" android:showAsAction="never" />
+    <item android:id="@id/details" android:title="@string/image_details" android:showAsAction="never" />
+</menu>

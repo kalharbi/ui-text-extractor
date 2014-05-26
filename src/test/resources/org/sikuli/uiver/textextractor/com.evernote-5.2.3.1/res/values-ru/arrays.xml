@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>Проблемы с аккаунтом</item>
+        <item>Аудиозаметки</item>
+        <item>Содержимое</item>
+        <item>Отображение</item>
+        <item>Форматирование</item>
+        <item>Вопрос по использованию</item>
+        <item>Заметки с изображением</item>
+        <item>Офлайн-блокноты</item>
+        <item>Другое</item>
+        <item>Синхронизация</item>
+    </string-array>
+</resources>

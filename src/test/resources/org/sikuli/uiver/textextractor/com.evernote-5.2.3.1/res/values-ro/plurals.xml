@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d note</item>
+        <item quantity="one">%d Nota</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d notebook-uri</item>
+        <item quantity="one">%d notebook</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d Etichete:</item>
+        <item quantity="one">%d tag:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d încercari ramase</item>
+        <item quantity="one">%d incercari ramase</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Cota se resetează în %d zile</item>
+        <item quantity="one">Cota se resetează în %d zile</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Se resetează în %d zile</item>
+        <item quantity="one">Reset în %d zile</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Se reînnoiește în %d zile</item>
+        <item quantity="one">Se reînnoiește în %d zile</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d fotografii</item>
+        <item quantity="one">%1d foto</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Memento Abonamente</item>
+        <item quantity="one">%d Memento Abonament</item>
+    </plurals>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="widget_land_left_padding">1.0px</dimen>
+    <dimen name="widget_bottom_margin">0.0dip</dimen>
+    <dimen name="grid_snippet_item_width">237.0dip</dimen>
+    <dimen name="grid_snippet_item_height">237.0dip</dimen>
+    <dimen name="grid_snippet_title">17.0sp</dimen>
+    <dimen name="grid_snippet_date">15.0sp</dimen>
+    <dimen name="grid_snippet_content">15.0sp</dimen>
+    <dimen name="grid_snippet_content_extra_spacing">0.0dip</dimen>
+    <dimen name="grid_snippet_image_size_large">150.0dip</dimen>
+    <dimen name="grid_snippet_image_size_small">80.0dip</dimen>
+    <dimen name="facebook_dialog_portrait_width">420.0dip</dimen>
+    <dimen name="facebook_dialog_portrait_height">630.0dip</dimen>
+    <dimen name="facebook_dialog_landscape_width">690.0dip</dimen>
+    <dimen name="facebook_dialog_landscape_height">390.0dip</dimen>
+    <dimen name="pop_activity_content_width">600.0dip</dimen>
+    <dimen name="pop_activity_content_height">620.0dip</dimen>
+    <dimen name="billing_content_width">480.0dip</dimen>
+    <dimen name="billing_content_height">496.0dip</dimen>
+    <dimen name="adv_search_selec_layout_margin_bottom">4.0dip</dimen>
+    <dimen name="gallery_bottom_padding">20.0dip</dimen>
+    <dimen name="upsell_layout_width">896.0dip</dimen>
+    <dimen name="upsell_main_vert_padding">28.0dip</dimen>
+    <dimen name="upsell_main_horiz_padding">72.0dip</dimen>
+    <dimen name="upsell_msg_margin">28.0dip</dimen>
+    <dimen name="upsell_title_padding">28.0dip</dimen>
+    <dimen name="upsell_dash_separator_margin">28.0dip</dimen>
+    <dimen name="upsell_hero_bottom_margin">28.0dip</dimen>
+    <dimen name="upsell_inline_img_horiz_padding">28.0dip</dimen>
+</resources>

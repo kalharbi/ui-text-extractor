@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d белешке</item>
+        <item quantity="one">%d белешка</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d бележнице</item>
+        <item quantity="one">%d бележница</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d ознаке:</item>
+        <item quantity="one">%d ознака:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d покушаја преостало</item>
+        <item quantity="one">%d покушај преостао</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Квота се ресетује за %d дана</item>
+        <item quantity="one">Квота се ресетује за %d дан</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Ресетује се за %d дана</item>
+        <item quantity="one">Ресетује се за %d дан</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Обнавња се за %d дана</item>
+        <item quantity="one">Обнавња се за %d дан</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d фотографија/е</item>
+        <item quantity="one">%1d фотографија</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d подсетник(а) за претплате</item>
+        <item quantity="one">%d подсетник за претплату</item>
+    </plurals>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/root" android:background="@drawable/upsell_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/invisible_margin_left" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="0.5" />
+    <FrameLayout android:id="@id/fragment_container" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.0" />
+    <View android:id="@id/invisible_margin_right" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="0.5" />
+    <RelativeLayout android:id="@id/button" android:background="@drawable/btn_default_holo_light" android:paddingLeft="@dimen/upsell_button_padding_left" android:paddingTop="@dimen/upsell_button_padding" android:paddingBottom="@dimen/upsell_button_padding" android:clickable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/upsell_shell_phone_button_padding_top" android:layout_marginRight="@dimen/upsell_shell_phone_button_padding_right" android:layout_weight="1.0">
+        <TextView android:textAppearance="@style/upsell_button_install" android:id="@id/install" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/upsell_button_install" />
+        <TextView android:textAppearance="@style/upsell_button_app_name" android:id="@id/app_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/install" />
+    </RelativeLayout>
+</LinearLayout>

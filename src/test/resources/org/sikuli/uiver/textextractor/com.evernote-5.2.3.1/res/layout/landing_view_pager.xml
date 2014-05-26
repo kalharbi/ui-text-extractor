@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_gravity="top" android:id="@id/root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.evernote.ui.landing.ToggleViewPager android:id="@id/landing_activity" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    </LinearLayout>
+    <com.evernote.ui.widget.LandingPageSlidePanel android:gravity="center_horizontal" android:layout_gravity="bottom|center" android:orientation="vertical" android:id="@id/oneclick_panel" android:background="@drawable/slide_panel_bg" android:paddingLeft="54.0dip" android:paddingRight="54.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" evernote:maxWidth="500.0dip" evernote:speed="100">
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/white" android:id="@id/oneclick_title" android:paddingTop="8.0dip" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/quick_start" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/oneclick_email_color" android:id="@id/oneclick_email" android:background="@drawable/abs__spinner_ab_holo_dark" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="12.0dip" android:textColor="@color/oneclick_disclaimer_color" android:gravity="center" android:layout_gravity="center" android:id="@id/oneclick_disclaimer" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/registration_disclaimer" />
+        <Button android:textSize="16.0sp" android:textColor="@color/white" android:id="@id/oneclick_register_button" android:background="@drawable/brown_btn_default_holo_light" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dip" android:text="@string/start_using_evernote" />
+    </com.evernote.ui.widget.LandingPageSlidePanel>
+</FrameLayout>

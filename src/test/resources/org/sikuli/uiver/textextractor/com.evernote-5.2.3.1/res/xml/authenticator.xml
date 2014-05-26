@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<account-authenticator android:label="@string/evernote" android:icon="@drawable/ic_launcher" android:accountType="com.evernote" android:smallIcon="@drawable/ic_launcher" android:accountPreferences="@xml/account_preferences"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>Problemele legate de cont</item>
+        <item>Note Audio</item>
+        <item>Conținut</item>
+        <item>Afișare</item>
+        <item>Formatare</item>
+        <item>Cum să</item>
+        <item>Note Imagine</item>
+        <item>Offline</item>
+        <item>Alta</item>
+        <item>Sincronizare</item>
+    </string-array>
+</resources>

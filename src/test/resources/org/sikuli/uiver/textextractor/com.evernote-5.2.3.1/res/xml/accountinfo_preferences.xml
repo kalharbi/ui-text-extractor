@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/account_info" android:key="accountInfo"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:enabled="false" android:title="@string/pref_account_title" android:key="Account" />
+    <Preference android:enabled="false" android:title="@string/pref_status_title" android:key="AccountStatus" />
+    <Preference android:title="@string/pref_status_non_premium_title" android:key="Upgrade" android:summary="@string/pref_status_non_premium_summary" />
+    <Preference android:enabled="false" android:title="@string/pref_status_manage_subscription" android:key="ManageSubscription" />
+    <Preference android:enabled="false" android:title="@string/manage_points" android:key="Points" android:summary="@string/points_available" />
+    <PreferenceScreen android:title="@string/pref_evernote_email_title" android:key="EvernoteEmail">
+        <Preference android:enabled="false" android:title="@string/evernote_email_title" android:key="EmailMessage" android:summary="@string/evernote_email_description" />
+        <Preference android:title="@string/evernote_email_add_contact" android:key="AddEmailToContacts" />
+    </PreferenceScreen>
+    <Preference android:title="@string/pref_usage_title" android:key="Usage" />
+    <Preference android:title="@string/pref_days_left_title" android:key="DaysLeft" />
+    <PreferenceCategory android:title="@string/upsell_pref_group_name" android:key="clients">
+        <Preference android:title="@string/upsell_pref_mobile_name" android:key="UpsellMobile" android:summary="@string/upsell_pref_mobile_desc" />
+        <Preference android:title="@string/upsell_pref_desktop_name" android:key="UpsellDesktop" android:summary="@string/upsell_pref_desktop_desc" />
+    </PreferenceCategory>
+</PreferenceScreen>

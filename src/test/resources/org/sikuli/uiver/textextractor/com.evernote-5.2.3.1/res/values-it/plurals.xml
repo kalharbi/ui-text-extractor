@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d note</item>
+        <item quantity="one">%d nota</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d taccuini</item>
+        <item quantity="one">%d taccuino</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d tag:</item>
+        <item quantity="one">%d tag:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d tentativi rimasti</item>
+        <item quantity="one">%d tentativo rimasto</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Reimpostazione Quota fra %d giorni</item>
+        <item quantity="one">Reimpostazione Quota fra %d giorni</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Si ripristina tra %d giorni</item>
+        <item quantity="one">Si ripristina tra %d giorni</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Rinnovi tra %d giorni</item>
+        <item quantity="one">Rinnovi tra %d giorno</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d foto</item>
+        <item quantity="one">%1d foto</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">Abbonamenti promemoria a %d</item>
+        <item quantity="one">Abbonamento promemoria a %d</item>
+    </plurals>
+</resources>

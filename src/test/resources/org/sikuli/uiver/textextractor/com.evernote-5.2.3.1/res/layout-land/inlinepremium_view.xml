@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:id="@id/inline_premium_view_container" android:background="#ffebe8e5" android:paddingLeft="24.0dip" android:paddingTop="@dimen/ab_height_land" android:paddingRight="24.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/premium_land_top_padding" android:layout_width="fill_parent" android:layout_height="@dimen/premium_land_padding_top_phone" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/sad_cloud_layout" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/sad_cloud_layout_img" android:paddingBottom="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_inline_sad_note" />
+            <TextView android:textSize="17.0sp" android:textColor="#ff85827f" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/sad_cloud_layout_txt" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/note_loading_slow" />
+        </LinearLayout>
+        <View android:gravity="center_horizontal" android:id="@id/happy_cloud_line_view" android:background="#ffd5d2cf" android:paddingBottom="48.0dip" android:visibility="invisible" android:layout_width="1.0dip" android:layout_height="192.0dip" />
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/happy_cloud_layout" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/happy_cloud_layout_img" android:paddingBottom="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_inline_happy_note" />
+            <TextView android:textSize="17.0sp" android:textColor="#ff5fb336" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/happy_cloud_layout_txt" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:paddingBottom="16.0dip" android:layout_width="240.0dip" android:layout_height="wrap_content" android:text="@string/note_loading_slow_premium_benefit" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

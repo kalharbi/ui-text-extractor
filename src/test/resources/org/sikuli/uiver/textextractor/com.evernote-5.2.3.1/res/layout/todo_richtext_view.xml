@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:id="@id/checkbox_mini" android:layout_width="22.0dip" android:layout_height="22.0dip" android:checked="false" android:button="@drawable/btn_editor_checkbox" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <com.evernote.note.composer.richtext.Views.EvernoteEditText android:gravity="start|top|center" android:linksClickable="false" android:id="@id/text" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minLines="1" android:layout_toRightOf="@id/checkbox_mini" android:layout_centerVertical="true" android:inputType="textCapSentences|textMultiLine" android:imeOptions="flagNoFullscreen|flagNoExtractUi" />
+</RelativeLayout>

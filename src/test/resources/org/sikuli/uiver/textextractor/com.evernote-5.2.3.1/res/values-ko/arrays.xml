@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>계정 문제</item>
+        <item>오디오 노트</item>
+        <item>내용</item>
+        <item>표시</item>
+        <item>서식</item>
+        <item>사용 방법</item>
+        <item>이미지 노트</item>
+        <item>오프라인</item>
+        <item>기타</item>
+        <item>동기화하는 중</item>
+    </string-array>
+</resources>

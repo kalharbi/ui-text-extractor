@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_action_snapshot_rendered" android:id="@id/hdr_btn_camera" android:title="@string/acc_take_snapshot" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_plus" android:id="@id/btn_plus" android:title="@string/add_to_note" android:showAsAction="always">
+        <menu>
+            <item android:icon="@drawable/ic_editor_menu_page_camera" android:id="@id/hdr_btn_page_camera" android:title="@string/acc_page_camera" android:showAsAction="never" />
+            <item android:icon="@drawable/ic_editor_menu_attachment" android:id="@id/hdr_btn_attach" android:title="@string/acc_add_attachment" android:showAsAction="never" />
+            <item android:icon="@drawable/ic_editor_menu_video" android:id="@id/hdr_btn_video" android:title="@string/video_clip" android:showAsAction="never" />
+            <item android:icon="@drawable/ic_editor_menu_skitch" android:id="@id/hdr_btn_markup" android:title="@string/skitch" android:showAsAction="never" />
+            <item android:icon="@drawable/ic_editor_menu_skitch" android:id="@id/hdr_btn_snote" android:title="@string/snote" android:showAsAction="never" />
+            <item android:icon="@drawable/ic_editor_menu_audio" android:id="@id/voice_record_only" android:title="@string/audio_record" android:showAsAction="never" />
+            <item android:icon="@drawable/ic_editor_menu_dictate" android:id="@id/voice_record" android:title="@string/voice_record" android:showAsAction="never" />
+        </menu>
+    </item>
+    <item android:id="@id/reminder" android:visible="false" android:title="@string/reminder" android:showAsAction="always|withText">
+        <menu>
+            <item android:icon="@drawable/ic_options_done" android:id="@id/mark_as_done" android:title="@string/mark_as_done" android:showAsAction="never" />
+            <item android:icon="@drawable/ic_options_remove" android:id="@id/clear_reminder" android:title="@string/clear_reminder" android:showAsAction="never" />
+            <item android:icon="@drawable/ic_options_calendar" android:id="@id/set_date" android:title="@string/set_date" android:showAsAction="never" />
+        </menu>
+    </item>
+    <item android:id="@id/btn_save_n_continue" android:title="@string/save" android:showAsAction="never" />
+    <item android:id="@id/hdr_btn_notebook" android:title="@string/notebook" android:showAsAction="never" />
+    <item android:id="@id/hdr_btn_add_tag" android:title="@string/tags" android:showAsAction="never" />
+    <item android:id="@id/hdr_btn_location" android:title="@string/set_location" android:showAsAction="never" />
+    <item android:id="@id/hdr_btn_settings" android:title="@string/settings" android:showAsAction="never" />
+</menu>

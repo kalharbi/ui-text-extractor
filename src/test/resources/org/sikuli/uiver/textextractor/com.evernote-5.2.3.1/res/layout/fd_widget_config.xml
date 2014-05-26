@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0dip" android:textColor="#ff97cf67" android:id="@id/title_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/fd_widget_app_config_title" />
+    <TextView android:textSize="16.0dip" android:textColor="#ffe7e7e7" android:id="@id/message_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/fd_widget_app_config_message" />
+    <TextView android:textSize="14.0dip" android:textColor="#ffb7b7b7" android:id="@id/message_faded_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/fd_widget_app_message" />
+    <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ffe7e7e7" android:id="@id/tap_to_dismiss" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/tap_to_dismiss" />
+    <Button android:id="@id/positive_button" android:background="@drawable/btn_green_bg" android:paddingLeft="24.0dip" android:paddingTop="8.0dip" android:paddingRight="24.0dip" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="@string/fd_widget_app_update" style="@style/green_btn" />
+</merge>

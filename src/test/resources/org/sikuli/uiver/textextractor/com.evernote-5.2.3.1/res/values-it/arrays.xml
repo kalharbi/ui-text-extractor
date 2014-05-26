@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>"Problemi relativi all'account"</item>
+        <item>Note Audio</item>
+        <item>Contenuto</item>
+        <item>Visualizza</item>
+        <item>Formattazione</item>
+        <item>Come fare</item>
+        <item>"Note D'immagine"</item>
+        <item>Non in linea</item>
+        <item>Altro</item>
+        <item>Sincronizzazione in corso</item>
+    </string-array>
+</resources>

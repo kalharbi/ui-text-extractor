@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>Problemer med konti</item>
+        <item>Lydnoter</item>
+        <item>Indhold</item>
+        <item>Vis</item>
+        <item>Formatering</item>
+        <item>Sådan gør du</item>
+        <item>Billednoter</item>
+        <item>Offline</item>
+        <item>Andet</item>
+        <item>Synkroniserer</item>
+    </string-array>
+</resources>

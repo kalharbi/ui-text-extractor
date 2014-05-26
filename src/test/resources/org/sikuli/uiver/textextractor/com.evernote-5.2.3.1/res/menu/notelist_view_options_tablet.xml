@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/view_as" android:title="@string/notelist_view_as">
+        <menu>
+            <item android:id="@id/notelist_list_view" android:title="@string/list" />
+            <item android:id="@id/notelist_snippet_view" android:title="@string/notelist_view_snippets" />
+        </menu>
+    </item>
+    <item android:id="@id/sort_by" android:title="@string/notelist_sort_by">
+        <menu>
+            <item android:id="@id/sort_by_date_updated" android:title="@string/notelist_sortby_date_updated" />
+            <item android:id="@id/sort_by_title" android:title="@string/title" />
+            <item android:id="@id/sort_by_other" android:title="@string/notelist_sortby_other" />
+        </menu>
+    </item>
+</menu>

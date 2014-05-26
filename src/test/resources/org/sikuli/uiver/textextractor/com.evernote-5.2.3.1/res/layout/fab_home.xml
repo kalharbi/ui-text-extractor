@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/ab_home_layout" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/back_button" android:background="@null" android:layout_width="@dimen/ab_home_back_icon_width" android:layout_height="fill_parent" android:layout_marginLeft="4.0dip" />
+    <ImageButton android:id="@id/home_button" android:background="@null" android:layout_width="@dimen/ab_home_icon_width" android:layout_height="fill_parent" android:layout_marginRight="4.0dip" />
+    <View android:layout_gravity="center" android:id="@id/separator" android:background="@color/ics_ab_home_divider" android:visibility="invisible" android:layout_width="1.0dip" android:layout_height="24.0dip" android:layout_marginLeft="7.0dip" />
+</LinearLayout>

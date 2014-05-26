@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">บันทึกย่อ %d รายการ</item>
+        <item quantity="one">บันทึกย่อ %d รายการ</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">สมุดบันทึก %d รายการ</item>
+        <item quantity="one">สมุดบันทึก %d รายการ</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d แท็ก:</item>
+        <item quantity="one">%d แท็ก:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">ลองได้อีก %d ครั้ง</item>
+        <item quantity="one">ลองได้อีก %d ครั้ง</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">ตั้งค่าโควตาใหม่ใน %d วัน</item>
+        <item quantity="one">ตั้งค่าโควตาใหม่ใน %d วัน</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">ตั้งค่าใหม่ใน %d วัน</item>
+        <item quantity="one">ตั้งค่าใหม่ใน %d วัน</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">ต่ออายุใน %d วัน</item>
+        <item quantity="one">ต่ออายุใน %d วัน</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d ภาพถ่าย</item>
+        <item quantity="one">%1d ภาพถ่าย</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">การสมัครใช้งานการแจ้งเตือน %d รายการ</item>
+        <item quantity="one">การสมัครใช้งานการแจ้งเตือน %d รายการ</item>
+    </plurals>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <item android:icon="@drawable/ic_action_sort" android:id="@id/sort_options" android:title="@string/sort_options" android:showAsAction="ifRoom" evernote:bottomIcon="@drawable/ic_action_sort" />
+    <item android:icon="@drawable/ic_action_view" android:id="@id/view_options" android:title="@string/change_view" android:showAsAction="ifRoom" evernote:bottomIcon="@drawable/ic_action_view" />
+</menu>

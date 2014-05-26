@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_fd_dk" android:id="@id/hdr_btn_help" android:title="@string/feature_discovery_title" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_action_offline_dk" android:id="@id/nb_multiselect" android:title="@string/offline_notebooks" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_action_new_notebook_dk" android:id="@id/new_notebook" android:title="@string/new_notebook" android:showAsAction="always" />
+    <item android:id="@id/nb_reminder_notifications" android:title="@string/reminder_notifications" android:showAsAction="never" />
+    <item android:icon="@drawable/ic_action_search_dk" android:id="@id/search" android:title="@string/search" android:showAsAction="ifRoom" />
+    <item android:id="@id/join_business_nb" android:visible="false" android:title="@string/business_library" android:showAsAction="never" />
+</menu>

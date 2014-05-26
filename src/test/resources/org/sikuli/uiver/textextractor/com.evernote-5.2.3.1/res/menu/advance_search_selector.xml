@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_menu_select_items" android:id="@id/select_all" android:title="@string/select_all" />
+    <item android:icon="@drawable/ic_menu_unselect_items" android:id="@id/unselect_all" android:title="@string/unselect_all" />
+</menu>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d ملاحظات</item>
+        <item quantity="one">%d ملاحظة</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d دفاتر الملاحظات</item>
+        <item quantity="one">%d دفتر الملاحظات</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d من العلامات:</item>
+        <item quantity="one">%d علامة:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">باقٍ عدد %d من المحاولات</item>
+        <item quantity="one">باقٍ عدد %d من المحاولات</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">إعادة تعيين الحصة في %d أيام</item>
+        <item quantity="one">إعادة تعيين الحصة في %d يوم</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">إعادة التعيين خلال %d أيام</item>
+        <item quantity="one">إعادة التعيين خلال %d يوم</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">التجديدات خلال %d يوم</item>
+        <item quantity="one">التجديدات خلال %d يوم</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d صور</item>
+        <item quantity="one">%1d صورة</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d اشتراكات في رسائل التذكير</item>
+        <item quantity="one">%d اشتراك في رسائل التذكير</item>
+    </plurals>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/empty_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/empty_list_with_icon" />
+    <ExpandableListView android:scrollbarStyle="outsideOverlay" android:id="@id/list" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@drawable/top_list_selector" android:drawSelectorOnTop="true" android:fastScrollEnabled="true" android:footerDividersEnabled="false" style="@style/ics_category_expandable_list_view" />
+    <TextView android:textAppearance="@style/textxsmall.Bold" android:id="@id/scroll_hdr_text1" android:background="@color/grey" android:paddingLeft="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="25.0dip" android:maxLines="1" android:layout_alignTop="@id/list" />
+</RelativeLayout>

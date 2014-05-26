@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d notes</item>
+        <item quantity="one">%d note</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d carnets de notes</item>
+        <item quantity="one">%d carnet de notes</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d étiquettes :</item>
+        <item quantity="one">%d étiquette :</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d essais restants</item>
+        <item quantity="one">%d essai restant</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Quota remis à zéro dans %d jours</item>
+        <item quantity="one">Quota remis à zéro dans %d jour</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Réinitialiser dans %d jours</item>
+        <item quantity="one">Réinitialiser dans %d jour</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Renouvellement dans %d jours</item>
+        <item quantity="one">Renouvellement dans %d jour</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d photos</item>
+        <item quantity="one">%1d photo</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d inscriptions au rappel</item>
+        <item quantity="one">%d inscription au rappel</item>
+    </plurals>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>Vấn đề Trương mục</item>
+        <item>Ghi chú Âm thanh</item>
+        <item>Nội dung</item>
+        <item>Hiển thị</item>
+        <item>Định dạng</item>
+        <item>Cách làm</item>
+        <item>Ghi chú Ảnh</item>
+        <item>Gián tuyến</item>
+        <item>Khác</item>
+        <item>Đang đồng bộ</item>
+    </string-array>
+</resources>

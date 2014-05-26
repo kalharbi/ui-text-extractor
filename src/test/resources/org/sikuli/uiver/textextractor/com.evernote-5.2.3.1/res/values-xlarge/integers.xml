@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="widget_snippet_content_num_lines">8</integer>
+    <integer name="snippet_content_num_lines">9</integer>
+    <integer name="grid_snippet_col_count">3</integer>
+</resources>

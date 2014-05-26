@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d Notizen</item>
+        <item quantity="one">%d Notiz</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d Notizbücher</item>
+        <item quantity="one">%d Notizbuch</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d Schlagwörter:</item>
+        <item quantity="one">%d Schlagwort:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d verbleibende Versuche</item>
+        <item quantity="one">%d verbleibender Versuch</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Quote wird in %d Tagen zurückgesetzt</item>
+        <item quantity="one">Limit wird in %d Tag(en) zurückgesetzt</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Wird in %d Tagen zurückgesetzt</item>
+        <item quantity="one">Wird in %d Tag zurückgesetzt</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Wird in %d Tagen verlängert</item>
+        <item quantity="one">Wird in %d Tag verlängert</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d Fotos</item>
+        <item quantity="one">%1d Foto</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Abonnements für Erinnerungen</item>
+        <item quantity="one">%d Abonnement für Erinnerungen</item>
+    </plurals>
+</resources>

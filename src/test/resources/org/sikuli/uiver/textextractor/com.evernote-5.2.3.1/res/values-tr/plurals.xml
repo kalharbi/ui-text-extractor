@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d notlar</item>
+        <item quantity="one">%d not</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d not defterleri</item>
+        <item quantity="one">%d not defteri</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d etiket:</item>
+        <item quantity="one">%d etiket:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d deneme hakkı kaldı</item>
+        <item quantity="one">%d deneme hakkı kaldı</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Kota %d gün sonra sıfırlanacak</item>
+        <item quantity="one">Kota %d gün sonra sıfırlanacak</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">%d gün içinde sıfırlanacak</item>
+        <item quantity="one">%d gün içinde sıfırlanacak</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">%d gün içinde yenilenir</item>
+        <item quantity="one">%d gün içinde yenilenir</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d fotoğraf</item>
+        <item quantity="one">%1d fotoğraf</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Hatırlatıcı Aboneliği</item>
+        <item quantity="one">%d Hatırlatıcı Aboneliği</item>
+    </plurals>
+</resources>

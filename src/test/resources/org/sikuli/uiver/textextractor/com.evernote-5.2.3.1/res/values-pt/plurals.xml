@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d notas</item>
+        <item quantity="one">%d nota</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d blocos de notas</item>
+        <item quantity="one">%d bloco de notas</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d etiquetas:</item>
+        <item quantity="one">%d etiqueta:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d tentativas restantes</item>
+        <item quantity="one">%d tentativa restante</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">A quota será reposta dentro de %d dias</item>
+        <item quantity="one">A quota será reposta dentro de %d dia</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Reposta dentro de %d dias</item>
+        <item quantity="one">Reposta dentro de %d dia</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Renovação dentro de %d dias</item>
+        <item quantity="one">Renovação dentro de %d dia</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d fotografias</item>
+        <item quantity="one">%1d fotografia</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Lembretes Subscritos</item>
+        <item quantity="one">%d Subscrição de Lembrete</item>
+    </plurals>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="widget_pinlock_layout_padding_top">14.0dip</dimen>
+    <dimen name="widget_pinlock_layout_padding_bottom">18.0dip</dimen>
+    <dimen name="widget_pinlock_layout_padding_left">16.0dip</dimen>
+    <dimen name="widget_pinlock_layout_padding_right">16.0dip</dimen>
+    <dimen name="widget_pinlock_layout_margin_top">-12.0dip</dimen>
+    <dimen name="widget_pinlock_layout_margin_between">6.0dip</dimen>
+    <dimen name="ab_height">40.0dip</dimen>
+    <dimen name="picker_side_offset">16.0dip</dimen>
+    <dimen name="picker_dialog_width">480.0dip</dimen>
+    <dimen name="picker_dialog_height">340.0dip</dimen>
+</resources>

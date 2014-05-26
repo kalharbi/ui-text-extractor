@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>Проблеми з обліковим записом</item>
+        <item>Аудіонотатки</item>
+        <item>Контент</item>
+        <item>Відображення</item>
+        <item>Форматування</item>
+        <item>Питання щодо використання</item>
+        <item>Нотатки із зображеннями</item>
+        <item>Автономний блокнот</item>
+        <item>Інше</item>
+        <item>Синхронізація</item>
+    </string-array>
+</resources>

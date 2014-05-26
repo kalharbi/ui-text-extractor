@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>Tilin ongelmat</item>
+        <item>Äänimuistiinpanot</item>
+        <item>Sisältö</item>
+        <item>Näkymä</item>
+        <item>Muotoilu</item>
+        <item>Opasteet</item>
+        <item>Kuvamuistiinpanot</item>
+        <item>Offline-tila</item>
+        <item>Muu</item>
+        <item>Synkronoidaan</item>
+    </string-array>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_gravity="bottom" android:id="@id/promo_buttons" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <View android:id="@id/promo_top_line" android:background="@color/promo_buttons_bottom" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentTop="true" />
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_below="@id/promo_top_line">
+            <Button android:textColor="@color/promo_buttons_bottom" android:id="@id/activate_promo" android:background="@*android:color/transparent" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/activate" android:layout_weight="1.0" />
+            <View android:id="@id/promo_sep1" android:background="@color/promo_buttons_bottom" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+            <Button android:textColor="@color/promo_buttons_bottom" android:id="@id/hide_promo" android:background="@*android:color/transparent" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/hide_promo" android:layout_weight="1.0" />
+            <View android:id="@id/promo_sep2" android:background="@color/promo_buttons_bottom" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+            <Button android:textColor="@color/promo_buttons_bottom" android:id="@id/remind_later_promo" android:background="@*android:color/transparent" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/remind_later_promo" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+</merge>

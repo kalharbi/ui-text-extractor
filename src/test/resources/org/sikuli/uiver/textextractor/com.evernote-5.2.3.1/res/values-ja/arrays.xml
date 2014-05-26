@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>アカウントの問題</item>
+        <item>音声ノート</item>
+        <item>コンテンツ</item>
+        <item>表示</item>
+        <item>書式設定</item>
+        <item>利用法</item>
+        <item>画像ノート</item>
+        <item>オフライン</item>
+        <item>その他</item>
+        <item>同期中</item>
+    </string-array>
+</resources>

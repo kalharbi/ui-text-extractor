@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.evernote">
+    <com.evernote.ui.widget.RotatingImageView android:enabled="false" android:id="@id/sync_progress_icon" android:focusable="false" android:visibility="gone" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ics_rotating_refresh" android:scaleType="centerInside" android:layout_centerInParent="true" app:frameDuration="120" app:framesCount="12" app:pivotX="50.0%" app:pivotY="50.0%" />
+    <ImageView android:id="@id/sync_icon" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ic_home_sb_sync" android:scaleType="centerInside" android:contentDescription="@string/sync" />
+</FrameLayout>

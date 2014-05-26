@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <item android:icon="@drawable/ic_action_search_dk" android:id="@id/search" android:title="@string/search" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_fd_dk" android:id="@id/hdr_btn_help" android:title="@string/feature_discovery_title" android:showAsAction="always" />
+    <item android:icon="@drawable/ic_action_map_dk" android:id="@id/map" android:title="@string/maps" android:showAsAction="always" />
+</menu>

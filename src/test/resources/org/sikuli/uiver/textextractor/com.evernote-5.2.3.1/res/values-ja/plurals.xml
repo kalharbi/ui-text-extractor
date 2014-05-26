@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">ノート数: %d</item>
+        <item quantity="one">ノート数: %d</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">ノートブック数: %d</item>
+        <item quantity="one">ノートブック数: %d</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">タグ数: %d</item>
+        <item quantity="one">タグ数: %d</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">残り %d</item>
+        <item quantity="one">残り %d</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">アップロード容量は %d 日でリセットされます</item>
+        <item quantity="one">アップロード容量は %d 日でリセットされます</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">%d 日後にリセット</item>
+        <item quantity="one">%d 日後にリセット</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">%d 日後に更新</item>
+        <item quantity="one">%d 日後にリセット</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d 個の写真</item>
+        <item quantity="one">%1d 個の写真</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d 個のリマインダー登録</item>
+        <item quantity="one">%d 個のリマインダー登録</item>
+    </plurals>
+</resources>

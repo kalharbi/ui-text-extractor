@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>Ствари у вези с налогом</item>
+        <item>Звучне белешке</item>
+        <item>Садржаj</item>
+        <item>Приказ</item>
+        <item>Форматирање</item>
+        <item>Како да</item>
+        <item>Сликовне белешке</item>
+        <item>Ван мреже</item>
+        <item>Друго</item>
+        <item>Синхронизовање</item>
+    </string-array>
+</resources>

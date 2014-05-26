@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d notater</item>
+        <item quantity="one">%d notat</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d notatbøker</item>
+        <item quantity="one">%d notatbok</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d etiketter:</item>
+        <item quantity="one">%d etikett:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d forsøk gjenstår</item>
+        <item quantity="one">%d forsøk gjenstår</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Kvote tilbakestilles om %d dager</item>
+        <item quantity="one">Kvote tilbakestilles om %d dag</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Tilbakestilles om %d dager</item>
+        <item quantity="one">Tilbakestilles om %d dag</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Fornyes om %d dager</item>
+        <item quantity="one">Fornyes om %d dag</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d photos</item>
+        <item quantity="one">%1d photo</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d Reminder Subscriptions</item>
+        <item quantity="one">%d Reminder Subscription</item>
+    </plurals>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/view_notes" android:title="@string/view_notes" />
+    <item android:id="@id/view_child_tags" android:visible="false" android:title="@string/view_child_tags" />
+    <item android:id="@id/create_shortcut" android:title="@string/add_to_shortcuts" />
+    <item android:id="@id/remove_shortcut" android:title="@string/remove_from_shortcuts" />
+</menu>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cs_problem_areas">
+        <item>ปัญหาเรื่องบัญชี</item>
+        <item>บันทึกย่อแบบเสียง</item>
+        <item>เนื้อหา</item>
+        <item>แสดง</item>
+        <item>การจัดรูปแบบ</item>
+        <item>วิธีการ</item>
+        <item>บันทึกย่อรูปภาพ</item>
+        <item>ออฟไลน์</item>
+        <item>อื่นๆ</item>
+        <item>กำลังซิงค์</item>
+    </string-array>
+</resources>

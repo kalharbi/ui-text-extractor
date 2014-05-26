@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/screen_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/root_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:layout_gravity="top|left|center" android:id="@id/elephant" android:layout_width="130.0dip" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:src="@drawable/spotlight_elephant" android:scaleType="center" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="32.0dip">
+            <TextView android:textAppearance="@style/welcometext.big" android:layout_gravity="left" android:id="@id/have_a_new_design" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="@string/welcome_new_design" />
+            <TextView android:textAppearance="@style/welcometext.hdr" android:id="@id/quick_access" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/welcome_quick_access" />
+            <TextView android:textAppearance="@style/welcometext.desc" android:id="@id/quick_access_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:maxWidth="300.0dip" android:text="@string/welcome_quick_access_desc" />
+            <TextView android:textAppearance="@style/welcometext.hdr" android:id="@id/a_new_look" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/welcome_new_look" />
+            <TextView android:textAppearance="@style/welcometext.desc" android:id="@id/a_new_look_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:maxWidth="300.0dip" android:text="@string/welcome_new_look_desc" />
+            <TextView android:textAppearance="@style/welcometext.hdr" android:id="@id/clear_actions" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/welcome_clear_actions" />
+            <TextView android:textAppearance="@style/welcometext.desc" android:id="@id/clear_actions_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="300.0dip" android:text="@string/welcome_clear_actions_desc" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

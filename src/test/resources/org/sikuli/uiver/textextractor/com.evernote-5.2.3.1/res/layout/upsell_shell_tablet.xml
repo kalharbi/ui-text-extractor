@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root" android:background="@drawable/upsell_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:evernote="http://schemas.android.com/apk/res/com.evernote">
+    <com.evernote.ui.landing.StretchLinearLayout android:orientation="horizontal" android:background="@drawable/upsell_card_background" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerHorizontal="true" evernote:maxWidth="@dimen/upsell_layout_width">
+        <FrameLayout android:id="@id/fragment_container" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="2.0" />
+        <RelativeLayout android:id="@id/button" android:background="@drawable/btn_default_holo_light" android:paddingLeft="@dimen/upsell_button_padding_left" android:paddingTop="@dimen/upsell_button_padding" android:paddingBottom="@dimen/upsell_button_padding" android:clickable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/upsell_shell_button_padding_top" android:layout_marginRight="@dimen/upsell_shell_button_padding_right" android:layout_weight="1.0">
+            <ImageView android:id="@id/app_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/upsell_button_icon_margin_right" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textAppearance="@style/upsell_button_install" android:id="@id/install" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/upsell_button_install" android:layout_toRightOf="@id/app_image" />
+            <TextView android:textAppearance="@style/upsell_button_app_name" android:id="@id/app_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/app_image" android:layout_below="@id/install" />
+        </RelativeLayout>
+    </com.evernote.ui.landing.StretchLinearLayout>
+</RelativeLayout>

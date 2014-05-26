@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.evernote.ui.gestureframework.EAbsoluteLayout android:id="@id/root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.evernote.ui.gestureframework.EFrameLayout android:id="@id/panel_one" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.evernote.ui.gestureframework.EFrameLayout android:id="@id/panel_two" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/fd_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</com.evernote.ui.gestureframework.EAbsoluteLayout>

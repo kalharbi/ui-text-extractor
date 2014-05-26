@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="notes">
+        <item quantity="other">%d anteckningar</item>
+        <item quantity="one">%d anteckning</item>
+    </plurals>
+    <plurals name="notebooks">
+        <item quantity="other">%d anteckningsböcker</item>
+        <item quantity="one">%d anteckningsbok</item>
+    </plurals>
+    <plurals name="tags">
+        <item quantity="other">%d taggar:</item>
+        <item quantity="one">%d tagg:</item>
+    </plurals>
+    <plurals name="tries_left">
+        <item quantity="other">%d försök återstår</item>
+        <item quantity="one">%d försök återstår</item>
+    </plurals>
+    <plurals name="quota_days_left">
+        <item quantity="other">Kvoten återställs om %d dagar</item>
+        <item quantity="one">Kvoten återställs om %d dag</item>
+    </plurals>
+    <plurals name="quota_resets">
+        <item quantity="other">Återställs om %d dagar</item>
+        <item quantity="one">Återställs om %d dag</item>
+    </plurals>
+    <plurals name="quota_renews">
+        <item quantity="other">Förnyas om %d dagar</item>
+        <item quantity="one">Förnyas om %d dag</item>
+    </plurals>
+    <plurals name="noteworthy_new_event_content_photo">
+        <item quantity="other">%1d foton</item>
+        <item quantity="one">%1d foto</item>
+    </plurals>
+    <plurals name="reminder_subscriptions">
+        <item quantity="other">%d påminnelseprenumerationer</item>
+        <item quantity="one">%d påminnelseprenumeration</item>
+    </plurals>
+</resources>

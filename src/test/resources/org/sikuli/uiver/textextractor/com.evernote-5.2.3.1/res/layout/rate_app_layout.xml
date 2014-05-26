@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/btn_login_signup_default" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/content" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:ellipsize="none" android:gravity="center_horizontal" android:id="@id/message" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/rate_app_message" android:shadowDy="4.0" style="@style/textsmall" />
+    </LinearLayout>
+    <View android:background="@drawable/horizontal_divider" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:layout_gravity="center_vertical" android:id="@id/positiveButton" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="@string/go_to_market" android:singleLine="true" android:layout_weight="1.0" />
+        <View android:layout_width="5.0dip" android:layout_height="1.0dip" />
+        <Button android:layout_gravity="center_vertical" android:id="@id/negativeButton" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="@string/no_thanks" android:singleLine="true" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/premium_root_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" app:maxLinearLayoutWidth="360.0dip">
+                <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="16.0dip" android:paddingTop="16.0dip" android:paddingRight="16.0dip" android:paddingBottom="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/go_premium_image_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/premium_crest" />
+                    <TextView android:textSize="16.0sp" android:textColor="#ff5d5d5d" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/premium_msg_txt" android:paddingLeft="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/premium_msg" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/lyt_payment_option" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:paddingTop="5.0dip" android:clickable="true" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_weight="1.0">
+                        <Button android:textSize="14.0sp" android:textColor="#ff5d5d5d" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/recurring_btn" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:text="@string/recurring" android:layout_weight="1.0" />
+                        <View android:id="@id/recurring_btn_selected" android:background="#ff836167" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+                    </LinearLayout>
+                    <View android:background="#ff5d5d5d" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginBottom="5.0dip" />
+                    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/onetime_btn" android:paddingTop="5.0dip" android:clickable="true" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_weight="1.0">
+                        <TextView android:textSize="14.0sp" android:textColor="#ff5d5d5d" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="@string/one_time" />
+                        <TextView android:textSize="12.0sp" android:textColor="#ff5d5d5d" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="@string/carrier_billing" android:layout_weight="1.0" />
+                        <View android:id="@id/onetime_btn_selected" android:background="#ff836167" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="4.0dip" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:background="#ff836167" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="16.0dip" android:paddingTop="16.0dip" android:paddingRight="16.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <Button android:textSize="14.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/month_btn" android:background="@drawable/btn_default_holo_light" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_marginRight="8.0dip" android:text="@string/monthly" android:layout_weight="1.0" />
+                    <Button android:textSize="14.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/year_btn" android:background="@drawable/btn_default_holo_light" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_marginLeft="8.0dip" android:text="@string/yearly" android:layout_weight="1.0" />
+                </LinearLayout>
+            </com.evernote.billing.MaxWidthLinearLayout>
+        </LinearLayout>
+        <View android:background="#ff836167" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="#ff545454" android:paddingLeft="16.0dip" android:paddingTop="32.0dip" android:paddingBottom="32.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/premium_benefits" />
+                <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="32.0dip" android:paddingRight="32.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ff545454" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/access_offline_title_premium" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/access_offline_msg_premium" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="right|center" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/ic_premium_offline" />
+                </com.evernote.billing.MaxWidthLinearLayout>
+                <View android:background="#ffd6d6d6" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" />
+                <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="32.0dip" android:paddingTop="16.0dip" android:paddingRight="32.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ff545454" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/addition_mobile_security_title" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/addition_mobile_security_msg" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="right|center" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/ic_premium_pin" />
+                </com.evernote.billing.MaxWidthLinearLayout>
+                <View android:background="#ffd6d6d6" android:layout_width="wrap_content" android:layout_height="1.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" />
+                <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="32.0dip" android:paddingTop="16.0dip" android:paddingRight="32.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ff545454" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/supersize_upload_title" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/supersize_upload_msg" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="right|center" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/ic_premium_uploads" />
+                </com.evernote.billing.MaxWidthLinearLayout>
+                <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="32.0dip" android:paddingRight="32.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ff545454" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/search_pdf_title" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/search_pdf_msg" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="right|center" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/ic_premium_search" />
+                </com.evernote.billing.MaxWidthLinearLayout>
+                <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="32.0dip" android:paddingRight="32.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ff545454" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/document_search_upsell_dialog_title" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/document_search_msg" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="right|center" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/ic_premium_doc_search" />
+                </com.evernote.billing.MaxWidthLinearLayout>
+                <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="32.0dip" android:paddingRight="32.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ff545454" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/share_notebook_title" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/share_notebook_msg" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="right|center" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/ic_premium_shared" />
+                </com.evernote.billing.MaxWidthLinearLayout>
+                <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="32.0dip" android:paddingRight="32.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ff545454" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/premium_support_title" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/premium_support_msg" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="right|center" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/ic_premium_support" />
+                </com.evernote.billing.MaxWidthLinearLayout>
+                <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="32.0dip" android:paddingRight="32.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ff545454" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/big_note_size_title" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/big_note_size_msg" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="right|center" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/ic_premium_note" />
+                </com.evernote.billing.MaxWidthLinearLayout>
+                <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="32.0dip" android:paddingRight="32.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ff545454" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/note_history_title" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff808080" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/note_history_msg" />
+                    </LinearLayout>
+                    <ImageView android:layout_gravity="right|center" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:src="@drawable/ic_premium_notes" />
+                </com.evernote.billing.MaxWidthLinearLayout>
+            </com.evernote.billing.MaxWidthLinearLayout>
+            <View android:background="#ff836167" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+            <com.evernote.billing.MaxWidthLinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="32.0dip" android:paddingTop="32.0dip" android:paddingRight="32.0dip" android:paddingBottom="32.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:maxLinearLayoutWidth="500.0dip">
+                <TextView android:textSize="16.0sp" android:textStyle="italic" android:textColor="#ff808080" android:layout_gravity="center_vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/hide_premium" android:layout_weight="1.0" />
+                <CheckBox android:layout_gravity="right" android:id="@id/hide_premium_checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" />
+            </com.evernote.billing.MaxWidthLinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
