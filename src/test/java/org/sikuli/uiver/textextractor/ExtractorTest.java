@@ -14,30 +14,25 @@ import org.apache.commons.io.FileUtils;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
-import org.sikuli.uiver.textextractor.extractor.ResourcesDecoder;
 
 import com.google.common.io.Files;
 
 public class ExtractorTest {
-	File apkFile = null;
-	File targetTempDirectory = null;
+	File apkDir = null;
 
 	@Before
 	public void setUp() throws IOException {
-		apkFile = new File(getClass().getResource("com.evernote.apk").getPath());
-		targetTempDirectory = Files.createTempDir();
-		assertNotNull("Test APK file is missing", apkFile);
-		assertNotNull("Test tmp directory could not be created",
-				targetTempDirectory);
+		apkDir = new File(getClass().getResource("com.evernote-5.2.3.1").getPath());
+		assertNotNull("The unpacked APK file is not found.", apkDir);
 	}
 
 	@Test
 	public void testUIText() throws IOException {
-		ResourcesDecoder res = new ResourcesDecoder();
-		res.run(new File[] { apkFile }, targetTempDirectory);
-		File uiTextDirectory = new File(targetTempDirectory, "com.evernote");
-		uiTextDirectory = new File(uiTextDirectory, "ui");
-		File uiTextFile = new File(uiTextDirectory, "com.evernote.txt");
+		App app = new App();
+		
+		app.startUiTextExtractor(new File[] { apkDir });
+		File uiTextDirectory = new File(apkDir, "ui");
+		File uiTextFile = new File(uiTextDirectory, "com.evernote-5.2.3.1.txt");
 		String fileContent = FileUtils.readFileToString(uiTextFile);
 		assertTrue("File does not exist: " + uiTextFile.getAbsolutePath(),
 				uiTextFile.exists());
