@@ -16,6 +16,10 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.SerializationConfig;
 import org.sikuli.uiver.textextractor.serialization.AndroidView;
 import org.sikuli.uiver.textextractor.serialization.Layout;
 import org.sikuli.uiver.textextractor.serialization.UIDescriptor;
@@ -23,11 +27,11 @@ import org.sikuli.uiver.textextractor.utils.Constants.AndroidResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 public class ParserExecutor implements Runnable {
-	private final static Logger logger = LoggerFactory.getLogger(ParserExecutor.class);
+	private final static Logger logger = LoggerFactory
+			.getLogger(ParserExecutor.class);
 	private List<StringResource> androidResources;
 	private Collection<File> layoutFiles;
 	private File dumpTargetFile, jsonTargetFile;
@@ -56,7 +60,7 @@ public class ParserExecutor implements Runnable {
 	private void parseStringResources() {
 		try {
 			synchronized (dumpTargetFile) {
-				if(androidResources == null){
+				if (androidResources == null) {
 					return;
 				}
 				BufferedWriter bw = new BufferedWriter((new OutputStreamWriter(
@@ -70,14 +74,16 @@ public class ParserExecutor implements Runnable {
 					}
 					StringValuesParser parser = null;
 
-					logger.info("{}- {} -- {}",id, dumpTargetFile.getName(),
+					logger.info("{}- {} -- {}", id, dumpTargetFile.getName(),
 							resource.getResourceFile().getName());
 
 					// TODO: Parse other types of asset resources
 					if (resource.getAndroidResourceType() == AndroidResource.ASSETS) {
 						File assetFile = resource.getResourceFile();
-						if(FilenameUtils.getExtension(assetFile.getName()).equals("txt")){
-							String content = FileUtils.readFileToString(assetFile);
+						if (FilenameUtils.getExtension(assetFile.getName())
+								.equals("txt")) {
+							String content = FileUtils
+									.readFileToString(assetFile);
 							bw.write(content);
 						}
 					}
@@ -86,10 +92,9 @@ public class ParserExecutor implements Runnable {
 							AndroidResource.PUBLIC)) {
 						this.publicFile = resource.getResourceFile()
 								.getAbsoluteFile();
-					} 
-					else if (resource.getAndroidResourceType().equals(
+					} else if (resource.getAndroidResourceType().equals(
 							AndroidResource.STRING)) {
-						System.out.println("Processing String...");
+						logger.info("Processing String...");
 						parser = new StringValuesParser(resource
 								.getResourceFile().getAbsoluteFile());
 						parser.parseDocument();
@@ -99,8 +104,7 @@ public class ParserExecutor implements Runnable {
 						for (String value : values) {
 							bw.write(value);
 						}
-					} 
-					else if (resource.getAndroidResourceType().equals(
+					} else if (resource.getAndroidResourceType().equals(
 							AndroidResource.STRING_ARRAY)) {
 						logger.info("Processing String Array...");
 						parser = new StringValuesParser(resource
@@ -110,8 +114,7 @@ public class ParserExecutor implements Runnable {
 						for (String value : values) {
 							bw.write(value);
 						}
-					} 
-					else if (resource.getAndroidResourceType().equals(
+					} else if (resource.getAndroidResourceType().equals(
 							AndroidResource.PLURALS)) {
 						logger.info("Processing Plurals...");
 						parser = new StringValuesParser(resource
@@ -127,11 +130,6 @@ public class ParserExecutor implements Runnable {
 				if (bw != null) {
 					bw.close();
 				}
-				/*
-				 * BufferedWriter bw = new BufferedWriter(fileWriter);
-				 * List<String> tokens = getTokens(); for(final String
-				 * token:tokens) bw.write(token+" ");
-				 */
 			}
 		} catch (Exception e) {
 			logger.error("Error {}", e);
@@ -140,49 +138,47 @@ public class ParserExecutor implements Runnable {
 
 	private void parseLayoutResources() {
 		synchronized (jsonTargetFile) {
-			if(layoutFiles == null){
+			if (layoutFiles == null) {
 				return;
 			}
-			String apkName = FilenameUtils.getBaseName(jsonTargetFile
+			String apkName = FilenameUtils.getBaseName(this.jsonTargetFile
 					.getAbsolutePath());
 			UIDescriptor uiDescriptor;
 			List<Layout> layoutList = new ArrayList<Layout>();
 
-			try {
-				BufferedWriter bw = new BufferedWriter((new OutputStreamWriter(
-						new FileOutputStream(jsonTargetFile.getAbsoluteFile()),
-						"UTF-8")));
-				for (File layouFile : layoutFiles) {
-					Layout layout = new Layout(layouFile.getAbsolutePath());
+			for (File layouFile : layoutFiles) {
+				Layout layout = new Layout(layouFile.getAbsolutePath());
 
-					logger.info("Processing Layout File: {}",
-							layouFile.getAbsolutePath());
+				logger.info("Processing Layout File: {}",
+						layouFile.getAbsolutePath());
 
-					LayoutParser layoutParser = new LayoutParser(layouFile,
-							this.stringsFile, this.publicFile);
-					layoutParser.parseDocument();
-					List<AndroidView> androidViews = layoutParser
-							.getViewsList();
-					layout.setElements(androidViews);
-					layoutList.add(layout);
+				LayoutParser layoutParser = new LayoutParser(layouFile,
+						this.stringsFile, this.publicFile);
+				layoutParser.parseDocument();
+				List<AndroidView> androidViews = layoutParser.getViewsList();
+				layout.setElements(androidViews);
+				layoutList.add(layout);
 
-					writeLayoutStringValues(layoutParser.getViewsTextList());
+				writeLayoutStringValues(layoutParser.getViewsTextList());
 
-				}
-				uiDescriptor = new UIDescriptor(apkName, layoutList);
-
-				if (uiDescriptor != null) {
-					Gson gson = new GsonBuilder().setPrettyPrinting().create();
-					String json = gson.toJson(uiDescriptor);
-					bw.write(json);
-				}
-				if (bw != null) {
-					bw.close();
-				}
-
-			} catch (IOException e) {
-				logger.error("Error: {}", e);
 			}
+			uiDescriptor = new UIDescriptor(apkName, layoutList);
+
+			if (uiDescriptor != null) {
+				ObjectMapper mapper = new ObjectMapper();
+				mapper.configure(SerializationConfig.Feature.INDENT_OUTPUT,
+						true);
+				try {
+					mapper.writeValue(this.jsonTargetFile, uiDescriptor);
+				} catch (JsonGenerationException e) {
+					logger.error("Error {}", e);
+				} catch (JsonMappingException e) {
+					logger.error("Error {}", e);
+				} catch (IOException e) {
+					logger.error("Error {}", e);
+				}
+			}
+
 		}
 	}
 
@@ -191,9 +187,10 @@ public class ParserExecutor implements Runnable {
 			synchronized (dumpTargetFile) {
 				BufferedWriter bw;
 				try {
-					bw = new BufferedWriter(
-							(new OutputStreamWriter(new FileOutputStream(
-									dumpTargetFile.getAbsoluteFile(),true), "UTF-8")));
+					bw = new BufferedWriter((new OutputStreamWriter(
+							new FileOutputStream(
+									dumpTargetFile.getAbsoluteFile(), true),
+							"UTF-8")));
 					for (String text : layoutStringValues) {
 						bw.write(text);
 					}
