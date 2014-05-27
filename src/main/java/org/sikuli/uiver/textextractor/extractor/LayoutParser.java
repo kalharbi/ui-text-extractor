@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -31,7 +32,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class LayoutParser extends DefaultHandler {
-	private final static Logger logger = LoggerFactory.getLogger(LayoutParser.class);
+	private final static Logger logger = LoggerFactory
+			.getLogger(LayoutParser.class);
 	private File layoutXMLFile, stringsXMLFile, publicXMLFile;
 	private List<AndroidView> viewsList;
 	private List<String> viewsTextList;
@@ -74,17 +76,16 @@ public class LayoutParser extends DefaultHandler {
 			androidView = new AndroidView();
 			inWidget = true;
 			String id_val = attributes.getValue("android:id");
-			String publicId_val = "";
+			String publicId_val = null;
 			String name_val = qName;
 			String text_val = attributes.getValue("android:text");
 			String hint_val = attributes.getValue("android:hint");
 			String onClick_val = attributes.getValue("android:onClick");
 			if (id_val != null && id_val.contains("id/")) {
-				try{
+				try {
 					id_val = id_val.substring(id_val.indexOf('/') + 1);
 					publicId_val = getPublicIdValue(id_val);
-				}
-				catch(IndexOutOfBoundsException e){
+				} catch (IndexOutOfBoundsException e) {
 				}
 			}
 			if (text_val != null && text_val.startsWith("@string/")) {
@@ -95,17 +96,18 @@ public class LayoutParser extends DefaultHandler {
 				hint_val = getTextValue(hint_val.substring(hint_val
 						.indexOf('/') + 1));
 			}
-			androidView.setId((id_val == null) ? "" : id_val);
+			androidView.setId(id_val);
 			androidView.setPublicId(publicId_val);
-			androidView.setName((name_val == null) ? "" : name_val);
-			androidView.setText((text_val == null) ? "" : text_val);
-			androidView.setHint((hint_val == null) ? "" : hint_val);
-			androidView.setOnClick((onClick_val == null) ? "" : onClick_val);
-			// add text values to the list so it can be added to the dump text files
-			if(text_val != null && text_val != ""){
+			androidView.setName(name_val);
+			androidView.setText(text_val);
+			androidView.setHint(hint_val);
+			androidView.setOnClick(onClick_val);
+			// add text values to the list so it can be added to the dump text
+			// files
+			if (text_val != null) {
 				viewsTextList.add(text_val + " ");
 			}
-			if(hint_val != null && hint_val != ""){
+			if (hint_val != null) {
 				viewsTextList.add(hint_val + " ");
 			}
 		}
@@ -118,7 +120,7 @@ public class LayoutParser extends DefaultHandler {
 				viewsList.add(androidView);
 			}
 			inWidget = false;
-			widgetName = "";
+			widgetName = null;
 		}
 	}
 
@@ -161,7 +163,7 @@ public class LayoutParser extends DefaultHandler {
 		} catch (ParserConfigurationException e) {
 			logger.error("Error: ", e);
 		}
-		return "";
+		return null;
 	}
 
 	private String getPublicIdValue(String idVal) {
@@ -172,7 +174,8 @@ public class LayoutParser extends DefaultHandler {
 			Document doc = builder.parse(publicXMLFile);
 			XPathFactory xPathfactory = XPathFactory.newInstance();
 			XPath xpath = xPathfactory.newXPath();
-			String expression = "//public[@type=\"id\" and @name=\"" + idVal + "\"]";
+			String expression = "//public[@type=\"id\" and @name=\"" + idVal
+					+ "\"]";
 			XPathExpression xpathExpr = xpath.compile(expression);
 			NodeList nodeList = (NodeList) xpathExpr.evaluate(doc,
 					XPathConstants.NODESET);
@@ -188,13 +191,14 @@ public class LayoutParser extends DefaultHandler {
 		} catch (ParserConfigurationException e) {
 			logger.error("Error", e);
 		}
-		return "";
+		return null;
 	}
+
 	// Returns a list of hard coded string values in the layout files
 	public List<String> getViewsTextList() {
 		return viewsTextList;
 	}
-	
+
 	// Returns a list of Android views defined in the layout files
 	public List<AndroidView> getViewsList() {
 		return viewsList;
