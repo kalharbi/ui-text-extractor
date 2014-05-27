@@ -120,33 +120,41 @@ public class CommandLineTool {
 
 	}
 
-	private void doInput(String inputValue) {
-		if (inputValue != null) {
-			File inputFile = new File(inputValue);
-			if (!inputFile.exists()) {
+	private void doInput(String inputDirPath) {
+		if (inputDirPath != null) {
+			File inputDir = new File(inputDirPath);
+			if (!inputDir.exists()) {
 				System.err.println("Error: input directory does not exist. "
-						+ inputValue);
+						+ inputDirPath);
 				System.exit(2);
 			}
-			if (inputFile.isDirectory()) {
-				this.apkDirs = inputFile.listFiles(new FilenameFilter() {
-					public boolean accept(File dir, String name) {
-						try {
-							if (FileUtils.directoryContains(dir, new File(dir,
-									name))) {
-								return new File(dir, name).isDirectory();
+			if (inputDir.isDirectory()) {
+				// if the input directory contains a single unpacked apk file.
+				if (new File(inputDir, "AndroidManifest.xml").exists()) {
+					this.apkDirs = new File[] { inputDir };
+				} else {
+					// if the input directory contains multiple unpacked apk
+					// files.
+					this.apkDirs = inputDir.listFiles(new FilenameFilter() {
+						public boolean accept(File dir, String name) {
+							try {
+								if (FileUtils.directoryContains(dir, new File(
+										dir, name))) {
+									return new File(dir, name).isDirectory();
+								}
+							} catch (IOException e) {
+								e.printStackTrace();
 							}
-						} catch (IOException e) {
-							e.printStackTrace();
+							return false;
 						}
-						return false;
-					}
-				});
+					});
+				}
 			}
 
 			if (this.apkDirs == null || this.apkDirs.length < 1) {
-				System.err.println("Error: Unable to find .apk file(s) in "
-						+ inputValue);
+				System.err
+						.println("Error: Unable to find unpacked apk file(s) in "
+								+ inputDirPath);
 				System.exit(2);
 			}
 		}
@@ -162,7 +170,7 @@ public class CommandLineTool {
 				"print the version number.");
 
 		Option logFileOption = OptionBuilder.withArgName("FILE").hasArg()
-				.withDescription("Write logs to FILE.").create("log");
+				.withDescription("Write logs to FILE.").withLongOpt("log").create("l");
 
 		Option workerThreadsOption = OptionBuilder
 				.withArgName("nthreads")
