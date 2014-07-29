@@ -44,7 +44,7 @@ public class App {
 					.getFinalOutputFiles();
 			if (finalOutputFiles != null) {
 				parserExecutor.execute(new ParserExecutor(i, androidResources,
-						layoutFiles, finalOutputFiles[0], finalOutputFiles[1]));
+						layoutFiles, finalOutputFiles[0]));
 			}
 			i++;
 		}

@@ -10,31 +10,20 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.SerializationConfig;
-import org.sikuli.uiver.textextractor.serialization.AndroidView;
-import org.sikuli.uiver.textextractor.serialization.Layout;
-import org.sikuli.uiver.textextractor.serialization.UIDescriptor;
 import org.sikuli.uiver.textextractor.utils.Constants.AndroidResource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 public class ParserExecutor implements Runnable {
 	private final static Logger logger = LoggerFactory
 			.getLogger(ParserExecutor.class);
 	private List<StringResource> androidResources;
 	private Collection<File> layoutFiles;
-	private File dumpTargetFile, jsonTargetFile;
+	private File dumpTargetFile;
 	private int id;
 	private File stringsFile, publicFile;
 
@@ -42,13 +31,11 @@ public class ParserExecutor implements Runnable {
 	// https://android.googlesource.com/platform/frameworks/base/+/refs/heads/master/core/java/android/widget
 
 	public ParserExecutor(int id, List<StringResource> androidResources,
-			Collection<File> layoutFiles, File dumpTargetFile,
-			File jsonTargetFile) {
+			Collection<File> layoutFiles, File dumpTargetFile) {
 		this.id = id;
 		this.androidResources = androidResources;
 		this.layoutFiles = layoutFiles;
 		this.dumpTargetFile = dumpTargetFile;
-		this.jsonTargetFile = jsonTargetFile;
 	}
 
 	@Override
@@ -137,48 +124,17 @@ public class ParserExecutor implements Runnable {
 	}
 
 	private void parseLayoutResources() {
-		synchronized (jsonTargetFile) {
-			if (layoutFiles == null) {
-				return;
-			}
-			String apkName = FilenameUtils.getBaseName(this.jsonTargetFile
-					.getAbsolutePath());
-			UIDescriptor uiDescriptor;
-			List<Layout> layoutList = new ArrayList<Layout>();
+		if (layoutFiles == null) {
+			return;
+		}
 
-			for (File layouFile : layoutFiles) {
-				Layout layout = new Layout(layouFile.getAbsolutePath());
-
-				logger.info("Processing Layout File: {}",
-						layouFile.getAbsolutePath());
-
-				LayoutParser layoutParser = new LayoutParser(layouFile,
-						this.stringsFile, this.publicFile);
-				layoutParser.parseDocument();
-				List<AndroidView> androidViews = layoutParser.getViewsList();
-				layout.setElements(androidViews);
-				layoutList.add(layout);
-
-				writeLayoutStringValues(layoutParser.getViewsTextList());
-
-			}
-			uiDescriptor = new UIDescriptor(apkName, layoutList);
-
-			if (uiDescriptor != null) {
-				ObjectMapper mapper = new ObjectMapper();
-				mapper.configure(SerializationConfig.Feature.INDENT_OUTPUT,
-						true);
-				try {
-					mapper.writeValue(this.jsonTargetFile, uiDescriptor);
-				} catch (JsonGenerationException e) {
-					logger.error("Error {}", e);
-				} catch (JsonMappingException e) {
-					logger.error("Error {}", e);
-				} catch (IOException e) {
-					logger.error("Error {}", e);
-				}
-			}
-
+		for (File layouFile : layoutFiles) {
+			logger.info("Processing Layout File: {}",
+					layouFile.getAbsolutePath());
+			LayoutParser layoutParser = new LayoutParser(layouFile,
+					this.stringsFile, this.publicFile);
+			layoutParser.parseDocument();
+			writeLayoutStringValues(layoutParser.getViewsTextList());
 		}
 	}
 
